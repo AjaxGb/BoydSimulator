@@ -95,7 +95,7 @@ start.onclick = function() {
 	}
 };
 
-xhr.open("GET", "sounds/_map.json");
+xhr.open("GET", "lines.json");
 xhr.responseType = "json";
 xhr.onload = function() {
 	if (xhr.status < 200 || xhr.status >= 300) return;

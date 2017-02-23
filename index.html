@@ -13,7 +13,7 @@
 			display: block;
 			width: 15em;
 			line-height: 1.5em;
-			padding-bottom: 1em;
+			padding: 0.5em 1em;
 		}
 		input {
 			width: 5em;
@@ -29,16 +29,26 @@
 		ul {
 			max-width: 40em;
 			padding: 2em;
-			margin-left: -2em;
 			border: #555 3px double;
 		}
 		h1 {
 			margin-top: 0;
 		}
+		.side {
+			-ms-transform: rotate(-90deg);
+			-ms-transform-origin: 100% 100%;
+			-webkit-transform: rotate(-90deg);
+			-webkit-transform-origin: 100% 100%;
+			transform: rotate(-90deg);
+			transform-origin: 100% 100%;
+			float: right;
+			max-height: 100%;
+		}
 	</style>
 </head>
 
 <body>
+	<h1 class="side">BOYD'S CONSPIRACY SIM</h1>
 	<form>
 		<input type="button" id="start" value="Start" disabled>
 		<label>

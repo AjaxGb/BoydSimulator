@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<title>The Milkman Conspiracy</title>
+	<style type="text/css">
+		form {
+			display: block;
+			width: 15em;
+		}
+		input {
+			width: 5em;
+		}
+		label, input[type="button"] {
+			display: block;
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<form>
+		<input type="button" id="start" value="Start" disabled>
+		<label>
+			<input type="checkbox" id="sane">
+			Slightly Saner
+		</label>
+		<label>
+			<input type="checkbox" id="loop" checked>
+			Loop
+		</label>
+		<label>
+			<input type="number" value="0.60" min="0" max="1" step="0.01" id="aside">
+			Aside Chance
+		</label>
+		<label>
+			<input type="number" value="0.30" min="0" max="2" step="0.01" id="interject">
+			Interjection Chance
+		</label>
+	</form>
+	<ul id="text"></ul>
+	<audio id="audio" autoplay></audio>
+	
+	<script type="text/javascript" src="conspiracy.js"></script>
+</body>
+</html>

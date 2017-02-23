@@ -1,0 +1,871 @@
+{
+	"subject": {
+		"next": ["subjectConnector", "transitiveVerb", "intransitiveVerb"],
+		"entries": [
+			{
+				"index": 1,
+				"text": "the Milkman"
+			},
+			{
+				"index": 2,
+				"crazy": "those little green cops, they",
+				"text": "those little green cops"
+			},
+			{
+				"index": 3,
+				"text": "the military industrial complex"
+			},
+			{
+				"index": 4,
+				"crazy": "the suits, they",
+				"text": "the suits"
+			},
+			{
+				"index": 5,
+				"text": "the analyticals, man,"
+			},
+			{
+				"index": 6,
+				"text": "those Bermuda Triangle sharks"
+			},
+			{
+				"index": 7,
+				"text": "all them haters"
+			},
+			{
+				"index": 8,
+				"text": "Hernando"
+			},
+			{
+				"index": 9,
+				"crazy": "that little fat kid, with the bunny, he",
+				"text": "that little fat kid, with the bunny,"
+			},
+			{
+				"index": 10,
+				"text": "the doctors back at the clinic"
+			},
+			{
+				"index": 11,
+				"text": "the pelicans"
+			},
+			{
+				"index": 12,
+				"text": "the squirrels"
+			},
+			{
+				"index": 13,
+				"text": "the manager of that boy band"
+			},
+			{
+				"index": 14,
+				"text": "those eggheads in their ivory tower"
+			},
+			{
+				"index": 15,
+				"text": "that guy with the eyepatch"
+			},
+			{
+				"index": 16,
+				"text": "the Psycho-whatsits"
+			},
+			{
+				"index": 17,
+				"text": "the freaky hunchback girl who loves brains so much"
+			},
+			{
+				"index": 18,
+				"text": "the dairy industry"
+			},
+			{
+				"index": 19,
+				"text": "the kid with the goggles"
+			},
+			{
+				"index": 20,
+				"text": "the dogtrack regulators"
+			},
+			{
+				"index": 21,
+				"text": "the tuna canneries"
+			},
+			{
+				"index": 22,
+				"text": "the National Park system"
+			},
+			{
+				"index": 23,
+				"text": "Big Oil"
+			},
+			{
+				"index": 24,
+				"text": "organized labor"
+			},
+			{
+				"index": 25,
+				"text": "the rodeo clown cartel"
+			},
+			{
+				"index": 26,
+				"text": "the media"
+			},
+			{
+				"index": 27,
+				"text": "the cows"
+			},
+			{
+				"index": 28,
+				"text": "foreign toymakers"
+			},
+			{
+				"index": 29,
+				"text": "the dairy industry"
+			},
+			{
+				"index": 30,
+				"text": "the intelligentsia"
+			},
+			{
+				"index": 31,
+				"text": "the fluoride producers"
+			},
+			{
+				"index": 32,
+				"text": "a secret doomsday cult"
+			},
+			{
+				"index": 33,
+				"text": "the president's brother"
+			},
+			{
+				"index": 34,
+				"text": "my first cat, Seymour,"
+			},
+			{
+				"index": 35,
+				"crazy": "one of my nostril hairs",
+				"text": "oh! one of my nostril hairs"
+			},
+			{
+				"index": 36,
+				"text": "the intelligence community"
+			},
+			{
+				"index": 37,
+				"text": "the five richest families in the country"
+			},
+			{
+				"index": 38,
+				"text": "all those stupid crows"
+			},
+			{
+				"index": 39,
+				"text": "some sort of power, y'know?"
+			}
+		]
+	},
+	"subjectConnector": {
+		"next": ["subject"],
+		"entries": [
+			{
+				"index": 40,
+				"text": "and"
+			},
+			{
+				"index": 41,
+				"text": "...or else maybe..."
+			},
+			{
+				"index": 42,
+				"text": "...no, no, wait, I mean..."
+			},
+			{
+				"index": 43,
+				"text": "in conjunction with"
+			},
+			{
+				"index": 44,
+				"text": "with the full blessing of"
+			},
+			{
+				"index": 45,
+				"text": "with the backing of"
+			},
+			{
+				"index": 46,
+				"text": "who are merely the pawns of"
+			},
+			{
+				"index": 47,
+				"text": "who are the puppet masters of"
+			}
+		]
+	},
+	"transitiveVerb": {
+		"next": ["object"],
+		"entries": [
+			{
+				"index": 48,
+				"text": "went to the prom with"
+			},
+			{
+				"index": 49,
+				"text": "ate a whole jar of olives with"
+			},
+			{
+				"index": 50,
+				"text": "are working for"
+			},
+			{
+				"index": 51,
+				"text": "are telling my location to"
+			},
+			{
+				"index": 52,
+				"text": "made a deal, back in '68, with"
+			},
+			{
+				"index": 53,
+				"text": "sold their soul to"
+			},
+			{
+				"index": 54,
+				"text": "are controlled by"
+			},
+			{
+				"index": 55,
+				"text": "bought votes to protect"
+			},
+			{
+				"index": 56,
+				"text": "are doing the dirty work of"
+			},
+			{
+				"index": 57,
+				"text": "got in bed with"
+			},
+			{
+				"index": 58,
+				"text": "signed a secret treaty with"
+			},
+			{
+				"index": 59,
+				"text": "has been officially linked with"
+			}
+		]
+	},
+	"intransitiveVerb": {
+		"next": ["verbConnector", "verbPreposition", "conclusion", null],
+		"entries": [
+			{
+				"index": 60,
+				"text": "know the truth"
+			},
+			{
+				"index": 61,
+				"text": "won't stop visiting me"
+			},
+			{
+				"index": 62,
+				"text": "keep sparring with me"
+			},
+			{
+				"index": 63,
+				"text": "have been spitting on me all day"
+			},
+			{
+				"index": 64,
+				"text": "do this horrible thing, but in conjunction with who? Or, whom?"
+			},
+			{
+				"index": 65,
+				"text": "are crawling all over my skin"
+			},
+			{
+				"index": 66,
+				"text": "bit me all night, so I couldn't sleep"
+			},
+			{
+				"index": 67,
+				"text": "have everyone fooled"
+			},
+			{
+				"index": 68,
+				"text": "were digging away at the plastics"
+			},
+			{
+				"index": 69,
+				"text": "were dialing in through the optics"
+			},
+			{
+				"index": 70,
+				"text": "stole my theories and reprinted them—incorrectly—to discredit them"
+			},
+			{
+				"index": 71,
+				"text": "are not to be trusted"
+			},
+			{
+				"index": 72,
+				"text": "have been living off the teat of the dairy industry"
+			},
+			{
+				"index": 73,
+				"text": "have been fixing oil prices"
+			},
+			{
+				"index": 74,
+				"text": "assassinated the one man in their way"
+			},
+			{
+				"index": 75,
+				"text": "pretty much control everything"
+			},
+			{
+				"index": 76,
+				"crazy": "pick who lives, who dies, what the football scores are going to be every week",
+				"text": "pick who lives, and who dies, and what the football scores are going to be every week"
+			}
+		]
+	},
+	"verbConnector": {
+		"next": ["transitiveVerb", "intransitiveVerb"],
+		"entries": [
+			{
+				"index": 77,
+				"crazy": "they obviously",
+				"text": "and they obviously"
+			},
+			{
+				"index": 78,
+				"crazy": "and I know they",
+				"text": "I know they"
+			},
+			{
+				"index": 79,
+				"text": "but they can't hide that they"
+			},
+			{
+				"index": 80,
+				"text": "ha! Like I don't know that they"
+			},
+			{
+				"index": 81,
+				"text": "and let's just say for now that they"
+			},
+			{
+				"index": 82,
+				"crazy": "and, if I know anything, I know that they",
+				"text": "if I know anything, I know that they"
+			},
+			{
+				"index": 83,
+				"text": "and sure as the nose on my face, I am sure they"
+			}
+		]
+	},
+	"verbPreposition": {
+		"next": ["object"],
+		"entries": [
+			{
+				"index": 84,
+				"text": "to get"
+			},
+			{
+				"index": 85,
+				"text": "because they want"
+			},
+			{
+				"index": 86,
+				"text": "in order to monopolize"
+			},
+			{
+				"index": 87,
+				"text": "to keep down"
+			},
+			{
+				"index": 88,
+				"text": "so the people never find out about"
+			},
+			{
+				"index": 89,
+				"text": "and who wins? Them. Who loses?"
+			},
+			{
+				"index": 90,
+				"text": "all in a big fight over"
+			}
+		]
+	},
+	"object": {
+		"next": ["verbConnector", "verbPreposition", "conclusion", null],
+		"entries": [
+			{
+				"index": 91,
+				"text": "the truth"
+			},
+			{
+				"index": 92,
+				"text": "all of us"
+			},
+			{
+				"index": 93,
+				"text": "the whole sack of lies"
+			},
+			{
+				"index": 94,
+				"text": "the innocents"
+			},
+			{
+				"index": 95,
+				"text": "the biggest conspiracy of all"
+			},
+			{
+				"index": 96,
+				"text": "the infrastructure"
+			},
+			{
+				"index": 97,
+				"text": "the lap belt man"
+			},
+			{
+				"index": 98,
+				"text": "the water supply"
+			},
+			{
+				"index": 99,
+				"text": "the rotundra"
+			},
+			{
+				"index": 100,
+				"text": "the AM Tenderizer"
+			},
+			{
+				"index": 101,
+				"text": "last specimen of the supervirus"
+			},
+			{
+				"index": 102,
+				"text": "the witnesses"
+			},
+			{
+				"index": 103,
+				"text": "my hooch"
+			},
+			{
+				"index": 104,
+				"text": "the hanging udders"
+			},
+			{
+				"index": 105,
+				"text": "a clean-burning perpetual energy source"
+			},
+			{
+				"index": 106,
+				"text": "a religious artifact with supposedly unimaginable powers"
+			},
+			{
+				"index": 107,
+				"text": "exactly what, nobody knows"
+			}
+		]
+	},
+	"conclusion": {
+		"next": [null],
+		"entries": [
+			{
+				"index": 108,
+				"text": "How long do they think they can hide that?"
+			},
+			{
+				"index": 109,
+				"text": "I mean, who do they think they're fooling?"
+			},
+			{
+				"index": 110,
+				"text": "Can I really be the only person who sees this?"
+			},
+			{
+				"index": 111,
+				"text": "Someone has to get this information to the people."
+			},
+			{
+				"index": 112,
+				"crazy": "And if they find out I know this stuff, I'm dead.",
+				"text": "If they find out I know this stuff, I'm dead."
+			},
+			{
+				"index": 113,
+				"text": "Oh man, this stuff is hot."
+			},
+			{
+				"index": 114,
+				"text": "since the year \"dot\"."
+			},
+			{
+				"index": 115,
+				"text": "right under peoples noses!"
+			},
+			{
+				"index": 116,
+				"text": "and nobody seems to care!"
+			}
+		]
+	},
+	"aside": [
+		{
+			"index": 117,
+			"text": "Visiting hours are over!"
+		},
+		{
+			"index": 118,
+			"text": "Why does that hydrant keep looking at me?"
+		},
+		{
+			"index": 119,
+			"crazy": "You can pass it over the counter, but that don't make it \"over the counter!\"",
+			"text": "You can pass it over the counter, but that doesn't make it \"over the counter.\""
+		},
+		{
+			"index": 120,
+			"text": "No insubordination, right boss? Right?"
+		},
+		{
+			"index": 121,
+			"text": "Okay, boss?"
+		},
+		{
+			"index": 122,
+			"text": "Hey, where is the boss?"
+		},
+		{
+			"index": 123,
+			"text": "Ignore it, Cooper."
+		},
+		{
+			"index": 124,
+			"text": "I have to get rid of some of this stuff."
+		},
+		{
+			"index": 125,
+			"text": "I have to stay focused."
+		},
+		{
+			"index": 126,
+			"text": "No distractions!"
+		},
+		{
+			"index": 127,
+			"text": "What?"
+		},
+		{
+			"index": 128,
+			"text": "No, that doesn't fit. That doesn't fit at all!"
+		},
+		{
+			"index": 129,
+			"crazy": "Well, maybe if I forget about the other part...",
+			"text": "Well, maybe if I forget about that other part..."
+		},
+		{
+			"index": 130,
+			"text": "Wait, why did I say that?"
+		},
+		{
+			"index": 131,
+			"text": "Oh Boyd, you've got this all wrong."
+		},
+		{
+			"index": 132,
+			"text": "Did I just think that? Or did someone make me think it?"
+		},
+		{
+			"index": 133,
+			"text": "But when that happens, they turn it into chocolate milk, and nobody can tell the difference."
+		},
+		{
+			"index": 134,
+			"text": "You know what I mean? \"Amounts\" \"tendered\"? Yeah?"
+		},
+		{
+			"index": 135,
+			"text": "The squirrels have eyes."
+		},
+		{
+			"index": 136,
+			"text": "Listen to me. Listen to me! LISTEN TO ME!"
+		},
+		{
+			"index": 137,
+			"text": "Shut up. Shut up. Shut up!"
+		},
+		{
+			"index": 138,
+			"text": "Shhh! No, wait. Say that again?"
+		},
+		{
+			"index": 139,
+			"crazy": "They think the windows are tinted. But they aren't tinted nearly enough!",
+			"text": "They think the windows are tinted. But they ain't tinted nearly enough! Hyeh."
+		},
+		{
+			"index": 140,
+			"text": "Of course the milk's got spiderwebs in it. Taste it!"
+		},
+		{
+			"index": 141,
+			"text": "I scream, you scream, we all scream... we all scream!"
+		},
+		{
+			"index": 142,
+			"text": "The ice cream's in the web. The web is in the cream!"
+		},
+		{
+			"index": 143,
+			"text": "Oh, you think that's regular yarn, do you?"
+		},
+		{
+			"index": 144,
+			"text": "They come, they whisper, they watch, they chop, chop, chop!"
+		},
+		{
+			"index": 145,
+			"text": "What's that on your head? That's no hat. Maybe you could tell your hat to shut up? Or at least ask me the right questions?"
+		},
+		{
+			"index": 146,
+			"text": "I wonder if I'm on camera right now. Ha! What, am I crazy? Of course I am."
+		},
+		{
+			"index": 147,
+			"text": "Hi mom! Look at me! I'm tangled in a web of deception. How's Uncle G?"
+		},
+		{
+			"index": 148,
+			"text": "G-Man, who are you working for? Who is G?"
+		},
+		{
+			"index": 149,
+			"text": "G-Man, Go-Man, Goat-Man... I thought you worked for me."
+		},
+		{
+			"index": 150,
+			"text": "My father, he was a good man. But he served a cruel master!"
+		},
+		{
+			"index": 151,
+			"text": "Mom, are you sure these are your children?"
+		},
+		{
+			"index": 152,
+			"text": "These are not my dot-to-dots. These are not my babies!"
+		},
+		{
+			"index": 153,
+			"text": "But of course you know all this, because you're Australian!"
+		},
+		{
+			"index": 154,
+			"text": "And then it comes out of those wires over there, and goes straight into my head, with all its little audio tricks!"
+		},
+		{
+			"index": 155,
+			"text": "I don't want to be a lead weight on the table."
+		},
+		{
+			"index": 156,
+			"text": "I see myself more as a turtle with a rocket strapped to its back."
+		},
+		{
+			"index": 157,
+			"text": "And he waits, and he waits."
+		},
+		{
+			"index": 158,
+			"text": "This milk can't stay fresh forever!"
+		},
+		{
+			"index": 159,
+			"text": "Something's got to give!"
+		},
+		{
+			"index": 160,
+			"text": "How many are there? I count fourteen, but that's not the number on my hand! That's not the number on my neck!"
+		},
+		{
+			"index": 161,
+			"text": "The truth lives in a small house on the edge of town."
+		},
+		{
+			"index": 162,
+			"text": "The truth is sleeping in a glass box."
+		},
+		{
+			"index": 163,
+			"text": "The truth is a colorful diamond."
+		},
+		{
+			"index": 164,
+			"text": "I'm dropping out of this yogurt convention. There's no fruit at the bottom!"
+		},
+		{
+			"index": 165,
+			"text": "Hey, lady, where are you going with that sweater!?"
+		},
+		{
+			"index": 166,
+			"crazy": "What, you think— think you could get this past me? I'm the guard.",
+			"text": "Think you could get this past me? I'm the guard."
+		},
+		{
+			"index": 167,
+			"text": "I've got the truth. It's tucked in my cheeks! I'm not going to eat it right now."
+		},
+		{
+			"index": 168,
+			"text": "Are you buying? Or are you spying?"
+		},
+		{
+			"index": 169,
+			"text": "This is ugly. It's like a cyclops with a million eyes!"
+		},
+		{
+			"index": 170,
+			"text": "The fire will start in menswear!"
+		},
+		{
+			"index": 171,
+			"text": "But what if the signal comes early?"
+		},
+		{
+			"index": 172,
+			"text": "The meaty bit, in the middle of this wonton? It's me."
+		},
+		{
+			"index": 173,
+			"text": "Hey, don't worry about me. I'm centered. I'm the whole center, in fact."
+		},
+		{
+			"index": 174,
+			"crazy": "Am I? Or is he? Am I he? What is he? Doing in my house!?",
+			"text": "Am I? Or is he? Am I he? What's he doing in my house?"
+		},
+		{
+			"index": 175,
+			"text": "Someone moved into my neighborhood uninvited."
+		},
+		{
+			"index": 176,
+			"text": "The housing committee is not going to like this."
+		},
+		{
+			"index": 177,
+			"text": "They should paint their garage door the same color as everybody else's."
+		},
+		{
+			"index": 178,
+			"text": "I'm locked on the outside and I'm locked on the inside."
+		},
+		{
+			"index": 179,
+			"text": "And the little girl stuck her finger in the dike and saved all the windmills. But who does the little girl work for?"
+		},
+		{
+			"index": 180,
+			"text": "Hey, little girl, get your finger out of there!"
+		},
+		{
+			"index": 181,
+			"text": "Hahaha, I know what you're up to."
+		},
+		{
+			"index": 182,
+			"text": "You've got the skates, but I've got the key."
+		},
+		{
+			"index": 183,
+			"crazy": "Who's the Milkman?",
+			"text": "Who is the Milkman?"
+		},
+		{
+			"index": 184,
+			"text": "You know my house is clean, right? Right, boss?"
+		},
+		{
+			"index": 185,
+			"text": "Get off of me!"
+		},
+		{
+			"index": 186,
+			"text": "I don't want any half-and-half, I'm already half-and-half."
+		},
+		{
+			"index": 187,
+			"text": "If I'm invisible, then why is everyone looking at me?"
+		}
+	],
+	"interjection": [
+		{
+			"index": 188,
+			"text": "*chuckles*"
+		},
+		{
+			"index": 189,
+			"text": "(Ho ho!)"
+		},
+		{
+			"index": 190,
+			"text": "(Wait...)"
+		},
+		{
+			"index": 191,
+			"text": "(Uh...)"
+		},
+		{
+			"index": 192,
+			"crazy": "(Uh...)",
+			"text": "(Um...)"
+		},
+		{
+			"index": 193,
+			"text": "*cough*"
+		},
+		{
+			"index": 194,
+			"text": "(Uh...)"
+		},
+		{
+			"index": 195,
+			"text": "(Hmm...)"
+		},
+		{
+			"index": 196,
+			"text": "(Ha!)"
+		},
+		{
+			"index": 197,
+			"text": "(Yeah, yeah, yeah...)"
+		},
+		{
+			"index": 198,
+			"text": "(What?)"
+		},
+		{
+			"index": 199,
+			"text": "(No, no, nonono...)"
+		},
+		{
+			"index": 200,
+			"text": "(Okay, okay but...)"
+		},
+		{
+			"index": 201,
+			"text": "(Huh?)"
+		},
+		{
+			"index": 202,
+			"crazy": "(Oh-hoh, RIGHT...)",
+			"text": "(Right...)"
+		}
+	]
+}

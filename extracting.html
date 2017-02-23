@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+	<title>How to Extract Voice Files</title>
+	<style type="text/css">
+		html {
+			width: 100%;
+		}
+		body {
+			margin: 2em 6em;
+		}
+		li + li {
+			margin-top: 20px;
+		}
+		li li {
+			margin-top: 10px;
+		}
+		.images {
+			float: right;
+			width: 440px;
+			margin-left: 3em;
+		}
+	</style>
+</head>
+	<a href="./">&lt;== Back</a>
+	<div class="images">
+	<img src="pics/extracting1.png" width="440px" height="335px">
+	<img src="pics/extracting2.png" width="440px" height="335px">
+	</div>
+	<p>
+	Wow, look at that back arrow. I think it's apparent that this will be
+	the most gorgeous website ever created in 2017. Anyway:
+	</p>
+	<h1>How to Extract the Required Files</h1>
+	<ol>
+	<li>
+		Download <a href="http://quickandeasysoftware.net/software/psychonauts-explorer">
+		Psychonauts Explorer</a>. Windows only, I'm afraid.
+	</li>
+	<li>
+		Run the program, click "Open", and navigate to your <i>Psychonauts</i> installation.
+		<ul>
+		<li>
+			The Steam version is found under
+			<code>C:\Program Files (x86)\Steam\SteamApps\common\Psychonauts</code>.
+		</li>
+		</ul>
+	</li>
+	<li>
+		Find the file containing the voices for the asylum grounds.
+		<ul>
+		<li>
+			In the Steam version, it is called <code>asgrvoice.isb</code>, as in
+			<strong>AS</strong>ylum <strong>GR</strong>ounds <strong>VOICE</strong>s.
+		</li>
+		<li>
+			In the Steam version, it is located under <code>WorkResource\Sounds\asgrvoice.isb</code>.
+		</li>
+		</ul>
+	</li>
+	<li>
+		Select "Save All Audio Files" (<strong>not</strong> "Dump All"), and give the
+		program a good place to store them. This operation will take a while.
+	</li>
+	<li>
+		Now that you have the files, you'll want to isolate Boyd's relevant lines.
+		You can delete the other files or keep them, just make sure not to send them
+		to the simulator.
+		<ul>
+		<li>
+			They should be numbered from 1 to 202, with two variations each, and have
+			similar names otherwise. My copy is missing one variant for 71; this is
+			not a major issue. The simulator will just fill in the other one.
+		</li>
+		<li>
+			In the Steam version, they are named <code>ASBR001BOA.wav</code> through
+			<code>ASBR202BOB.wav</code>, with an <code>A.wav</code> (outside Boyd's mind)
+			and a <code>B.wav</code> (inside Boyd's mind) for each number. <code>AS</code>
+			stands for <strong>AS</strong>ylum and <code>BO</code> stands for
+			<strong>BO</strong>yd; I'm not sure about <code>BR</code>.
+		</li>
+		</ul>
+	</li>
+	<li>
+		The simulator will assume that the files' names contain a single number
+		between 1 and 202, and end with an <code>A</code> or a <code>B</code>, as
+		outlined above. If your files do not match this pattern, please edit them
+		accordingly. You <em>should</em> have 404 files, but as I said my copy was
+		missing a <code>71B</code>, so 403 is acceptable.
+	</li>
+	<li>
+		Go back to the previous page, click the "Select files" button, and select all
+		404 (or 403) files, then hit "Open".
+	</li>
+	</ol>
+	<hr>
+	Congratulations, the simulator should now play voice files.
+<body>
+</body>
+</html>

@@ -112,11 +112,24 @@ function updateSoundFile() {
 		src = indexToSoundFile(sentence[currPlaying].index, sane.checked);
 		if (src) break;
 		if (++currPlaying >= sentence.length) {
-			if (!stopped) start.onclick();
+			stopSound();
 			return;
 		}
 	}
 	audio.src = src;
+}
+
+function startNewSentence(argument) {
+	sentence = buildSentence(map, +aside.value, +inter.value);
+	stopped = false;
+	start.value = "Stop";
+	displaySentence(sentence);
+}
+
+function stopSound() {
+	audio.pause();
+	stopped = true;
+	start.value = "Generate Conspiracy";
 }
 
 ////////////////////////////////////////////////////////
@@ -137,7 +150,7 @@ const text  = document.getElementById("text"),
       files = document.getElementById("files"),
       xhr   = new XMLHttpRequest(),
       numRx = /^\D*(\d+)\D*(?:\.[^.]*)?$/;
-let stopped = true, map, voices = [], sentence, currPlaying;
+let stopped = true, map, voices = [], sentence, currPlaying, timeout;
 sane.onchange = function() {
 	updateText(sentence, currPlaying + 1);	
 };
@@ -147,7 +160,7 @@ vol.oninput = function() {
 	volO.innerHTML = (v * 100)|0;
 };
 files.onchange = function() {
-	if (!stopped) start.onclick();
+	stopSound();
 	for (let i = voices.length - 1; i >= 0; --i) {
 		for (let j in voices[i]) {
 			URL.revokeObjectURL(voices[i][j]);
@@ -209,25 +222,26 @@ files.onchange = function() {
 audio.onended = function() {
 	if (++currPlaying >= sentence.length) {
 		if (!stopped) {
-			start.onclick();
 			if (loop.checked) {
-				setOptionalTimeout(start.onclick, +delay.value * 1000);
+				timeout = setOptionalTimeout(startNewSentence,
+					+delay.value * 1000);
+			} else {
+				stopSound();
 			}
 		}
 		return;
 	}
-	setOptionalTimeout(updateSoundFile, +delay.value * 1000);
+	timeout = setOptionalTimeout(updateSoundFile, +delay.value * 1000);
 };
 start.onclick = function() {
+	if (timeout != undefined) {
+		clearTimeout(timeout);
+		timeout = undefined;
+	}
 	if (stopped) {
-		sentence = buildSentence(map, +aside.value, +inter.value);
-		stopped = false;
-		start.value = "Stop";
-		displaySentence(sentence);
+		startNewSentence();
 	} else {
-		audio.pause();
-		stopped = true;
-		start.value = "Generate Conspiracy";
+		stopSound();
 	}
 };
 

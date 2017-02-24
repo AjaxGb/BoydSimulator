@@ -227,7 +227,7 @@ start.onclick = function() {
 	} else {
 		audio.pause();
 		stopped = true;
-		start.value = "Start";
+		start.value = "Generate Conspiracy";
 	}
 };
 

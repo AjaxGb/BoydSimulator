@@ -24,6 +24,14 @@ function randomChoice(arr) {
 	return arr[randomInt(arr.length)];
 }
 
+function setOptionalTimeout(func, delay) {
+	if (delay === 0) {
+		func();
+	} else {
+		return setTimeout(func, delay);
+	}
+}
+
 function indexToSoundFile(i, sane) {
 	const line = voices[i];
 	if (!line) return undefined;
@@ -123,6 +131,7 @@ const text  = document.getElementById("text"),
       lenF  = document.getElementById("lengthWeight"),
       aside = document.getElementById("aside"),
       inter = document.getElementById("interject"),
+      delay = document.getElementById("delay"),
       files = document.getElementById("files"),
       xhr   = new XMLHttpRequest(),
       numRx = /^\D*(\d+)\D*(?:\.[^.]*)?$/;
@@ -194,11 +203,13 @@ audio.onended = function() {
 	if (++currPlaying >= sentence.length) {
 		if (!stopped) {
 			start.onclick();
-			if (loop.checked) start.onclick();
+			if (loop.checked) {
+				setOptionalTimeout(start.onclick, +delay.value * 1000);
+			}
 		}
 		return;
 	}
-	updateSoundFile();
+	setOptionalTimeout(updateSoundFile, +delay.value * 1000);
 };
 start.onclick = function() {
 	if (stopped) {

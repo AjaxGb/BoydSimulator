@@ -1,12 +1,28 @@
 "use strict";
 
-function random(max) {
+function randomInt(max) {
 	return Math.floor(max * Math.random());
 }
 
+function randomWeightedChoice(arr, weightFunc) {
+	const weights = [];
+	let sum = 0;
+	for (let i = arr.length - 1; i >= 0; --i) {
+		const w = weightFunc(arr[i]);
+		weights[i] = w;
+		sum += w;
+	}
+	for (let i = arr.length - 1, rnd = sum * Math.random(); i >= 0; --i) {
+		rnd -= weights[i];
+		if (rnd < 0) return arr[i];
+	}
+	// Shouldn't get here, but floats being what they are...
+	return arr[0];
+}
+
 function randomChoice(arr) {
-	return arr[random(arr.length)];
-};
+	return arr[randomInt(arr.length)];
+}
 
 function indexToSoundFile(i, sane) {
 	const line = voices[i];
@@ -14,6 +30,13 @@ function indexToSoundFile(i, sane) {
 	return line[sane ? "sane" : "crazy"] || line[sane ? "crazy" : "sane"];
 }
 
+function getLengthWeight(c) {
+	if (!c) return 1;
+	const w = 1 + (map.index[c].lengthFactor * (+lenF.value));
+	return (w < 0) ? 0 : w;
+}
+
+const maxLengthError = {text: "[[MAX LENGTH REACHED]]", index: -1};
 function buildSentence(map, asideChance, interjectionChance) {
 	if (asideChance && Math.random() < asideChance) {
 		if (interjectionChance && Math.random() < interjectionChance) {
@@ -22,14 +45,28 @@ function buildSentence(map, asideChance, interjectionChance) {
 		return [randomChoice(map.aside)];
 	}
 	const result = [];
-	for (let curr = "subject"; curr !== null; curr = randomChoice(map[curr].next)) {
-		if (result.length >= 1000) return result;
-		result.push(randomChoice(map[curr].entries));
+	for (
+			let curr = "subject";
+			curr !== null;
+			curr = randomWeightedChoice(map.index[curr].next, getLengthWeight)
+		) {
+		if (result.length >= 1000) {
+			result.push(maxLengthError)
+			return result;
+		}
+		result.push(randomChoice(map[curr]));
 		if (interjectionChance) {
 			// Decrease chance by half each time, to discourage long strings
 			// of interjections.
-			for (let tempChance = interjectionChance; Math.random() < tempChance; tempChance /= 2) {
-				if (result.length >= 1000) return result;
+			for (
+					let tempChance = interjectionChance;
+					Math.random() < tempChance;
+					tempChance /= 2
+				) {
+				if (result.length >= 1000) {
+					result.push(maxLengthError)
+					return result;
+				}
 				result.push(randomChoice(map.interjection));
 			}
 		}
@@ -83,6 +120,7 @@ const text  = document.getElementById("text"),
       start = document.getElementById("start"),
       sane  = document.getElementById("sane"),
       loop  = document.getElementById("loop"),
+      lenF  = document.getElementById("lengthWeight"),
       aside = document.getElementById("aside"),
       inter = document.getElementById("interject"),
       files = document.getElementById("files"),

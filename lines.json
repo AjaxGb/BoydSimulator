@@ -1,517 +1,527 @@
 {
-	"subject": {
-		"next": ["subjectConnector", "transitiveVerb", "intransitiveVerb"],
-		"entries": [
-			{
-				"index": 1,
-				"text": "the Milkman"
-			},
-			{
-				"index": 2,
-				"crazy": "those little green cops, they",
-				"text": "those little green cops"
-			},
-			{
-				"index": 3,
-				"text": "the military industrial complex"
-			},
-			{
-				"index": 4,
-				"crazy": "the suits, they",
-				"text": "the suits"
-			},
-			{
-				"index": 5,
-				"text": "the analyticals, man,"
-			},
-			{
-				"index": 6,
-				"text": "those Bermuda Triangle sharks"
-			},
-			{
-				"index": 7,
-				"text": "all them haters"
-			},
-			{
-				"index": 8,
-				"text": "Hernando"
-			},
-			{
-				"index": 9,
-				"crazy": "that little fat kid, with the bunny, he",
-				"text": "that little fat kid, with the bunny,"
-			},
-			{
-				"index": 10,
-				"text": "the doctors back at the clinic"
-			},
-			{
-				"index": 11,
-				"text": "the pelicans"
-			},
-			{
-				"index": 12,
-				"text": "the squirrels"
-			},
-			{
-				"index": 13,
-				"text": "the manager of that boy band"
-			},
-			{
-				"index": 14,
-				"text": "those eggheads in their ivory tower"
-			},
-			{
-				"index": 15,
-				"text": "that guy with the eyepatch"
-			},
-			{
-				"index": 16,
-				"text": "the Psycho-whatsits"
-			},
-			{
-				"index": 17,
-				"text": "the freaky hunchback girl who loves brains so much"
-			},
-			{
-				"index": 18,
-				"text": "the dairy industry"
-			},
-			{
-				"index": 19,
-				"text": "the kid with the goggles"
-			},
-			{
-				"index": 20,
-				"text": "the dogtrack regulators"
-			},
-			{
-				"index": 21,
-				"text": "the tuna canneries"
-			},
-			{
-				"index": 22,
-				"text": "the National Park system"
-			},
-			{
-				"index": 23,
-				"text": "Big Oil"
-			},
-			{
-				"index": 24,
-				"text": "organized labor"
-			},
-			{
-				"index": 25,
-				"text": "the rodeo clown cartel"
-			},
-			{
-				"index": 26,
-				"text": "the media"
-			},
-			{
-				"index": 27,
-				"text": "the cows"
-			},
-			{
-				"index": 28,
-				"text": "foreign toymakers"
-			},
-			{
-				"index": 29,
-				"text": "the dairy industry"
-			},
-			{
-				"index": 30,
-				"text": "the intelligentsia"
-			},
-			{
-				"index": 31,
-				"text": "the fluoride producers"
-			},
-			{
-				"index": 32,
-				"text": "a secret doomsday cult"
-			},
-			{
-				"index": 33,
-				"text": "the president's brother"
-			},
-			{
-				"index": 34,
-				"text": "my first cat, Seymour,"
-			},
-			{
-				"index": 35,
-				"crazy": "one of my nostril hairs",
-				"text": "oh! one of my nostril hairs"
-			},
-			{
-				"index": 36,
-				"text": "the intelligence community"
-			},
-			{
-				"index": 37,
-				"text": "the five richest families in the country"
-			},
-			{
-				"index": 38,
-				"text": "all those stupid crows"
-			},
-			{
-				"index": 39,
-				"text": "some sort of power, y'know?"
-			}
-		]
+	"index": {
+		"subject": {
+			"lengthFactor": 0,
+			"next": ["subjectConnector", "transitiveVerb", "intransitiveVerb"]
+		},
+		"subjectConnector": {
+			"lengthFactor": 3,
+			"next": ["subject"]
+		},
+		"transitiveVerb": {
+			"lengthFactor": 1,
+			"next": ["object"]
+		},
+		"intransitiveVerb": {
+			"lengthFactor": 0,
+			"next": ["verbConnector", "verbPreposition", "conclusion", null]
+		},
+		"verbConnector": {
+			"lengthFactor": 5,
+			"next": ["transitiveVerb", "intransitiveVerb"]
+		},
+		"verbPreposition": {
+			"lengthFactor": 3,
+			"next": ["object"]
+		},
+		"object": {
+			"lengthFactor": 0,
+			"next": ["verbConnector", "verbPreposition", "conclusion", null]
+		},
+		"conclusion": {
+			"lengthFactor": 0,
+			"next": [null]
+		}
 	},
-	"subjectConnector": {
-		"next": ["subject"],
-		"entries": [
-			{
-				"index": 40,
-				"text": "and"
-			},
-			{
-				"index": 41,
-				"text": "...or else maybe..."
-			},
-			{
-				"index": 42,
-				"text": "...no, no, wait, I mean..."
-			},
-			{
-				"index": 43,
-				"text": "in conjunction with"
-			},
-			{
-				"index": 44,
-				"text": "with the full blessing of"
-			},
-			{
-				"index": 45,
-				"text": "with the backing of"
-			},
-			{
-				"index": 46,
-				"text": "who are merely the pawns of"
-			},
-			{
-				"index": 47,
-				"text": "who are the puppet masters of"
-			}
-		]
-	},
-	"transitiveVerb": {
-		"next": ["object"],
-		"entries": [
-			{
-				"index": 48,
-				"text": "went to the prom with"
-			},
-			{
-				"index": 49,
-				"text": "ate a whole jar of olives with"
-			},
-			{
-				"index": 50,
-				"text": "are working for"
-			},
-			{
-				"index": 51,
-				"text": "are telling my location to"
-			},
-			{
-				"index": 52,
-				"text": "made a deal, back in '68, with"
-			},
-			{
-				"index": 53,
-				"text": "sold their soul to"
-			},
-			{
-				"index": 54,
-				"text": "are controlled by"
-			},
-			{
-				"index": 55,
-				"text": "bought votes to protect"
-			},
-			{
-				"index": 56,
-				"text": "are doing the dirty work of"
-			},
-			{
-				"index": 57,
-				"text": "got in bed with"
-			},
-			{
-				"index": 58,
-				"text": "signed a secret treaty with"
-			},
-			{
-				"index": 59,
-				"text": "has been officially linked with"
-			}
-		]
-	},
-	"intransitiveVerb": {
-		"next": ["verbConnector", "verbPreposition", "conclusion", null],
-		"entries": [
-			{
-				"index": 60,
-				"text": "know the truth"
-			},
-			{
-				"index": 61,
-				"text": "won't stop visiting me"
-			},
-			{
-				"index": 62,
-				"text": "keep sparring with me"
-			},
-			{
-				"index": 63,
-				"text": "have been spitting on me all day"
-			},
-			{
-				"index": 64,
-				"text": "do this horrible thing, but in conjunction with who? Or, whom?"
-			},
-			{
-				"index": 65,
-				"text": "are crawling all over my skin"
-			},
-			{
-				"index": 66,
-				"text": "bit me all night, so I couldn't sleep"
-			},
-			{
-				"index": 67,
-				"text": "have everyone fooled"
-			},
-			{
-				"index": 68,
-				"text": "were digging away at the plastics"
-			},
-			{
-				"index": 69,
-				"text": "were dialing in through the optics"
-			},
-			{
-				"index": 70,
-				"text": "stole my theories and reprinted them—incorrectly—to discredit them"
-			},
-			{
-				"index": 71,
-				"text": "are not to be trusted"
-			},
-			{
-				"index": 72,
-				"text": "have been living off the teat of the dairy industry"
-			},
-			{
-				"index": 73,
-				"text": "have been fixing oil prices"
-			},
-			{
-				"index": 74,
-				"text": "assassinated the one man in their way"
-			},
-			{
-				"index": 75,
-				"text": "pretty much control everything"
-			},
-			{
-				"index": 76,
-				"crazy": "pick who lives, who dies, what the football scores are going to be every week",
-				"text": "pick who lives, and who dies, and what the football scores are going to be every week"
-			}
-		]
-	},
-	"verbConnector": {
-		"next": ["transitiveVerb", "intransitiveVerb"],
-		"entries": [
-			{
-				"index": 77,
-				"crazy": "they obviously",
-				"text": "and they obviously"
-			},
-			{
-				"index": 78,
-				"crazy": "and I know they",
-				"text": "I know they"
-			},
-			{
-				"index": 79,
-				"text": "but they can't hide that they"
-			},
-			{
-				"index": 80,
-				"text": "ha! Like I don't know that they"
-			},
-			{
-				"index": 81,
-				"text": "and let's just say for now that they"
-			},
-			{
-				"index": 82,
-				"crazy": "and, if I know anything, I know that they",
-				"text": "if I know anything, I know that they"
-			},
-			{
-				"index": 83,
-				"text": "and sure as the nose on my face, I am sure they"
-			}
-		]
-	},
-	"verbPreposition": {
-		"next": ["object"],
-		"entries": [
-			{
-				"index": 84,
-				"text": "to get"
-			},
-			{
-				"index": 85,
-				"text": "because they want"
-			},
-			{
-				"index": 86,
-				"text": "in order to monopolize"
-			},
-			{
-				"index": 87,
-				"text": "to keep down"
-			},
-			{
-				"index": 88,
-				"text": "so the people never find out about"
-			},
-			{
-				"index": 89,
-				"text": "and who wins? Them. Who loses?"
-			},
-			{
-				"index": 90,
-				"text": "all in a big fight over"
-			}
-		]
-	},
-	"object": {
-		"next": ["verbConnector", "verbPreposition", "conclusion", null],
-		"entries": [
-			{
-				"index": 91,
-				"text": "the truth"
-			},
-			{
-				"index": 92,
-				"text": "all of us"
-			},
-			{
-				"index": 93,
-				"text": "the whole sack of lies"
-			},
-			{
-				"index": 94,
-				"text": "the innocents"
-			},
-			{
-				"index": 95,
-				"text": "the biggest conspiracy of all"
-			},
-			{
-				"index": 96,
-				"text": "the infrastructure"
-			},
-			{
-				"index": 97,
-				"text": "the lap belt man"
-			},
-			{
-				"index": 98,
-				"text": "the water supply"
-			},
-			{
-				"index": 99,
-				"text": "the rotundra"
-			},
-			{
-				"index": 100,
-				"text": "the AM Tenderizer"
-			},
-			{
-				"index": 101,
-				"text": "last specimen of the supervirus"
-			},
-			{
-				"index": 102,
-				"text": "the witnesses"
-			},
-			{
-				"index": 103,
-				"text": "my hooch"
-			},
-			{
-				"index": 104,
-				"text": "the hanging udders"
-			},
-			{
-				"index": 105,
-				"text": "a clean-burning perpetual energy source"
-			},
-			{
-				"index": 106,
-				"text": "a religious artifact with supposedly unimaginable powers"
-			},
-			{
-				"index": 107,
-				"text": "exactly what, nobody knows"
-			}
-		]
-	},
-	"conclusion": {
-		"next": [null],
-		"entries": [
-			{
-				"index": 108,
-				"text": "How long do they think they can hide that?"
-			},
-			{
-				"index": 109,
-				"text": "I mean, who do they think they're fooling?"
-			},
-			{
-				"index": 110,
-				"text": "Can I really be the only person who sees this?"
-			},
-			{
-				"index": 111,
-				"text": "Someone has to get this information to the people."
-			},
-			{
-				"index": 112,
-				"crazy": "And if they find out I know this stuff, I'm dead.",
-				"text": "If they find out I know this stuff, I'm dead."
-			},
-			{
-				"index": 113,
-				"text": "Oh man, this stuff is hot."
-			},
-			{
-				"index": 114,
-				"text": "since the year \"dot\"."
-			},
-			{
-				"index": 115,
-				"text": "right under peoples noses!"
-			},
-			{
-				"index": 116,
-				"text": "and nobody seems to care!"
-			}
-		]
-	},
+	"subject": [
+		{
+			"index": 1,
+			"text": "the Milkman"
+		},
+		{
+			"index": 2,
+			"crazy": "those little green cops, they",
+			"text": "those little green cops"
+		},
+		{
+			"index": 3,
+			"text": "the military industrial complex"
+		},
+		{
+			"index": 4,
+			"crazy": "the suits, they",
+			"text": "the suits"
+		},
+		{
+			"index": 5,
+			"text": "the analyticals, man,"
+		},
+		{
+			"index": 6,
+			"text": "those Bermuda Triangle sharks"
+		},
+		{
+			"index": 7,
+			"text": "all them haters"
+		},
+		{
+			"index": 8,
+			"text": "Hernando"
+		},
+		{
+			"index": 9,
+			"crazy": "that little fat kid, with the bunny, he",
+			"text": "that little fat kid, with the bunny,"
+		},
+		{
+			"index": 10,
+			"text": "the doctors back at the clinic"
+		},
+		{
+			"index": 11,
+			"text": "the pelicans"
+		},
+		{
+			"index": 12,
+			"text": "the squirrels"
+		},
+		{
+			"index": 13,
+			"text": "the manager of that boy band"
+		},
+		{
+			"index": 14,
+			"text": "those eggheads in their ivory tower"
+		},
+		{
+			"index": 15,
+			"text": "that guy with the eyepatch"
+		},
+		{
+			"index": 16,
+			"text": "the Psycho-whatsits"
+		},
+		{
+			"index": 17,
+			"text": "the freaky hunchback girl who loves brains so much"
+		},
+		{
+			"index": 18,
+			"text": "the dairy industry"
+		},
+		{
+			"index": 19,
+			"text": "the kid with the goggles"
+		},
+		{
+			"index": 20,
+			"text": "the dogtrack regulators"
+		},
+		{
+			"index": 21,
+			"text": "the tuna canneries"
+		},
+		{
+			"index": 22,
+			"text": "the National Park system"
+		},
+		{
+			"index": 23,
+			"text": "Big Oil"
+		},
+		{
+			"index": 24,
+			"text": "organized labor"
+		},
+		{
+			"index": 25,
+			"text": "the rodeo clown cartel"
+		},
+		{
+			"index": 26,
+			"text": "the media"
+		},
+		{
+			"index": 27,
+			"text": "the cows"
+		},
+		{
+			"index": 28,
+			"text": "foreign toymakers"
+		},
+		{
+			"index": 29,
+			"text": "the dairy industry"
+		},
+		{
+			"index": 30,
+			"text": "the intelligentsia"
+		},
+		{
+			"index": 31,
+			"text": "the fluoride producers"
+		},
+		{
+			"index": 32,
+			"text": "a secret doomsday cult"
+		},
+		{
+			"index": 33,
+			"text": "the president's brother"
+		},
+		{
+			"index": 34,
+			"text": "my first cat, Seymour,"
+		},
+		{
+			"index": 35,
+			"crazy": "one of my nostril hairs",
+			"text": "oh! one of my nostril hairs"
+		},
+		{
+			"index": 36,
+			"text": "the intelligence community"
+		},
+		{
+			"index": 37,
+			"text": "the five richest families in the country"
+		},
+		{
+			"index": 38,
+			"text": "all those stupid crows"
+		},
+		{
+			"index": 39,
+			"text": "some sort of power, y'know?"
+		}
+	],
+	"subjectConnector": [
+		{
+			"index": 40,
+			"text": "and"
+		},
+		{
+			"index": 41,
+			"text": "...or else maybe..."
+		},
+		{
+			"index": 42,
+			"text": "...no, no, wait, I mean..."
+		},
+		{
+			"index": 43,
+			"text": "in conjunction with"
+		},
+		{
+			"index": 44,
+			"text": "with the full blessing of"
+		},
+		{
+			"index": 45,
+			"text": "with the backing of"
+		},
+		{
+			"index": 46,
+			"text": "who are merely the pawns of"
+		},
+		{
+			"index": 47,
+			"text": "who are the puppet masters of"
+		}
+	],
+	"transitiveVerb": [
+		{
+			"index": 48,
+			"text": "went to the prom with"
+		},
+		{
+			"index": 49,
+			"text": "ate a whole jar of olives with"
+		},
+		{
+			"index": 50,
+			"text": "are working for"
+		},
+		{
+			"index": 51,
+			"text": "are telling my location to"
+		},
+		{
+			"index": 52,
+			"text": "made a deal, back in '68, with"
+		},
+		{
+			"index": 53,
+			"text": "sold their soul to"
+		},
+		{
+			"index": 54,
+			"text": "are controlled by"
+		},
+		{
+			"index": 55,
+			"text": "bought votes to protect"
+		},
+		{
+			"index": 56,
+			"text": "are doing the dirty work of"
+		},
+		{
+			"index": 57,
+			"text": "got in bed with"
+		},
+		{
+			"index": 58,
+			"text": "signed a secret treaty with"
+		},
+		{
+			"index": 59,
+			"text": "has been officially linked with"
+		}
+	],
+	"intransitiveVerb": [
+		{
+			"index": 60,
+			"text": "know the truth"
+		},
+		{
+			"index": 61,
+			"text": "won't stop visiting me"
+		},
+		{
+			"index": 62,
+			"text": "keep sparring with me"
+		},
+		{
+			"index": 63,
+			"text": "have been spitting on me all day"
+		},
+		{
+			"index": 64,
+			"text": "do this horrible thing, but in conjunction with who? Or, whom?"
+		},
+		{
+			"index": 65,
+			"text": "are crawling all over my skin"
+		},
+		{
+			"index": 66,
+			"text": "bit me all night, so I couldn't sleep"
+		},
+		{
+			"index": 67,
+			"text": "have everyone fooled"
+		},
+		{
+			"index": 68,
+			"text": "were digging away at the plastics"
+		},
+		{
+			"index": 69,
+			"text": "were dialing in through the optics"
+		},
+		{
+			"index": 70,
+			"text": "stole my theories and reprinted them—incorrectly—to discredit them"
+		},
+		{
+			"index": 71,
+			"text": "are not to be trusted"
+		},
+		{
+			"index": 72,
+			"text": "have been living off the teat of the dairy industry"
+		},
+		{
+			"index": 73,
+			"text": "have been fixing oil prices"
+		},
+		{
+			"index": 74,
+			"text": "assassinated the one man in their way"
+		},
+		{
+			"index": 75,
+			"text": "pretty much control everything"
+		},
+		{
+			"index": 76,
+			"crazy": "pick who lives, who dies, what the football scores are going to be every week",
+			"text": "pick who lives, and who dies, and what the football scores are going to be every week"
+		}
+	],
+	"verbConnector": [
+		{
+			"index": 77,
+			"crazy": "they obviously",
+			"text": "and they obviously"
+		},
+		{
+			"index": 78,
+			"crazy": "and I know they",
+			"text": "I know they"
+		},
+		{
+			"index": 79,
+			"text": "but they can't hide that they"
+		},
+		{
+			"index": 80,
+			"text": "ha! Like I don't know that they"
+		},
+		{
+			"index": 81,
+			"text": "and let's just say for now that they"
+		},
+		{
+			"index": 82,
+			"crazy": "and, if I know anything, I know that they",
+			"text": "if I know anything, I know that they"
+		},
+		{
+			"index": 83,
+			"text": "and sure as the nose on my face, I am sure they"
+		}
+	],
+	"verbPreposition": [
+		{
+			"index": 84,
+			"text": "to get"
+		},
+		{
+			"index": 85,
+			"text": "because they want"
+		},
+		{
+			"index": 86,
+			"text": "in order to monopolize"
+		},
+		{
+			"index": 87,
+			"text": "to keep down"
+		},
+		{
+			"index": 88,
+			"text": "so the people never find out about"
+		},
+		{
+			"index": 89,
+			"text": "and who wins? Them. Who loses?"
+		},
+		{
+			"index": 90,
+			"text": "all in a big fight over"
+		}
+	],
+	"object": [
+		{
+			"index": 91,
+			"text": "the truth"
+		},
+		{
+			"index": 92,
+			"text": "all of us"
+		},
+		{
+			"index": 93,
+			"text": "the whole sack of lies"
+		},
+		{
+			"index": 94,
+			"text": "the innocents"
+		},
+		{
+			"index": 95,
+			"text": "the biggest conspiracy of all"
+		},
+		{
+			"index": 96,
+			"text": "the infrastructure"
+		},
+		{
+			"index": 97,
+			"text": "the lap belt man"
+		},
+		{
+			"index": 98,
+			"text": "the water supply"
+		},
+		{
+			"index": 99,
+			"text": "the rotundra"
+		},
+		{
+			"index": 100,
+			"text": "the AM Tenderizer"
+		},
+		{
+			"index": 101,
+			"text": "last specimen of the supervirus"
+		},
+		{
+			"index": 102,
+			"text": "the witnesses"
+		},
+		{
+			"index": 103,
+			"text": "my hooch"
+		},
+		{
+			"index": 104,
+			"text": "the hanging udders"
+		},
+		{
+			"index": 105,
+			"text": "a clean-burning perpetual energy source"
+		},
+		{
+			"index": 106,
+			"text": "a religious artifact with supposedly unimaginable powers"
+		},
+		{
+			"index": 107,
+			"text": "exactly what, nobody knows"
+		}
+	],
+	"conclusion": [
+		{
+			"index": 108,
+			"text": "How long do they think they can hide that?"
+		},
+		{
+			"index": 109,
+			"text": "I mean, who do they think they're fooling?"
+		},
+		{
+			"index": 110,
+			"text": "Can I really be the only person who sees this?"
+		},
+		{
+			"index": 111,
+			"text": "Someone has to get this information to the people."
+		},
+		{
+			"index": 112,
+			"crazy": "And if they find out I know this stuff, I'm dead.",
+			"text": "If they find out I know this stuff, I'm dead."
+		},
+		{
+			"index": 113,
+			"text": "Oh man, this stuff is hot."
+		},
+		{
+			"index": 114,
+			"text": "since the year \"dot\"."
+		},
+		{
+			"index": 115,
+			"text": "right under peoples noses!"
+		},
+		{
+			"index": 116,
+			"text": "and nobody seems to care!"
+		}
+	],
 	"aside": [
 		{
 			"index": 117,

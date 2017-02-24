@@ -132,12 +132,19 @@ const text  = document.getElementById("text"),
       aside = document.getElementById("aside"),
       inter = document.getElementById("interject"),
       delay = document.getElementById("delay"),
+      vol   = document.getElementById("volume"),
+      volO  = document.getElementById("volumeOut"),
       files = document.getElementById("files"),
       xhr   = new XMLHttpRequest(),
       numRx = /^\D*(\d+)\D*(?:\.[^.]*)?$/;
 let stopped = true, map, voices = [], sentence, currPlaying;
 sane.onchange = function() {
 	updateText(sentence, currPlaying + 1);	
+};
+vol.oninput = function() {
+	const v = +vol.value;
+	audio.volume = v;
+	volO.innerHTML = (v * 100)|0;
 };
 files.onchange = function() {
 	if (!stopped) start.onclick();

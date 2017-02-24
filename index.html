@@ -16,7 +16,9 @@
 			padding: 0.5em 1em;
 		}
 		input {
-			width: 5em;
+			box-sizing: border-box;
+			width: 6em;
+			margin: 3px;
 		}
 		#start {
 			height: 2em;
@@ -83,7 +85,11 @@
 		</label>
 		<label>
 			<input type="number" value="0.2" min="0" step="0.001" id="delay">s
-			Delay Between Clips
+			Between Clips
+		</label>
+		<label>
+			<input type="range" value="1" min="0" max="1" step="any" id="volume">
+			Volume (<span id="volumeOut">100</span>%)
 		</label>
 		<hr>
 		<label for="files">Select your voice files here:</label>

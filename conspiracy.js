@@ -86,27 +86,34 @@ function pushText(str) {
 	const li = document.createElement("li");
 	li.appendChild(new Text(str));
 	text.appendChild(li);
+	return li;
 }
 
-function updateText(sentence, ignoreBefore) {
-	ignoreBefore |= 0
+function updateText(sentence, curr, ignoreBefore) {
+	ignoreBefore |= 0;
 	while (text.childElementCount > ignoreBefore) {
 		text.removeChild(text.lastChild);
 	}
 	for (let i = ignoreBefore; i < sentence.length; ++i) {
-		pushText(sane.checked
+		const text = pushText(sane.checked
 			? sentence[i].text
 			: sentence[i].crazy || sentence[i].text);
+		if (i === curr) {
+			text.className = "curr";
+		}
 	}
 }
 
 function displaySentence(sentence) {
-	updateText(sentence);
 	currPlaying = 0;
+	updateText(sentence);
 	updateSoundFile();
 }
 
 function updateSoundFile() {
+	const oldText = text.childNodes[currPlaying];
+	if (oldText) oldText.className = "";
+	
 	let src;
 	while(1) {
 		src = indexToSoundFile(sentence[currPlaying].index, sane.checked);
@@ -116,6 +123,9 @@ function updateSoundFile() {
 			return;
 		}
 	}
+	const newText = text.childNodes[currPlaying + 1];
+	if (newText) newText.className = "curr";
+	
 	audio.src = src;
 }
 
@@ -152,7 +162,7 @@ const text  = document.getElementById("text"),
       numRx = /^\D*(\d+)\D*(?:\.[^.]*)?$/;
 let stopped = true, map, voices = [], sentence, currPlaying, timeout;
 sane.onchange = function() {
-	updateText(sentence, currPlaying + 1);	
+	updateText(sentence, currPlaying, currPlaying + 1);	
 };
 vol.oninput = function() {
 	const v = +vol.value;
@@ -175,7 +185,7 @@ files.onchange = function() {
 		      lastDot = file.name.lastIndexOf('.'),
 		      numMatch = numRx.exec(file.name);
 		if (!numMatch) {
-			pushText('ERROR: "' + file.name
+			pushText('ERROR: The filename "' + file.name
 				+ '" contains too many or too few numbers! It must contain one.');
 			pushText('Skipping "' + file.name + '".');
 			continue;
@@ -184,7 +194,7 @@ files.onchange = function() {
 		const index = numMatch[1]|0;
 		let variant = file.name.toUpperCase()[lastDot - 1];
 		if (index < 1 || index > 202) {
-			pushText("ERROR: Index " + index + ' in "' + file.name
+			pushText("ERROR: The number " + index + ' in the filename "' + file.name
 				+ '" is outside of the range 1-202.');
 			pushText('Skipping "' + file.name + '".');
 			continue;
@@ -194,7 +204,7 @@ files.onchange = function() {
 		} else if (variant === "B") {
 			variant = "sane";
 		} else {
-			pushText("ERROR: '" + variant + "' at the end of \"" + file.name
+			pushText("ERROR: The variant '" + variant + "' at the end of \"" + file.name
 				+ "\" is neither 'A' nor 'B'.");
 			pushText('Skipping "' + file.name + '".');
 			continue;
@@ -204,7 +214,7 @@ files.onchange = function() {
 			++filled;
 		} else if (variant in voices[index]) {
 			pushText('ERROR: "' + file.name
-				+ '" has the same index and variant as another file.');
+				+ '" has the same number and variant as another file.');
 			pushText('Skipping "' + file.name + '".');
 			continue;
 		}
@@ -213,7 +223,7 @@ files.onchange = function() {
 	}
 	if (filled < 202) {
 		pushText("WARNING: " + (202 - filled)
-			+ " indices were never filled. Those lines will be silent.");
+			+ " slots were never filled. Those lines will be silent.");
 		pushText("Loaded " + filled + " lines.");
 	} else {
 		pushText("Loaded all " + filled + " lines.");
@@ -231,6 +241,7 @@ audio.onended = function() {
 		}
 		return;
 	}
+	
 	timeout = setOptionalTimeout(updateSoundFile, +delay.value * 1000);
 };
 start.onclick = function() {

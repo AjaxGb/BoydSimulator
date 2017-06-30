@@ -99,7 +99,9 @@ function updateText(sentence, curr, ignoreBefore) {
 			? sentence[i].text
 			: sentence[i].crazy || sentence[i].text);
 		if (i === curr) {
+			if (currText) currText.className = "";
 			text.className = "curr";
+			currText = text;
 		}
 	}
 }
@@ -111,8 +113,8 @@ function displaySentence(sentence) {
 }
 
 function updateSoundFile() {
-	const oldText = text.childNodes[currPlaying];
-	if (oldText) oldText.className = "";
+	if (currText) currText.className = "";
+	currText = null;
 	
 	let src;
 	while(1) {
@@ -123,8 +125,8 @@ function updateSoundFile() {
 			return;
 		}
 	}
-	const newText = text.childNodes[currPlaying + 1];
-	if (newText) newText.className = "curr";
+	currText = text.children[currPlaying];
+	if (currText) currText.className = "curr";
 	
 	audio.src = src;
 }
@@ -137,6 +139,9 @@ function startNewSentence(argument) {
 }
 
 function stopSound() {
+	if (currText) currText.className = "";
+	currText = null;
+	
 	audio.pause();
 	stopped = true;
 	start.value = "Generate Conspiracy";
@@ -160,7 +165,7 @@ const text  = document.getElementById("text"),
       files = document.getElementById("files"),
       xhr   = new XMLHttpRequest(),
       numRx = /^\D*(\d+)\D*(?:\.[^.]*)?$/;
-let stopped = true, map, voices = [], sentence, currPlaying, timeout;
+let stopped = true, map, voices = [], sentence, currPlaying, currText, timeout;
 sane.onchange = function() {
 	updateText(sentence, currPlaying, currPlaying + 1);	
 };

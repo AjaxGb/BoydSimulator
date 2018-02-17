@@ -123,7 +123,10 @@ function preloadNextLine() {
 	if (preloader) document.head.removeChild(preloader);
 	
 	var target = sentence[currPlaying + 1];
-	if (!target) return;
+	if (!target) {
+		preloader = null;
+		return;
+	}
 	
 	preloader = document.createElement("link");
 	preloader.rel = "preload";

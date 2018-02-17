@@ -14,19 +14,19 @@
 		},
 		"intransitiveVerb": {
 			"lengthFactor": 0,
-			"next": ["verbConnector", "verbPreposition", "conclusion", null]
+			"next": ["verbConnector", "preposition", "conclusion", null]
 		},
 		"verbConnector": {
 			"lengthFactor": 5,
 			"next": ["transitiveVerb", "intransitiveVerb"]
 		},
-		"verbPreposition": {
+		"preposition": {
 			"lengthFactor": 3,
 			"next": ["object"]
 		},
 		"object": {
 			"lengthFactor": 0,
-			"next": ["verbConnector", "verbPreposition", "conclusion", null]
+			"next": ["verbConnector", "preposition", "conclusion", null]
 		},
 		"conclusion": {
 			"lengthFactor": 0,
@@ -383,7 +383,7 @@
 			"text": "and sure as the nose on my face, I am sure they"
 		}
 	],
-	"verbPreposition": [
+	"preposition": [
 		{
 			"index": 84,
 			"text": "to get"

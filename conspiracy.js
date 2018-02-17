@@ -101,7 +101,7 @@ function updateText(sentence, curr, ignoreBefore) {
 			if (currText) currText.className = "";
 			textItem.className = "curr";
 			currText = textItem;
-			preloader.src = getSoundURL(sentence[i].index + 1, sane.checked);
+			preloader.href = getSoundURL(sentence[i].index + 1, sane.checked);
 		}
 	}
 }
@@ -114,7 +114,8 @@ function updateSoundFile() {
 	
 	audio.src = getSoundURL(sentence[currPlaying].index, sane.checked);
 	audio.play();
-	preloader.src = getSoundURL(sentence[currPlaying].index + 1, sane.checked);
+	
+	preloader.href = getSoundURL(sentence[currPlaying].index + 1, sane.checked);
 }
 
 function displaySentence(sentence) {
@@ -154,7 +155,7 @@ var text      = document.getElementById("text"),
     delay     = document.getElementById("delay"),
     vol       = document.getElementById("volume"),
     volO      = document.getElementById("volumeOut"),
-    preloader = document.getElementById("preloader"),
+    preloader = document.getElementById("nextClipLoader"),
     xhr       = new XMLHttpRequest(),
     firstRun  = true,
     stopped   = true,

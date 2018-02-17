@@ -2,12 +2,23 @@
 <html>
 <head>
 	<title>The Milkman Conspiracy</title>
+	<style media="screen and (min-width: 900px)">
+		.title {
+			-ms-transform: rotate(-90deg);
+			-ms-transform-origin: 100% 100%;
+			-webkit-transform: rotate(-90deg);
+			-webkit-transform-origin: 100% 100%;
+			transform: rotate(-90deg);
+			transform-origin: 100% 100%;
+			float: right;
+		}
+	</style>
 	<style type="text/css">
 		html {
 			width: 100%;
 		}
 		body {
-			margin: 3em 6em;
+			margin: 1.5em 2em;
 		}
 		form {
 			display: block;
@@ -30,7 +41,7 @@
 		}
 		ul {
 			max-width: 40em;
-			padding: 2em;
+			padding: 1em;
 			padding-left: 3em;
 			border: #555 3px double;
 		}
@@ -38,27 +49,25 @@
 			background-color: #FF5;
 		}
 		h1 {
-			margin-top: 0;
+			margin: 0;
 		}
-		.side {
-			-ms-transform: rotate(-90deg);
-			-ms-transform-origin: 100% 100%;
-			-webkit-transform: rotate(-90deg);
-			-webkit-transform-origin: 100% 100%;
-			transform: rotate(-90deg);
-			transform-origin: 100% 100%;
-			float: right;
-			line-height: 1em;
+		.title {
+			margin-bottom: 0.75em;
 		}
-		.side a {
+		.title a {
 			padding-left: 0.25em;
 			text-decoration: none;
+		}
+		.disclaimer > * {
+			font-size: smaller;
+			margin: 0;
+			margin-bottom: 0.2em;
 		}
 	</style>
 </head>
 
 <body>
-	<div class="side">
+	<div class="title">
 		<h1>BOYD'S CONSPIRACY SIM</h1>
 		<a href="https://github.com/AjaxGb/BoydSimulator">
 			https://github.com/AjaxGb/BoydSimulator
@@ -80,7 +89,7 @@
 		</label>
 		<label>
 			<input type="number" value="0.4" min="0" max="1" step="0.001" id="aside">
-			Aside Chance
+			"Aside" Chance
 		</label>
 		<label>
 			<input type="number" value="0.3" min="0" max="2" step="0.001" id="interject">
@@ -94,37 +103,28 @@
 			<input type="range" value="1" min="0" max="1" step="any" id="volume">
 			Volume (<span id="volumeOut">100</span>%)
 		</label>
-		<hr>
-		<label for="files">Select your voice files here:</label>
-		<input type="file" accept="audio/*" multiple id="files">
-		<a href="extracting.html">[Help and Instructions]</a>
 	</form>
 	<ul id="text">
 	<li style="list-style: none; margin-left: -1em;">
-		<h1>IMPORTANT!</h1>
 		<p>
-		This project is intended to include audio. Since the voice files of
+		This is a non-profit personal project to recreate the randomly generated ramblings of
 		<a href="http://psychonauts.wikia.com/wiki/Boyd_Cooper">Boyd Cooper</a>
-		come from the copyrighted game
-		<a href="https://en.wikipedia.org/wiki/Psychonauts"><i>Psychonauts</i></a>,
-		I am not hosting said files on this website. However, if you own <i>Psychonauts</i>
-		yourself, please follow this <a href="extracting.html">[Link]</a> for
-		instructions on extracting and using your own copies of the files.
-		</p>
-		<p>
-		If you do not own <i>Psychonauts</i>, you should! But in the meantime, feel
-		free to enjoy the text-only version.
-		</p>
-		<p>
-		Also, this website is probably not compatible with out-of-date browsers.
-		If you're still running IE 6 or something, please stop.
-		</p>
-		<p>
-		Yes, I know the website looks like it was written for IE -3. Get off my case.
+		from the game <a href="https://en.wikipedia.org/wiki/Psychonauts"><i>Psychonauts</i></a>.
+		All voice acting and writing comes from the game itself. If you do not own <i>Psychonauts</i>,
+		you should! It's a great game.
 		</p>
 	</li>
 	</ul>
+	<div class="disclaimer">
+		<p>
+			<i>Psychonauts</i> and Boyd Cooper are property of Double Fine Productions.
+		</p>
+		<p>
+			Boyd's voice is property of Double Fine and of Boyd's voice actor, Alan Blumenfeld.
+		</p>
+	</div>
 	<audio id="audio" autoplay></audio>
+	<audio id="preloader" preload></audio>
 	
 	<script type="text/javascript" src="conspiracy.js"></script>
 </body>

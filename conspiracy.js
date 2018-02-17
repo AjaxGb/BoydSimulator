@@ -5,14 +5,14 @@ function randomInt(max) {
 }
 
 function randomWeightedChoice(arr, weightFunc) {
-	const weights = [];
-	let sum = 0;
-	for (let i = arr.length - 1; i >= 0; --i) {
-		const w = weightFunc(arr[i]);
+	var weights = [],
+	    sum = 0;
+	for (var i = arr.length - 1; i >= 0; --i) {
+		var w = weightFunc(arr[i]);
 		weights[i] = w;
 		sum += w;
 	}
-	for (let i = arr.length - 1, rnd = sum * Math.random(); i >= 0; --i) {
+	for (var i = arr.length - 1, rnd = sum * Math.random(); i >= 0; --i) {
 		rnd -= weights[i];
 		if (rnd < 0) return arr[i];
 	}
@@ -32,29 +32,28 @@ function setOptionalTimeout(func, delay) {
 	}
 }
 
-function indexToSoundFile(i, sane) {
-	const line = voices[i];
-	if (!line) return undefined;
-	return line[sane ? "sane" : "crazy"] || line[sane ? "crazy" : "sane"];
+function getSoundURL(i, sane) {
+	return "sounds/line_" + i + (sane ? "_sane.mp3" : "_crazy.mp3");
 }
 
 function getLengthWeight(c) {
 	if (!c) return 1;
-	const w = 1 + (map.index[c].lengthFactor * (+lenF.value));
+	var w = 1 + (map.index[c].lengthFactor * (+lengthW.value));
 	return (w < 0) ? 0 : w;
 }
 
-const maxLengthError = {text: "[[MAX LENGTH REACHED]]", index: -1};
+var maxLengthError = {text: "[[MAX LENGTH REACHED]]", index: -1};
 function buildSentence(map, asideChance, interjectionChance) {
-	if (asideChance && Math.random() < asideChance) {
+	if (!firstRun && asideChance && Math.random() < asideChance) {
 		if (interjectionChance && Math.random() < interjectionChance) {
 			return [randomChoice(map.interjection)];
 		}
 		return [randomChoice(map.aside)];
 	}
-	const result = [];
+	firstRun = false; // Make sure we don't start with an aside.
+	var result = [];
 	for (
-			let curr = "subject";
+			var curr = "subject";
 			curr !== null;
 			curr = randomWeightedChoice(map.index[curr].next, getLengthWeight)
 		) {
@@ -67,7 +66,7 @@ function buildSentence(map, asideChance, interjectionChance) {
 			// Decrease chance by half each time, to discourage long strings
 			// of interjections.
 			for (
-					let tempChance = interjectionChance;
+					var tempChance = interjectionChance;
 					Math.random() < tempChance;
 					tempChance /= 2
 				) {
@@ -83,7 +82,7 @@ function buildSentence(map, asideChance, interjectionChance) {
 }
 
 function pushText(str) {
-	const li = document.createElement("li");
+	var li = document.createElement("li");
 	li.appendChild(new Text(str));
 	text.appendChild(li);
 	return li;
@@ -94,14 +93,15 @@ function updateText(sentence, curr, ignoreBefore) {
 	while (text.childElementCount > ignoreBefore) {
 		text.removeChild(text.lastChild);
 	}
-	for (let i = ignoreBefore; i < sentence.length; ++i) {
-		const text = pushText(sane.checked
+	for (var i = ignoreBefore; i < sentence.length; ++i) {
+		var textItem = pushText(sane.checked
 			? sentence[i].text
 			: sentence[i].crazy || sentence[i].text);
 		if (i === curr) {
 			if (currText) currText.className = "";
-			text.className = "curr";
-			currText = text;
+			textItem.className = "curr";
+			currText = textItem;
+			preloader.src = getSoundURL(sentence[i].index + 1, sane.checked);
 		}
 	}
 }
@@ -116,19 +116,11 @@ function updateSoundFile() {
 	if (currText) currText.className = "";
 	currText = null;
 	
-	let src;
-	while(1) {
-		src = indexToSoundFile(sentence[currPlaying].index, sane.checked);
-		if (src) break;
-		if (++currPlaying >= sentence.length) {
-			stopSound();
-			return;
-		}
-	}
 	currText = text.children[currPlaying];
 	if (currText) currText.className = "curr";
 	
-	audio.src = src;
+	audio.src = getSoundURL(sentence[currPlaying].index, sane.checked);
+	preloader.src = getSoundURL(sentence[currPlaying].index + 1, sane.checked);
 }
 
 function startNewSentence(argument) {
@@ -151,88 +143,30 @@ function stopSound() {
 ////   Actual execution   //////////////////////////////
 ////////////////////////////////////////////////////////
 
-const text  = document.getElementById("text"),
-      audio = document.getElementById("audio"),
-      start = document.getElementById("start"),
-      sane  = document.getElementById("sane"),
-      loop  = document.getElementById("loop"),
-      lenF  = document.getElementById("lengthWeight"),
-      aside = document.getElementById("aside"),
-      inter = document.getElementById("interject"),
-      delay = document.getElementById("delay"),
-      vol   = document.getElementById("volume"),
-      volO  = document.getElementById("volumeOut"),
-      files = document.getElementById("files"),
-      xhr   = new XMLHttpRequest(),
-      numRx = /^\D*(\d+)\D*(?:\.[^.]*)?$/;
-let stopped = true, map, voices = [], sentence, currPlaying, currText, timeout;
+var text      = document.getElementById("text"),
+    audio     = document.getElementById("audio"),
+    start     = document.getElementById("start"),
+    sane      = document.getElementById("sane"),
+    loop      = document.getElementById("loop"),
+    lengthW   = document.getElementById("lengthWeight"),
+    aside     = document.getElementById("aside"),
+    inter     = document.getElementById("interject"),
+    delay     = document.getElementById("delay"),
+    vol       = document.getElementById("volume"),
+    volO      = document.getElementById("volumeOut"),
+    preloader = document.getElementById("preloader"),
+    xhr       = new XMLHttpRequest(),
+    firstRun  = true,
+    stopped   = true,
+    voices    = [],
+    map, sentence, currPlaying, currText, timeout;
 sane.onchange = function() {
 	updateText(sentence, currPlaying, currPlaying + 1);	
 };
 vol.oninput = function() {
-	const v = +vol.value;
+	var v = +vol.value;
 	audio.volume = v;
 	volO.innerHTML = (v * 100)|0;
-};
-files.onchange = function() {
-	stopSound();
-	for (let i = voices.length - 1; i >= 0; --i) {
-		for (let j in voices[i]) {
-			URL.revokeObjectURL(voices[i][j]);
-		}
-		voices[i] = undefined;
-	}
-	let filled = 0;
-	updateText([]);
-	pushText("Loading files...");
-	for (var i = 0; i < files.files.length; ++i) {
-		const file = files.files[i],
-		      lastDot = file.name.lastIndexOf('.'),
-		      numMatch = numRx.exec(file.name);
-		if (!numMatch) {
-			pushText('ERROR: The filename "' + file.name
-				+ '" contains too many or too few numbers! It must contain one.');
-			pushText('Skipping "' + file.name + '".');
-			continue;
-		}
-		if (lastDot < 0) lastDot = file.name.length;
-		const index = numMatch[1]|0;
-		let variant = file.name.toUpperCase()[lastDot - 1];
-		if (index < 1 || index > 202) {
-			pushText("ERROR: The number " + index + ' in the filename "' + file.name
-				+ '" is outside of the range 1-202.');
-			pushText('Skipping "' + file.name + '".');
-			continue;
-		}
-		if (variant === "A") {
-			variant = "crazy";
-		} else if (variant === "B") {
-			variant = "sane";
-		} else {
-			pushText("ERROR: The variant '" + variant + "' at the end of \"" + file.name
-				+ "\" is neither 'A' nor 'B'.");
-			pushText('Skipping "' + file.name + '".');
-			continue;
-		}
-		if (!voices[index]) {
-			voices[index] = {};
-			++filled;
-		} else if (variant in voices[index]) {
-			pushText('ERROR: "' + file.name
-				+ '" has the same number and variant as another file.');
-			pushText('Skipping "' + file.name + '".');
-			continue;
-		}
-		
-		voices[index][variant] = URL.createObjectURL(file);
-	}
-	if (filled < 202) {
-		pushText("WARNING: " + (202 - filled)
-			+ " slots were never filled. Those lines will be silent.");
-		pushText("Loaded " + filled + " lines.");
-	} else {
-		pushText("Loaded all " + filled + " lines.");
-	}
 };
 audio.onended = function() {
 	if (++currPlaying >= sentence.length) {

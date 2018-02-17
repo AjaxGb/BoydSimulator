@@ -101,7 +101,8 @@ function updateText(sentence, curr, ignoreBefore) {
 			if (currText) currText.className = "";
 			textItem.className = "curr";
 			currText = textItem;
-			preloader.href = getSoundURL(sentence[i].index + 1, sane.checked);
+			
+			preloadNextLine();
 		}
 	}
 }
@@ -115,7 +116,20 @@ function updateSoundFile() {
 	audio.src = getSoundURL(sentence[currPlaying].index, sane.checked);
 	audio.play();
 	
-	preloader.href = getSoundURL(sentence[currPlaying].index + 1, sane.checked);
+	preloadNextLine();
+}
+
+function preloadNextLine() {
+	if (preloader) document.head.removeChild(preloader);
+	
+	var target = sentence[currPlaying + 1];
+	if (!target) return;
+	
+	preloader = document.createElement("link");
+	preloader.rel = "preload";
+	preloader.as = "audio";
+	preloader.href = getSoundURL(target.index, sane.checked);
+	document.head.appendChild(preloader);
 }
 
 function displaySentence(sentence) {
@@ -144,23 +158,22 @@ function stopSound() {
 ////   Actual execution   //////////////////////////////
 ////////////////////////////////////////////////////////
 
-var text      = document.getElementById("text"),
-    audio     = document.getElementById("audio"),
-    start     = document.getElementById("start"),
-    sane      = document.getElementById("sane"),
-    loop      = document.getElementById("loop"),
-    lengthW   = document.getElementById("lengthWeight"),
-    aside     = document.getElementById("aside"),
-    inter     = document.getElementById("interject"),
-    delay     = document.getElementById("delay"),
-    vol       = document.getElementById("volume"),
-    volO      = document.getElementById("volumeOut"),
-    preloader = document.getElementById("nextClipLoader"),
-    xhr       = new XMLHttpRequest(),
-    firstRun  = true,
-    stopped   = true,
-    voices    = [],
-    map, sentence, currPlaying, currText, timeout;
+var text     = document.getElementById("text"),
+    audio    = document.getElementById("audio"),
+    start    = document.getElementById("start"),
+    sane     = document.getElementById("sane"),
+    loop     = document.getElementById("loop"),
+    lengthW  = document.getElementById("lengthWeight"),
+    aside    = document.getElementById("aside"),
+    inter    = document.getElementById("interject"),
+    delay    = document.getElementById("delay"),
+    vol      = document.getElementById("volume"),
+    volO     = document.getElementById("volumeOut"),
+    xhr      = new XMLHttpRequest(),
+    firstRun = true,
+    stopped  = true,
+    voices   = [],
+    map, sentence, currPlaying, currText, timeout, preloader;
 sane.onchange = function() {
 	updateText(sentence, currPlaying, currPlaying + 1);	
 };
@@ -169,10 +182,6 @@ vol.oninput = function() {
 	audio.volume = v;
 	volO.innerHTML = (v * 100)|0;
 };
-for (var i = 1; i <= 202; ++i) {
-	new Audio(getSoundURL(i, true));
-	new Audio(getSoundURL(i, false));
-}
 audio.onended = function() {
 	if (++currPlaying >= sentence.length) {
 		if (!stopped) {

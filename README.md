@@ -5,7 +5,7 @@ from the game *Psychonauts*.
 
 *Psychonauts* generates Boyd's theories using 202 sentence fragments, each of which has
 two variants (one for outside of Boyd's mind, and one for inside) giving a total of 404
-sound clips. The clips are randomly assembled using the following structure:
+sound clips. The fragments are randomly assembled using the following structure:
 
 ![Flowchart of sentence structure](flowchart.png)
 

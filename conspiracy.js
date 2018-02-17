@@ -106,21 +106,21 @@ function updateText(sentence, curr, ignoreBefore) {
 	}
 }
 
-function displaySentence(sentence) {
-	currPlaying = 0;
-	updateText(sentence);
-	updateSoundFile();
-}
-
 function updateSoundFile() {
 	if (currText) currText.className = "";
-	currText = null;
 	
 	currText = text.children[currPlaying];
 	if (currText) currText.className = "curr";
 	
 	audio.src = getSoundURL(sentence[currPlaying].index, sane.checked);
+	audio.play();
 	preloader.src = getSoundURL(sentence[currPlaying].index + 1, sane.checked);
+}
+
+function displaySentence(sentence) {
+	currPlaying = 0;
+	updateText(sentence);
+	updateSoundFile();
 }
 
 function startNewSentence(argument) {

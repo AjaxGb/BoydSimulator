@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>The Milkman Conspiracy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style media="screen and (min-width: 900px)">
 		.title {
 			-ms-transform: rotate(-90deg);
@@ -31,13 +32,13 @@
 			width: 6em;
 			margin: 3px;
 		}
-		#start {
-			height: 2em;
-			margin-bottom: 0.5em;
-		}
 		label, form > input {
 			display: block;
 			width: 100%;
+		}
+		form input[type="button"] {
+			height: 2em;
+			margin-bottom: 0.5em;
 		}
 		ul {
 			max-width: 40em;
@@ -103,6 +104,8 @@
 			<input type="range" value="1" min="0" max="1" step="any" id="volume">
 			Volume (<span id="volumeOut">100</span>%)
 		</label>
+		<br>
+		<input type="button" id="load" value="Preload All Sound Files">
 	</form>
 	<ul id="text">
 	<li style="list-style: none; margin-left: -1em;">

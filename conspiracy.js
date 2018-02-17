@@ -154,6 +154,7 @@ var text      = document.getElementById("text"),
     delay     = document.getElementById("delay"),
     vol       = document.getElementById("volume"),
     volO      = document.getElementById("volumeOut"),
+    load      = document.getElementById("load"),
     preloader = document.getElementById("preloader"),
     xhr       = new XMLHttpRequest(),
     firstRun  = true,
@@ -167,6 +168,12 @@ vol.oninput = function() {
 	var v = +vol.value;
 	audio.volume = v;
 	volO.innerHTML = (v * 100)|0;
+};
+load.onclick = function() {
+	for (var i = 1; i <= 202; ++i) {
+		new Audio(getSoundURL(i, true));
+		new Audio(getSoundURL(i, false));
+	}
 };
 audio.onended = function() {
 	if (++currPlaying >= sentence.length) {

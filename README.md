@@ -1,14 +1,16 @@
 # BoydSimulator
 
-A project to generate rambling conspiracy theories using the lines of Boyd Cooper
-from the game *Psychonauts*, and attempting to match his output.
+A personal project to recreate the rambling conspiracy theories of Boyd Cooper
+from the game *Psychonauts*.
 
-Since I can't just upload files from a copyrighted game, Boyd's voice is not
-included—*by default*. The site provides
-[instructions](https://ajaxgb.github.io/BoydSimulator/extracting.html) for extracting
-Boyd's audio from your own legal copy of the game, after which you can hear the grand
-Milkman Conspiracy in all of its rambling glory.
+*Psychonauts* generates Boyd's theories using 202 sentence fragments, each of which has
+two variants (one for outside of Boyd's mind, and one for inside) giving a total of 404
+sound clips. The clips are randomly assembled using the following structure:
 
-If you can't or don't want to, the site works just fine in text-only mode.
+![Flowchart of sentence structure](flowchart.png)
 
-https://ajaxgb.github.io/BoydSimulator/
+This website recreates the same sort of random generation, producing results very similar
+to the actual game. Leave the Milkman Conspiracy running in the background for that extra
+burst of clarity!
+
+http://www.soltoder.com/BoydSimulator/

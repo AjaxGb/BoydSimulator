@@ -120,18 +120,18 @@ function updateSoundFile() {
 }
 
 function preloadNextLine() {
-	if (preloader) document.head.removeChild(preloader);
-	
 	var target = sentence[currPlaying + 1];
 	if (!target) {
-		preloader = null;
 		return;
 	}
 	
-	preloader = document.createElement("link");
+	var preloader = document.createElement("link");
 	preloader.rel = "preload";
 	preloader.as = "audio";
 	preloader.href = getSoundURL(target.index, sane.checked);
+	preloader.onload = function() {
+		document.head.removeChild(preloader);
+	};
 	document.head.appendChild(preloader);
 }
 
@@ -176,7 +176,7 @@ var text     = document.getElementById("text"),
     firstRun = true,
     stopped  = true,
     voices   = [],
-    map, sentence, currPlaying, currText, timeout, preloader;
+    map, sentence, currPlaying, currText, timeout;
 sane.onchange = function() {
 	updateText(sentence, currPlaying, currPlaying + 1);	
 };

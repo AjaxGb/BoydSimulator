@@ -40,8 +40,10 @@
 		},
 		{
 			"index": 2,
-			"crazy": "those little green cops, they",
-			"text": "those little green cops"
+			"text": "those little green cops",
+			"crazy": {
+				"text": "those little green cops, they"
+			}
 		},
 		{
 			"index": 3,
@@ -49,8 +51,10 @@
 		},
 		{
 			"index": 4,
-			"crazy": "the suits, they",
-			"text": "the suits"
+			"text": "the suits",
+			"crazy": {
+				"text": "the suits, they"
+			}
 		},
 		{
 			"index": 5,
@@ -70,8 +74,10 @@
 		},
 		{
 			"index": 9,
-			"crazy": "that little fat kid, with the bunny, he",
-			"text": "that little fat kid, with the bunny,"
+			"text": "that little fat kid, with the bunny,",
+			"crazy": {
+				"text": "that little fat kid with the bunny, he"
+			}
 		},
 		{
 			"index": 10,
@@ -175,8 +181,10 @@
 		},
 		{
 			"index": 35,
-			"crazy": "one of my nostril hairs",
-			"text": "oh! one of my nostril hairs"
+			"text": "oh! one of my nostril hairs",
+			"crazy": {
+				"text": "one of my nostril hairs"
+			}
 		},
 		{
 			"index": 36,
@@ -298,7 +306,8 @@
 		},
 		{
 			"index": 64,
-			"text": "do this horrible thing, but in conjunction with who? Or, whom?"
+			"text": "do this horrible thing, but in conjunction with who? Or, whom?",
+			"pre_punctuated": true
 		},
 		{
 			"index": 65,
@@ -326,7 +335,8 @@
 		},
 		{
 			"index": 71,
-			"text": "are not to be trusted"
+			"text": "are not to be trusted",
+			"end_punctuation": "!"
 		},
 		{
 			"index": 72,
@@ -346,20 +356,26 @@
 		},
 		{
 			"index": 76,
-			"crazy": "pick who lives, who dies, what the football scores are going to be every week",
-			"text": "pick who lives, and who dies, and what the football scores are going to be every week"
+			"text": "pick who lives, and who dies, and what the football scores are going to be every week",
+			"crazy": {
+				"text": "pick who lives, who dies, what the football scores are going to be every week"
+			}
 		}
 	],
 	"verbConnector": [
 		{
 			"index": 77,
-			"crazy": "they obviously",
-			"text": "and they obviously"
+			"text": "and they obviously",
+			"crazy": {
+				"text": "they obviously"
+			}
 		},
 		{
 			"index": 78,
-			"crazy": "and I know they",
-			"text": "I know they"
+			"text": "I know they",
+			"crazy": {
+				"text": "and I know they"
+			}
 		},
 		{
 			"index": 79,
@@ -375,8 +391,10 @@
 		},
 		{
 			"index": 82,
-			"crazy": "and, if I know anything, I know that they",
-			"text": "if I know anything, I know that they"
+			"text": "if I know anything, I know that they",
+			"crazy": {
+				"text": "and, if I know anything, I know that they"
+			}
 		},
 		{
 			"index": 83,
@@ -464,7 +482,10 @@
 		},
 		{
 			"index": 103,
-			"text": "my hooch"
+			"text": "my hooch",
+			"crazy": {
+				"end_punctuation": "!"
+			}
 		},
 		{
 			"index": 104,
@@ -486,396 +507,548 @@
 	"conclusion": [
 		{
 			"index": 108,
-			"text": "How long do they think they can hide that?"
+			"text": "How long do they think they can hide that?",
+			"new_sentence": true,
+			"pre_punctuated": true
 		},
 		{
 			"index": 109,
-			"text": "I mean, who do they think they're fooling?"
+			"text": "I mean, who do they think they're fooling?",
+			"new_sentence": true,
+			"pre_punctuated": true
 		},
 		{
 			"index": 110,
-			"text": "Can I really be the only person who sees this?"
+			"text": "Can I really be the only person who sees this?",
+			"new_sentence": true,
+			"pre_punctuated": true
 		},
 		{
 			"index": 111,
-			"text": "Someone has to get this information to the people."
+			"text": "Someone has to get this information to the people.",
+			"new_sentence": true,
+			"pre_punctuated": true
 		},
 		{
 			"index": 112,
-			"crazy": "And if they find out I know this stuff, I'm dead.",
-			"text": "If they find out I know this stuff, I'm dead."
+			"text": "If they find out I know this stuff, I'm dead.",
+			"new_sentence": true,
+			"pre_punctuated": true,
+			"crazy": {
+				"text": "And if they find out I know this stuff, I'm dead."
+			}
 		},
 		{
 			"index": 113,
-			"text": "Oh man, this stuff is hot."
+			"text": "Oh man, this stuff is hot.",
+			"new_sentence": true,
+			"pre_punctuated": true
 		},
 		{
 			"index": 114,
-			"text": "since the year \"dot\"."
+			"text": "since the year \"dot\".",
+			"pre_punctuated": true
 		},
 		{
 			"index": 115,
-			"text": "right under peoples noses!"
+			"text": "right under people's noses!",
+			"pre_punctuated": true
 		},
 		{
 			"index": 116,
-			"text": "and nobody seems to care!"
+			"text": "and nobody seems to care!",
+			"pre_punctuated": true
 		}
 	],
 	"aside": [
 		{
+			"index": 108,
+			"text": "How long do they think they can hide that?",
+			"ignore": true
+		},
+		{
+			"index": 109,
+			"text": "I mean, who do they think they're fooling?",
+			"ignore": true
+		},
+		{
+			"index": 110,
+			"text": "Can I really be the only person who sees this?",
+			"ignore": true
+		},
+		{
+			"index": 111,
+			"text": "Someone has to get this information to the people.",
+			"ignore": true
+		},
+		{
+			"index": 112,
+			"text": "If they find out I know this stuff, I'm dead.",
+			"ignore": true,
+			"crazy": {
+				"text": "And if they find out I know this stuff, I'm dead."
+			}
+		},
+		{
+			"index": 113,
+			"text": "Oh man, this stuff is hot.",
+			"ignore": true
+		},
+		{
 			"index": 117,
-			"text": "Visiting hours are over!"
+			"text": "Visiting hours are over!",
+			"ignore": true
 		},
 		{
 			"index": 118,
-			"text": "Why does that hydrant keep looking at me?"
+			"text": "Why does that hydrant keep looking at me?",
+			"ignore": true
 		},
 		{
 			"index": 119,
-			"crazy": "You can pass it over the counter, but that don't make it \"over the counter!\"",
-			"text": "You can pass it over the counter, but that doesn't make it \"over the counter.\""
+			"text": "You can pass it over the counter, but that doesn't make it \"over the counter.\"",
+			"ignore": true,
+			"crazy": {
+				"text": "You can pass it over the counter, but that don't make it \"over the counter!\""
+			}
 		},
 		{
 			"index": 120,
-			"text": "No insubordination, right boss? Right?"
+			"text": "No insubordination, right boss? Right?",
+			"ignore": true
 		},
 		{
 			"index": 121,
-			"text": "Okay, boss?"
+			"text": "Okay, boss?",
+			"ignore": true
 		},
 		{
 			"index": 122,
-			"text": "Hey, where is the boss?"
+			"text": "Hey, where is the boss?",
+			"ignore": true
 		},
 		{
 			"index": 123,
-			"text": "Ignore it, Cooper."
+			"text": "Ignore it, Cooper.",
+			"ignore": true
 		},
 		{
 			"index": 124,
-			"text": "I have to get rid of some of this stuff."
+			"text": "I have to get rid of some of this stuff.",
+			"ignore": true
 		},
 		{
 			"index": 125,
-			"text": "I have to stay focused."
+			"text": "I have to stay focused.",
+			"ignore": true
 		},
 		{
 			"index": 126,
-			"text": "No distractions!"
+			"text": "No distractions!",
+			"ignore": true
 		},
 		{
 			"index": 127,
-			"text": "What?"
+			"text": "What?",
+			"ignore": true
 		},
 		{
 			"index": 128,
-			"text": "No, that doesn't fit. That doesn't fit at all!"
+			"text": "No, that doesn't fit. That doesn't fit at all!",
+			"ignore": true
 		},
 		{
 			"index": 129,
-			"crazy": "Well, maybe if I forget about the other part...",
-			"text": "Well, maybe if I forget about that other part..."
+			"text": "Well, maybe if I forget about that other part...",
+			"ignore": true,
+			"crazy": {
+				"text": "Well, maybe if I forget about the other part..."
+			}
 		},
 		{
 			"index": 130,
-			"text": "Wait, why did I say that?"
+			"text": "Wait, why did I say that?",
+			"ignore": true
 		},
 		{
 			"index": 131,
-			"text": "Oh Boyd, you've got this all wrong."
+			"text": "Oh Boyd, you've got this all wrong.",
+			"ignore": true
 		},
 		{
 			"index": 132,
-			"text": "Did I just think that? Or did someone make me think it?"
+			"text": "Did I just think that? Or did someone make me think it?",
+			"ignore": true
 		},
 		{
 			"index": 133,
-			"text": "But when that happens, they turn it into chocolate milk, and nobody can tell the difference."
+			"text": "But when that happens, they turn it into chocolate milk, and nobody can tell the difference.",
+			"ignore": true
 		},
 		{
 			"index": 134,
-			"text": "You know what I mean? \"Amounts\" \"tendered\"? Yeah?"
+			"text": "You know what I mean? \"Amounts\" \"tendered\"? Yeah?",
+			"ignore": true
 		},
 		{
 			"index": 135,
-			"text": "The squirrels have eyes."
+			"text": "The squirrels have eyes.",
+			"ignore": true
 		},
 		{
 			"index": 136,
-			"text": "Listen to me. Listen to me! LISTEN TO ME!"
+			"text": "Listen to me. Listen to me! LISTEN TO ME!",
+			"ignore": true
 		},
 		{
 			"index": 137,
-			"text": "Shut up. Shut up. Shut up!"
+			"text": "Shut up. Shut up. Shut up!",
+			"ignore": true
 		},
 		{
 			"index": 138,
-			"text": "Shhh! No, wait. Say that again?"
+			"text": "Shhh! No, wait. Say that again?",
+			"ignore": true
 		},
 		{
 			"index": 139,
-			"crazy": "They think the windows are tinted. But they aren't tinted nearly enough!",
-			"text": "They think the windows are tinted. But they ain't tinted nearly enough! Hyeh."
+			"text": "They think the windows are tinted. But they ain't tinted nearly enough! Hyeh.",
+			"ignore": true,
+			"crazy": {
+				"text": "They think the windows are tinted. But they aren't tinted nearly enough!"
+			}
 		},
 		{
 			"index": 140,
-			"text": "Of course the milk's got spiderwebs in it. Taste it!"
+			"text": "Of course the milk's got spiderwebs in it. Taste it!",
+			"ignore": true
 		},
 		{
 			"index": 141,
-			"text": "I scream, you scream, we all scream... we all scream!"
+			"text": "I scream, you scream, we all scream... we all scream!",
+			"ignore": true
 		},
 		{
 			"index": 142,
-			"text": "The ice cream's in the web. The web is in the cream!"
+			"text": "The ice cream's in the web. The web is in the cream!",
+			"ignore": true
 		},
 		{
 			"index": 143,
-			"text": "Oh, you think that's regular yarn, do you?"
+			"text": "Oh, you think that's regular yarn, do you?",
+			"ignore": true
 		},
 		{
 			"index": 144,
-			"text": "They come, they whisper, they watch, they chop, chop, chop!"
+			"text": "They come, they whisper, they watch, they chop, chop, chop!",
+			"ignore": true
 		},
 		{
 			"index": 145,
-			"text": "What's that on your head? That's no hat. Maybe you could tell your hat to shut up? Or at least ask me the right questions?"
+			"text": "What's that on your head? That's no hat. Maybe you could tell your hat to shut up? Or at least ask me the right questions?",
+			"ignore": true
 		},
 		{
 			"index": 146,
-			"text": "I wonder if I'm on camera right now. Ha! What, am I crazy? Of course I am."
+			"text": "I wonder if I'm on camera right now. Ha! What, am I crazy? Of course I am.",
+			"ignore": true
 		},
 		{
 			"index": 147,
-			"text": "Hi mom! Look at me! I'm tangled in a web of deception. How's Uncle G?"
+			"text": "Hi mom! Look at me! I'm tangled in a web of deception. How's Uncle G?",
+			"ignore": true
 		},
 		{
 			"index": 148,
-			"text": "G-Man, who are you working for? Who is G?"
+			"text": "G-Man, who are you working for? Who is G?",
+			"ignore": true
 		},
 		{
 			"index": 149,
-			"text": "G-Man, Go-Man, Goat-Man... I thought you worked for me."
+			"text": "G-Man, Go-Man, Goat-Man... I thought you worked for me.",
+			"ignore": true
 		},
 		{
 			"index": 150,
-			"text": "My father, he was a good man. But he served a cruel master!"
+			"text": "My father, he was a good man. But he served a cruel master!",
+			"ignore": true
 		},
 		{
 			"index": 151,
-			"text": "Mom, are you sure these are your children?"
+			"text": "Mom, are you sure these are your children?",
+			"ignore": true
 		},
 		{
 			"index": 152,
-			"text": "These are not my dot-to-dots. These are not my babies!"
+			"text": "These are not my dot-to-dots. These are not my babies!",
+			"ignore": true
 		},
 		{
 			"index": 153,
-			"text": "But of course you know all this, because you're Australian!"
+			"text": "But of course you know all this, because you're Australian!",
+			"ignore": true
 		},
 		{
 			"index": 154,
-			"text": "And then it comes out of those wires over there, and goes straight into my head, with all its little audio tricks!"
+			"text": "And then it comes out of those wires over there, and goes straight into my head, with all its little audio tricks!",
+			"ignore": true
 		},
 		{
 			"index": 155,
-			"text": "I don't want to be a lead weight on the table."
+			"text": "I don't want to be a lead weight on the table.",
+			"ignore": true
 		},
 		{
 			"index": 156,
-			"text": "I see myself more as a turtle with a rocket strapped to its back."
+			"text": "I see myself more as a turtle with a rocket strapped to its back.",
+			"ignore": true
 		},
 		{
 			"index": 157,
-			"text": "And he waits, and he waits."
+			"text": "And he waits, and he waits.",
+			"ignore": true
 		},
 		{
 			"index": 158,
-			"text": "This milk can't stay fresh forever!"
+			"text": "This milk can't stay fresh forever!",
+			"ignore": true
 		},
 		{
 			"index": 159,
-			"text": "Something's got to give!"
+			"text": "Something's got to give!",
+			"ignore": true
 		},
 		{
 			"index": 160,
-			"text": "How many are there? I count fourteen, but that's not the number on my hand! That's not the number on my neck!"
+			"text": "How many are there? I count fourteen, but that's not the number on my hand! That's not the number on my neck!",
+			"ignore": true
 		},
 		{
 			"index": 161,
-			"text": "The truth lives in a small house on the edge of town."
+			"text": "The truth lives in a small house on the edge of town.",
+			"ignore": true
 		},
 		{
 			"index": 162,
-			"text": "The truth is sleeping in a glass box."
+			"text": "The truth is sleeping in a glass box.",
+			"ignore": true
 		},
 		{
 			"index": 163,
-			"text": "The truth is a colorful diamond."
+			"text": "The truth is a colorful diamond.",
+			"ignore": true
 		},
 		{
 			"index": 164,
-			"text": "I'm dropping out of this yogurt convention. There's no fruit at the bottom!"
+			"text": "I'm dropping out of this yogurt convention. There's no fruit at the bottom!",
+			"ignore": true
 		},
 		{
 			"index": 165,
-			"text": "Hey, lady, where are you going with that sweater!?"
+			"text": "Hey, lady, where are you going with that sweater!?",
+			"ignore": true
 		},
 		{
 			"index": 166,
-			"crazy": "What, you think— think you could get this past me? I'm the guard.",
-			"text": "Think you could get this past me? I'm the guard."
+			"text": "Think you could get this past me? I'm the guard.",
+			"ignore": true,
+			"crazy": {
+				"text": "What, you think— think you could get this past me? I'm the guard."
+			}
 		},
 		{
 			"index": 167,
-			"text": "I've got the truth. It's tucked in my cheeks! I'm not going to eat it right now."
+			"text": "I've got the truth. It's tucked in my cheeks! I'm not going to eat it right now.",
+			"ignore": true
 		},
 		{
 			"index": 168,
-			"text": "Are you buying? Or are you spying?"
+			"text": "Are you buying? Or are you spying?",
+			"ignore": true
 		},
 		{
 			"index": 169,
-			"text": "This is ugly. It's like a cyclops with a million eyes!"
+			"text": "This is ugly. It's like a cyclops with a million eyes!",
+			"ignore": true
 		},
 		{
 			"index": 170,
-			"text": "The fire will start in menswear!"
+			"text": "The fire will start in menswear!",
+			"ignore": true
 		},
 		{
 			"index": 171,
-			"text": "But what if the signal comes early?"
+			"text": "But what if the signal comes early?",
+			"ignore": true
 		},
 		{
 			"index": 172,
-			"text": "The meaty bit, in the middle of this wonton? It's me."
+			"text": "The meaty bit, in the middle of this wonton? It's me.",
+			"ignore": true
 		},
 		{
 			"index": 173,
-			"text": "Hey, don't worry about me. I'm centered. I'm the whole center, in fact."
+			"text": "Hey, don't worry about me. I'm centered. I'm the whole center, in fact.",
+			"ignore": true
 		},
 		{
 			"index": 174,
-			"crazy": "Am I? Or is he? Am I he? What is he? Doing in my house!?",
-			"text": "Am I? Or is he? Am I he? What's he doing in my house?"
+			"text": "Am I? Or is he? Am I he? What's he doing in my house?",
+			"ignore": true,
+			"crazy": {
+				"text": "Am I? Or is he? Am I he? What is he? Doing in my house!?"
+			}
 		},
 		{
 			"index": 175,
-			"text": "Someone moved into my neighborhood uninvited."
+			"text": "Someone moved into my neighborhood uninvited.",
+			"ignore": true
 		},
 		{
 			"index": 176,
-			"text": "The housing committee is not going to like this."
+			"text": "The housing committee is not going to like this.",
+			"ignore": true
 		},
 		{
 			"index": 177,
-			"text": "They should paint their garage door the same color as everybody else's."
+			"text": "They should paint their garage door the same color as everybody else's.",
+			"ignore": true
 		},
 		{
 			"index": 178,
-			"text": "I'm locked on the outside and I'm locked on the inside."
+			"text": "I'm locked on the outside and I'm locked on the inside.",
+			"ignore": true
 		},
 		{
 			"index": 179,
-			"text": "And the little girl stuck her finger in the dike and saved all the windmills. But who does the little girl work for?"
+			"text": "And the little girl stuck her finger in the dike and saved all the windmills. But who does the little girl work for?",
+			"ignore": true
 		},
 		{
 			"index": 180,
-			"text": "Hey, little girl, get your finger out of there!"
+			"text": "Hey, little girl, get your finger out of there!",
+			"ignore": true
 		},
 		{
 			"index": 181,
-			"text": "Hahaha, I know what you're up to."
+			"text": "Hahaha, I know what you're up to.",
+			"ignore": true
 		},
 		{
 			"index": 182,
-			"text": "You've got the skates, but I've got the key."
+			"text": "You've got the skates, but I've got the key.",
+			"ignore": true
 		},
 		{
 			"index": 183,
-			"crazy": "Who's the Milkman?",
-			"text": "Who is the Milkman?"
+			"text": "Who is the Milkman?",
+			"ignore": true,
+			"crazy": {
+				"text": "Who's the Milkman?"
+			}
 		},
 		{
 			"index": 184,
-			"text": "You know my house is clean, right? Right, boss?"
+			"text": "You know my house is clean, right? Right, boss?",
+			"ignore": true
 		},
 		{
 			"index": 185,
-			"text": "Get off of me!"
+			"text": "Get off of me!",
+			"ignore": true
 		},
 		{
 			"index": 186,
-			"text": "I don't want any half-and-half, I'm already half-and-half."
+			"text": "I don't want any half-and-half. I'm already half-and-half.",
+			"ignore": true
 		},
 		{
 			"index": 187,
-			"text": "If I'm invisible, then why is everyone looking at me?"
+			"text": "If I'm invisible, then why is everyone looking at me?",
+			"ignore": true
 		}
 	],
 	"interjection": [
 		{
 			"index": 188,
-			"text": "*chuckles*"
+			"text": "*chuckles*",
+			"ignore": true
 		},
 		{
 			"index": 189,
-			"text": "(Ho ho!)"
+			"text": "(Ho ho!)",
+			"ignore": true
 		},
 		{
 			"index": 190,
-			"text": "(Wait...)"
+			"text": "(Wait...)",
+			"ignore": true
 		},
 		{
 			"index": 191,
-			"text": "(Uh...)"
+			"text": "(Uh...)",
+			"ignore": true
 		},
 		{
 			"index": 192,
-			"crazy": "(Uh...)",
-			"text": "(Um...)"
+			"text": "(Um...)",
+			"ignore": true,
+			"crazy": {
+				"text": "(Uh...)"
+			}
 		},
 		{
 			"index": 193,
-			"text": "*cough*"
+			"text": "*cough*",
+			"ignore": true
 		},
 		{
 			"index": 194,
-			"text": "(Uh...)"
+			"text": "(Uh...)",
+			"ignore": true
 		},
 		{
 			"index": 195,
-			"text": "(Hmm...)"
+			"text": "(Hmm...)",
+			"ignore": true
 		},
 		{
 			"index": 196,
-			"text": "(Ha!)"
+			"text": "(Ha!)",
+			"ignore": true
 		},
 		{
 			"index": 197,
-			"text": "(Yeah, yeah, yeah...)"
+			"text": "(Yeah, yeah, yeah...)",
+			"ignore": true
 		},
 		{
 			"index": 198,
-			"text": "(What?)"
+			"text": "(What?)",
+			"ignore": true
 		},
 		{
 			"index": 199,
-			"text": "(No, no, nonono...)"
+			"text": "(No, no, nonono...)",
+			"ignore": true
 		},
 		{
 			"index": 200,
-			"text": "(Okay, okay but...)"
+			"text": "(Okay, okay but...)",
+			"ignore": true
 		},
 		{
 			"index": 201,
-			"text": "(Huh?)"
+			"text": "(Huh?)",
+			"ignore": true
 		},
 		{
 			"index": 202,
-			"crazy": "(Oh-hoh, RIGHT...)",
-			"text": "(Right...)"
+			"text": "(Right...)",
+			"ignore": true,
+			"crazy": {
+				"text": "(Oh-hoh, RIGHT...)"
+			}
 		}
 	]
 }

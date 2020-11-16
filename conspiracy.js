@@ -42,21 +42,29 @@ function getLengthWeight(c) {
 	return (w < 0) ? 0 : w;
 }
 
+function randomClipDelay() {
+	var min = +clipDelayMin.value, max = +clipDelayMin.value;
+	return (min + Math.random() * (max - min)) * 1000;
+}
+function randomSentenceDelay() {
+	var min = +sentDelayMin.value, max = +sentDelayMax.value;
+	return (min + Math.random() * (max - min)) * 1000;
+}
+
 var maxLengthError = {text: "[[MAX LENGTH REACHED]]", index: -1};
 function buildSentence(map, asideChance, interjectionChance) {
-	if (!firstRun && asideChance && Math.random() < asideChance) {
+	if (asideChance && Math.random() < asideChance) {
 		if (interjectionChance && Math.random() < interjectionChance) {
 			return [randomChoice(map.interjection)];
 		}
 		return [randomChoice(map.aside)];
 	}
-	firstRun = false; // Make sure we don't start with an aside.
 	var result = [];
 	for (
-			var curr = "subject";
-			curr !== null;
-			curr = randomWeightedChoice(map.index[curr].next, getLengthWeight)
-		) {
+		var curr = "subject";
+		curr !== null;
+		curr = randomWeightedChoice(map.index[curr].next, getLengthWeight)
+	) {
 		if (result.length >= 1000) {
 			result.push(maxLengthError)
 			return result;
@@ -66,10 +74,10 @@ function buildSentence(map, asideChance, interjectionChance) {
 			// Decrease chance by half each time, to discourage long strings
 			// of interjections.
 			for (
-					var tempChance = interjectionChance;
-					Math.random() < tempChance;
-					tempChance /= 2
-				) {
+				var tempChance = interjectionChance;
+				Math.random() < tempChance;
+				tempChance /= 2
+			) {
 				if (result.length >= 1000) {
 					result.push(maxLengthError)
 					return result;
@@ -88,15 +96,44 @@ function pushText(str) {
 	return li;
 }
 
+function getClipData(clip, sane, key, defaultValue) {
+	if (!sane && clip.crazy && clip.crazy.hasOwnProperty(key)) {
+		return clip.crazy[key];
+	}
+	if (clip.hasOwnProperty(key)) {
+		return clip[key];
+	}
+	return defaultValue;
+}
+
 function updateText(sentence, curr, ignoreBefore) {
 	ignoreBefore |= 0;
 	while (text.childElementCount > ignoreBefore) {
 		text.removeChild(text.lastChild);
 	}
 	for (var i = ignoreBefore; i < sentence.length; ++i) {
-		var textItem = pushText(sane.checked
-			? sentence[i].text
-			: sentence[i].crazy || sentence[i].text);
+		var clipText = getClipData(sentence[i], sane.checked, 'text');
+		if (!sentence[i].ignore) {
+			// Capitalize, if appropriate
+			if (i === 0) {
+				clipText = clipText[0].toUpperCase() + clipText.substring(1);
+			}
+			// Punctuate, if appropriate
+			if (!sentence[i].pre_punctuated) {
+				var nextClip = null;
+				for (var j = i + 1; j < sentence.length; ++j) {
+					if (!sentence[j].ignore) {
+						nextClip = sentence[j];
+						break;
+					}
+				}
+				
+				if (!nextClip || nextClip.new_sentence) {
+					clipText += getClipData(sentence[i], sane.checked, 'end_punctuation', '.');
+				}
+			}
+		}
+		var textItem = pushText(clipText);
 		if (i === curr) {
 			if (currText) currText.className = "";
 			textItem.className = "curr";
@@ -124,15 +161,8 @@ function preloadNextLine() {
 	if (!target) {
 		return;
 	}
-	
-	var preloader = document.createElement("link");
-	preloader.rel = "preload";
-	preloader.as = "audio";
-	preloader.href = getSoundURL(target.index, sane.checked);
-	preloader.onload = function() {
-		document.head.removeChild(preloader);
-	};
-	document.head.appendChild(preloader);
+	audioPreload.src = getSoundURL(target.index, sane.checked);
+	audioPreload.load();
 }
 
 function displaySentence(sentence) {
@@ -141,8 +171,8 @@ function displaySentence(sentence) {
 	updateSoundFile();
 }
 
-function startNewSentence(argument) {
-	sentence = buildSentence(map, +aside.value, +inter.value);
+function startNewSentence() {
+	sentence = buildSentence(map, +asidePer.value / 100, +interPer.value / 100);
 	stopped = false;
 	start.value = "Stop";
 	displaySentence(sentence);
@@ -161,36 +191,62 @@ function stopSound() {
 ////   Actual execution   //////////////////////////////
 ////////////////////////////////////////////////////////
 
-var text     = document.getElementById("text"),
-    audio    = document.getElementById("audio"),
-    start    = document.getElementById("start"),
-    sane     = document.getElementById("sane"),
-    loop     = document.getElementById("loop"),
-    lengthW  = document.getElementById("lengthWeight"),
-    aside    = document.getElementById("aside"),
-    inter    = document.getElementById("interject"),
-    delay    = document.getElementById("delay"),
-    vol      = document.getElementById("volume"),
-    volO     = document.getElementById("volumeOut"),
-    xhr      = new XMLHttpRequest(),
-    firstRun = true,
-    stopped  = true,
-    voices   = [],
+var text         = document.getElementById("text"),
+	audio        = document.getElementById("audio"),
+	audioPreload = document.getElementById("audioPreload"),
+    start        = document.getElementById("start"),
+    sane         = document.getElementById("sane"),
+    loop         = document.getElementById("loop"),
+    lengthW      = document.getElementById("lengthWeight"),
+    asidePer     = document.getElementById("aside"),
+    interPer     = document.getElementById("interject"),
+    clipDelayMin = document.getElementById("clipDelayMin"),
+    clipDelayMax = document.getElementById("clipDelayMax"),
+    sentDelayMin = document.getElementById("sentDelayMin"),
+    sentDelayMax = document.getElementById("sentDelayMax"),
+    volume       = document.getElementById("volume"),
+    volumeOut    = document.getElementById("volumeOut"),
+    xhr          = new XMLHttpRequest(),
+    stopped      = true,
+    voices       = [],
     map, sentence, currPlaying, currText, timeout;
 sane.onchange = function() {
 	updateText(sentence, currPlaying, currPlaying + 1);	
 };
-vol.oninput = function() {
-	var v = +vol.value;
-	audio.volume = v;
-	volO.innerHTML = (v * 100)|0;
+clipDelayMin.oninput = function() {
+	var min = +clipDelayMin.value, max = +clipDelayMax.value;
+	if (min > max) {
+		clipDelayMax.value = min;
+	}
+};
+clipDelayMax.oninput = function() {
+	var min = +clipDelayMin.value, max = +clipDelayMax.value;
+	if (min > max) {
+		clipDelayMin.value = max;
+	}
+};
+sentDelayMin.oninput = function() {
+	var min = +sentDelayMin.value, max = +sentDelayMax.value;
+	if (min > max) {
+		sentDelayMax.value = min;
+	}
+};
+sentDelayMax.oninput = function() {
+	var min = +sentDelayMin.value, max = +sentDelayMax.value;
+	if (min > max) {
+		sentDelayMin.value = max;
+	}
+};
+volume.oninput = function() {
+	var v = +volume.value;
+	audio.volume = v;volume
+	volumeOut.innerHTML = (v * 100)|0;
 };
 audio.onended = function() {
 	if (++currPlaying >= sentence.length) {
 		if (!stopped) {
 			if (loop.checked) {
-				timeout = setOptionalTimeout(startNewSentence,
-					+delay.value * 1000);
+				timeout = setOptionalTimeout(startNewSentence, randomSentenceDelay());
 			} else {
 				stopSound();
 			}
@@ -198,7 +254,7 @@ audio.onended = function() {
 		return;
 	}
 	
-	timeout = setOptionalTimeout(updateSoundFile, +delay.value * 1000);
+	timeout = setOptionalTimeout(updateSoundFile, randomClipDelay());
 };
 start.onclick = function() {
 	if (timeout != undefined) {
@@ -212,7 +268,7 @@ start.onclick = function() {
 	}
 };
 
-xhr.open("GET", "lines.json");
+xhr.open("GET", "lines.json?v=2");
 xhr.onload = function() {
 	if (xhr.status < 200 || xhr.status >= 300) return;
 	map = JSON.parse(xhr.response);

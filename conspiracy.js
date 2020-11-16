@@ -120,7 +120,14 @@ function updateText(sentence, curr, ignoreBefore) {
 		var clipText = getClipData(sentence[i], sane.checked, "text");
 		if (!sentence[i].ignore) {
 			// Capitalize, if appropriate
-			if (i === 0) {
+			var prevClip = null;
+			for (var j = i - 1; j >= 0; --j) {
+				if (!sentence[j].ignore) {
+					prevClip = sentence[j];
+					break;
+				}
+			}
+			if (!prevClip || prevClip.end_sentence) {
 				clipText = clipText[0].toUpperCase() + clipText.substring(1);
 			}
 			// Punctuate, if appropriate
@@ -316,7 +323,7 @@ text.onclick = function(e) {
 	}
 }
 
-xhr.open("GET", "lines.json?v=2");
+xhr.open("GET", "lines.json?v=3");
 xhr.onload = function() {
 	if (xhr.status < 200 || xhr.status >= 300) return;
 	map = JSON.parse(xhr.response);

@@ -425,7 +425,8 @@
 		},
 		{
 			"index": 89,
-			"text": "and who wins? Them. Who loses?"
+			"text": "and who wins? Them. Who loses?",
+			"end_sentence": true
 		},
 		{
 			"index": 90,

@@ -318,7 +318,7 @@ text.onclick = function(e) {
 			timeout = undefined;
 		}
 		audio.currentTime = 0;
-		updateText(sentence, currPlaying, currPlaying + 1);
+		updateText(sentence, currPlaying, currPlaying);
 		updateSoundFile();
 	}
 }

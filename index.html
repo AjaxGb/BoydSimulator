@@ -1,6 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
+	
 	<title>The Milkman Conspiracy</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,16 +57,68 @@
 			height: 2em;
 			margin-bottom: 0.5em;
 		}
-		#volume {
-			width: 8em;
-		}
-		ul {
+		.output-wrapper {
+			position: relative;
+			margin: 25px 0 15px;
+			border: #555 3px double;
 			max-width: 40em;
 			padding: 1em;
-			padding-left: 3em;
-			border: #555 3px double;
 		}
-		.curr {
+		.audio-controls {
+			display: inline-block;
+			position: absolute;
+			top: -19px;
+			left: 30px;
+			background: white;
+			padding: 0 10px;
+			white-space: nowrap;
+			height: 34px;
+		}
+		.audio-controls > * {
+			vertical-align: middle;
+			height: 100%;
+		}
+		#play-pause {
+			width: 34px;
+			padding: 5px;
+			margin: 0 10px 0 1px;
+		}
+		#play-pause .icon {
+			height: 100%;
+			width: 100%;
+			vertical-align: unset;
+		}
+		#play-pause .pause-icon {
+			display: none;
+		}
+		#play-pause.pause .pause-icon {
+			display: unset;
+		}
+		#play-pause.pause .play-icon {
+			display: none;
+		}
+		.volume-wrapper {
+			display: inline-block;
+		}
+		.volume-wrapper > * {
+			height: 100%;
+			vertical-align: middle;
+		}
+		.volume-wrapper .icon {
+			width: 22px;
+			height: 22px;
+		}
+		#volume {
+			width: 10em;
+			margin: 0 0 0 2px;
+		}
+		.clip-text {
+			cursor: pointer;
+		}
+		.clip-text:hover {
+			background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAgMAAADUn3btAAAACVBMVEWZ2er///+Z2epJlRU1AAAAAnRSTlNAAIbqgj0AAAAQSURBVAhbYxBi8GBQZGgBAALVAQCcH1pDAAAAAElFTkSuQmCC");
+		}
+		.clip-text.curr {
 			background-color: #FF5;
 		}
 		h1 {
@@ -93,7 +147,7 @@
 		</a>
 	</div>
 	<form>
-		<input type="button" id="start" value="Generate Conspiracy" disabled>
+		<input type="button" id="start" value="Generate New Conspiracy" disabled>
 		<label>
 			<span class="input-wrapper"><input type="checkbox" id="sane"></span>
 			Inside voice
@@ -103,7 +157,7 @@
 			Loop
 		</label>
 		<label>
-			<span class="input-wrapper"><input type="number" value="0" step="any" id="lengthWeight"></span>
+			<span class="input-wrapper"><input type="number" value="0" step="any" id="length-weight"></span>
 			Conspiracy length bonus
 		</label>
 		<label>
@@ -115,37 +169,52 @@
 			Chance of interjection between clips
 		</label>
 		<label>
-			<span class="input-wrapper"><input type="number" value="0.15" min="0" step="0.001" id="clipDelayMin"></span>
+			<span class="input-wrapper"><input type="number" value="0.15" min="0" step="0.001" id="clip-delay-min"></span>
 			Min seconds between clips
 		</label>
 		<label>
-			<span class="input-wrapper"><input type="number" value="0.7" min="0" step="0.001" id="clipDelayMax"></span>
+			<span class="input-wrapper"><input type="number" value="0.7" min="0" step="0.001" id="clip-delay-max"></span>
 			Max seconds between clips
 		</label>
 		<label>
-			<span class="input-wrapper"><input type="number" value="0.15" min="0" step="0.001" id="sentDelayMin"></span>
+			<span class="input-wrapper"><input type="number" value="0.15" min="0" step="0.001" id="sent-delay-min"></span>
 			Min seconds between sentences
 		</label>
 		<label>
-			<span class="input-wrapper"><input type="number" value="1.5" min="0" step="0.001" id="sentDelayMax"></span>
+			<span class="input-wrapper"><input type="number" value="1.5" min="0" step="0.001" id="sent-delay-max"></span>
 			Max seconds between sentences
 		</label>
-		<label>
-			<input type="range" value="1" min="0" max="1" step="any" id="volume">
-			Volume (<span id="volumeOut">100</span>%)
-		</label>
 	</form>
-	<ul id="text">
-	<li style="list-style: none; margin-left: -1em;">
-		<p>
-		This is a non-profit personal project to recreate the randomly generated ramblings of
-		<a href="http://psychonauts.wikia.com/wiki/Boyd_Cooper">Boyd Cooper</a>
-		from the game <a href="https://en.wikipedia.org/wiki/Psychonauts"><i>Psychonauts</i></a>.
-		All voice acting and writing comes from the game itself. If you do not own <i>Psychonauts</i>,
-		you should! It's a great game.
-		</p>
-	</li>
-	</ul>
+	<div class="output-wrapper">
+		<div class="audio-controls">
+			<button id="play-pause">
+				<svg class="icon play-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+					<path fill="black" d="M 10,0 L 90,50 L 10,100 z" />
+				</svg>
+				<svg class="icon pause-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+					<path fill="black" d="M 10,5 h 30 v 90 h -30 z m 50,0 h 30 v 90 h -30 z" />
+				</svg>
+			</button>
+			<div class="volume-wrapper">
+				<svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+					<path fill="black" d="M 0,30 h 20 L 55,0 v 100 L 20,70 H 0 z" />
+					<path stroke="black" stroke-width="10" fill="transparent" d="M 63,25 a 30,30,0,0,1,0,50 M 75,10 a 50,50,0,0,1,0,80" />
+				</svg>
+				<input type="range" value="1" min="0" max="1" step="any" id="volume">
+			</div>
+		</div>
+		<ul id="text">
+			<li style="list-style: none; margin-left: -1em;">
+				<p>
+				This is a non-profit personal project to recreate the randomly generated ramblings of
+				<a href="http://psychonauts.wikia.com/wiki/Boyd_Cooper">Boyd Cooper</a>
+				from the game <a href="https://en.wikipedia.org/wiki/Psychonauts"><i>Psychonauts</i></a>.
+				All voice acting and writing comes from the game itself. If you do not own <i>Psychonauts</i>,
+				you should! It's a great game.
+				</p>
+			</li>
+		</ul>
+	</div>
 	<div class="disclaimer">
 		<p>
 			<i>Psychonauts</i> and Boyd Cooper are property of Double Fine Productions.
@@ -155,7 +224,7 @@
 		</p>
 	</div>
 	<audio id="audio" autoplay></audio>
-	<audio id="audioPreload" muted preload></audio>
+	<audio id="audio-preload" muted preload></audio>
 	
 	<script type="text/javascript" src="conspiracy.js"></script>
 </body>

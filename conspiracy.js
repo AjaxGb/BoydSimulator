@@ -43,7 +43,7 @@ function getLengthWeight(c) {
 }
 
 function randomClipDelay() {
-	var min = +clipDelayMin.value, max = +clipDelayMin.value;
+	var min = +clipDelayMin.value, max = +clipDelayMax.value;
 	return (min + Math.random() * (max - min)) * 1000;
 }
 function randomSentenceDelay() {
@@ -53,12 +53,13 @@ function randomSentenceDelay() {
 
 var maxLengthError = {text: "[[MAX LENGTH REACHED]]", index: -1};
 function buildSentence(map, asideChance, interjectionChance) {
-	if (asideChance && Math.random() < asideChance) {
+	if (!firstRun && asideChance && Math.random() < asideChance) {
 		if (interjectionChance && Math.random() < interjectionChance) {
 			return [randomChoice(map.interjection)];
 		}
 		return [randomChoice(map.aside)];
 	}
+	firstRun = false;
 	var result = [];
 	for (
 		var curr = "subject";
@@ -89,9 +90,11 @@ function buildSentence(map, asideChance, interjectionChance) {
 	return result;
 }
 
-function pushText(str) {
+function pushText(str, index) {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(str));
+	li.className = "clip-text";
+	li.setAttribute("index", index);
 	text.appendChild(li);
 	return li;
 }
@@ -112,7 +115,7 @@ function updateText(sentence, curr, ignoreBefore) {
 		text.removeChild(text.lastChild);
 	}
 	for (var i = ignoreBefore; i < sentence.length; ++i) {
-		var clipText = getClipData(sentence[i], sane.checked, 'text');
+		var clipText = getClipData(sentence[i], sane.checked, "text");
 		if (!sentence[i].ignore) {
 			// Capitalize, if appropriate
 			if (i === 0) {
@@ -129,14 +132,14 @@ function updateText(sentence, curr, ignoreBefore) {
 				}
 				
 				if (!nextClip || nextClip.new_sentence) {
-					clipText += getClipData(sentence[i], sane.checked, 'end_punctuation', '.');
+					clipText += getClipData(sentence[i], sane.checked, "end_punctuation", ".");
 				}
 			}
 		}
-		var textItem = pushText(clipText);
+		var textItem = pushText(clipText, i);
 		if (i === curr) {
-			if (currText) currText.className = "";
-			textItem.className = "curr";
+			if (currText) currText.className = "clip-text";
+			textItem.className = "clip-text curr";
 			currText = textItem;
 			
 			preloadNextLine();
@@ -145,12 +148,16 @@ function updateText(sentence, curr, ignoreBefore) {
 }
 
 function updateSoundFile() {
-	if (currText) currText.className = "";
+	if (currText) currText.className = "clip-text";
 	
 	currText = text.children[currPlaying];
-	if (currText) currText.className = "curr";
+	if (currText) currText.className = "clip-text curr";
 	
-	audio.src = getSoundURL(sentence[currPlaying].index, sane.checked);
+	playPause.className = "pause";
+	var src = getSoundURL(sentence[currPlaying].index, sane.checked);
+	if (audio.src.substring(audio.src.length - src.length) !== src) {
+		audio.src = src;
+	}
 	audio.play();
 	
 	preloadNextLine();
@@ -161,8 +168,11 @@ function preloadNextLine() {
 	if (!target) {
 		return;
 	}
-	audioPreload.src = getSoundURL(target.index, sane.checked);
-	audioPreload.load();
+	var src = getSoundURL(target.index, sane.checked);
+	if (audioPreload.src.substring(audioPreload.src.length - src.length) !== src) {
+		audioPreload.src = src;
+		audioPreload.load();
+	}
 }
 
 function displaySentence(sentence) {
@@ -173,18 +183,42 @@ function displaySentence(sentence) {
 
 function startNewSentence() {
 	sentence = buildSentence(map, +asidePer.value / 100, +interPer.value / 100);
-	stopped = false;
-	start.value = "Stop";
+	playPause.disabled = false;
+	playPause.className = "pause";
 	displaySentence(sentence);
 }
 
-function stopSound() {
-	if (currText) currText.className = "";
-	currText = null;
+function playSound() {
+	if (!sentence || currPlaying >= sentence.length) {
+		startNewSentence();
+	} else {
+		updateSoundFile();
+	}
+}
+
+function pauseSound() {
+	if (timeout != undefined) {
+		clearTimeout(timeout);
+		timeout = undefined;
+	}
 	
+	playPause.className = "";
 	audio.pause();
-	stopped = true;
-	start.value = "Generate Conspiracy";
+}
+
+function stopSound() {
+	if (currText) {
+		currText.className = "clip-text";
+		currText = null;
+	}
+	
+	if (timeout != undefined) {
+		clearTimeout(timeout);
+		timeout = undefined;
+	}
+	
+	playPause.className = "";
+	audio.pause();
 }
 
 ////////////////////////////////////////////////////////
@@ -193,25 +227,25 @@ function stopSound() {
 
 var text         = document.getElementById("text"),
 	audio        = document.getElementById("audio"),
-	audioPreload = document.getElementById("audioPreload"),
+	audioPreload = document.getElementById("audio-preload"),
     start        = document.getElementById("start"),
     sane         = document.getElementById("sane"),
     loop         = document.getElementById("loop"),
-    lengthW      = document.getElementById("lengthWeight"),
+    lengthW      = document.getElementById("length-weight"),
     asidePer     = document.getElementById("aside"),
     interPer     = document.getElementById("interject"),
-    clipDelayMin = document.getElementById("clipDelayMin"),
-    clipDelayMax = document.getElementById("clipDelayMax"),
-    sentDelayMin = document.getElementById("sentDelayMin"),
-    sentDelayMax = document.getElementById("sentDelayMax"),
+    clipDelayMin = document.getElementById("clip-delay-min"),
+    clipDelayMax = document.getElementById("clip-delay-max"),
+    sentDelayMin = document.getElementById("sent-delay-min"),
+	sentDelayMax = document.getElementById("sent-delay-max"),
+	playPause    = document.getElementById("play-pause"),
     volume       = document.getElementById("volume"),
-    volumeOut    = document.getElementById("volumeOut"),
-    xhr          = new XMLHttpRequest(),
-    stopped      = true,
-    voices       = [],
+	firstRun     = true,
+	xhr          = new XMLHttpRequest(),
     map, sentence, currPlaying, currText, timeout;
 sane.onchange = function() {
-	updateText(sentence, currPlaying, currPlaying + 1);	
+	updateText(sentence, currPlaying, currPlaying + 1);
+	preloadNextLine();
 };
 clipDelayMin.oninput = function() {
 	var min = +clipDelayMin.value, max = +clipDelayMax.value;
@@ -238,35 +272,46 @@ sentDelayMax.oninput = function() {
 	}
 };
 volume.oninput = function() {
-	var v = +volume.value;
-	audio.volume = v;volume
-	volumeOut.innerHTML = (v * 100)|0;
+	audio.volume = +volume.value;
 };
 audio.onended = function() {
 	if (++currPlaying >= sentence.length) {
-		if (!stopped) {
-			if (loop.checked) {
-				timeout = setOptionalTimeout(startNewSentence, randomSentenceDelay());
-			} else {
-				stopSound();
-			}
+		if (loop.checked) {
+			timeout = setOptionalTimeout(startNewSentence, randomSentenceDelay());
+		} else {
+			stopSound();
 		}
-		return;
+	} else {
+		timeout = setOptionalTimeout(updateSoundFile, randomClipDelay());
 	}
-	
-	timeout = setOptionalTimeout(updateSoundFile, randomClipDelay());
 };
 start.onclick = function() {
 	if (timeout != undefined) {
 		clearTimeout(timeout);
 		timeout = undefined;
 	}
-	if (stopped) {
-		startNewSentence();
-	} else {
-		stopSound();
-	}
+	startNewSentence();
 };
+playPause.onclick = function() {
+	if (playPause.className === "pause") {
+		pauseSound();
+	} else {
+		playSound();
+	}
+	return false;
+}
+text.onclick = function(e) {
+	if (e.target.className.split(/\s+/g).indexOf("clip-text") >= 0) {
+		currPlaying = parseInt(e.target.getAttribute("index"), 10);
+		if (timeout != undefined) {
+			clearTimeout(timeout);
+			timeout = undefined;
+		}
+		audio.currentTime = 0;
+		updateText(sentence, currPlaying, currPlaying + 1);
+		updateSoundFile();
+	}
+}
 
 xhr.open("GET", "lines.json?v=2");
 xhr.onload = function() {

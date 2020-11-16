@@ -383,7 +383,8 @@
 		},
 		{
 			"index": 80,
-			"text": "ha! Like I don't know that they"
+			"text": "Ha! Like I don't know that they",
+			"new_sentence": true
 		},
 		{
 			"index": 81,

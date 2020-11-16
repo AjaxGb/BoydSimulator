@@ -93,8 +93,10 @@ function buildSentence(map, asideChance, interjectionChance) {
 function pushText(str, index) {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(str));
-	li.className = "clip-text";
-	li.setAttribute("index", index);
+	if (index >= 0) {
+		li.className = "clip-text";
+		li.setAttribute("index", index);
+	}
 	text.appendChild(li);
 	return li;
 }
@@ -275,7 +277,8 @@ volume.oninput = function() {
 	audio.volume = +volume.value;
 };
 audio.onended = function() {
-	if (++currPlaying >= sentence.length) {
+	++currPlaying;
+	if (currPlaying >= sentence.length || sentence[currPlaying].index < 0) {
 		if (loop.checked) {
 			timeout = setOptionalTimeout(startNewSentence, randomSentenceDelay());
 		} else {

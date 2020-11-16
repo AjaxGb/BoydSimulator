@@ -53,7 +53,7 @@ function randomSentenceDelay() {
 
 var maxLengthError = {text: "[[MAX LENGTH REACHED]]", index: -1};
 function buildSentence(map, asideChance, interjectionChance) {
-	if (!firstRun && asideChance && Math.random() < asideChance) {
+	if (asideChance >= 1 || (!firstRun && asideChance && Math.random() < asideChance)) {
 		if (interjectionChance && Math.random() < interjectionChance) {
 			return [randomChoice(map.interjection)];
 		}

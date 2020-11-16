@@ -294,15 +294,20 @@
 		},
 		{
 			"index": 61,
-			"text": "won't stop visiting me"
+			"text": "won't stop visiting me",
+			"crazy": {
+				"end_punctuation": "!"
+			}
 		},
 		{
 			"index": 62,
-			"text": "keep sparring with me"
+			"text": "keep sparring with me",
+			"end_punctuation": "!"
 		},
 		{
 			"index": 63,
-			"text": "have been spitting on me all day"
+			"text": "have been spitting on me all day",
+			"end_punctuation": "!"
 		},
 		{
 			"index": 64,
@@ -311,15 +316,24 @@
 		},
 		{
 			"index": 65,
-			"text": "are crawling all over my skin"
+			"text": "are crawling all over my skin",
+			"crazy": {
+				"end_punctuation": "!"
+			}
 		},
 		{
 			"index": 66,
-			"text": "bit me all night, so I couldn't sleep"
+			"text": "bit me all night, so I couldn't sleep",
+			"crazy": {
+				"end_punctuation": "!"
+			}
 		},
 		{
 			"index": 67,
-			"text": "have everyone fooled"
+			"text": "have everyone fooled",
+			"crazy": {
+				"end_punctuation": "!"
+			}
 		},
 		{
 			"index": 68,
@@ -331,7 +345,10 @@
 		},
 		{
 			"index": 70,
-			"text": "stole my theories and reprinted them—incorrectly—to discredit them"
+			"text": "stole my theories and reprinted them—incorrectly—to discredit them",
+			"crazy": {
+				"end_punctuation": "!"
+			}
 		},
 		{
 			"index": 71,
@@ -340,11 +357,17 @@
 		},
 		{
 			"index": 72,
-			"text": "have been living off the teat of the dairy industry"
+			"text": "have been living off the teat of the dairy industry",
+			"crazy": {
+				"end_punctuation": "!"
+			}
 		},
 		{
 			"index": 73,
-			"text": "have been fixing oil prices"
+			"text": "have been fixing oil prices",
+			"crazy": {
+				"end_punctuation": "!"
+			}
 		},
 		{
 			"index": 74,
@@ -352,13 +375,17 @@
 		},
 		{
 			"index": 75,
-			"text": "pretty much control everything"
+			"text": "pretty much control everything",
+			"crazy": {
+				"end_punctuation": "!"
+			}
 		},
 		{
 			"index": 76,
 			"text": "pick who lives, and who dies, and what the football scores are going to be every week",
 			"crazy": {
-				"text": "pick who lives, who dies, what the football scores are going to be every week"
+				"text": "pick who lives, who dies, what the football scores are going to be every week",
+				"end_punctuation": "!"
 			}
 		}
 	],

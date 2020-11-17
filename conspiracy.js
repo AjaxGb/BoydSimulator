@@ -201,7 +201,7 @@ function startNewSentence(startedManually) {
 		for (var i = 0; i < sentence.length; ++i) {
 			label += "/" + sentence[i].index;
 		}
-		gtag("event", startedManually ? "generate" : "loop", {
+		gtag("event", startedManually ? "generate_conspiracy" : "loop_conspiracy", {
 			event_category: "playback",
 			event_label: label,
 		});
@@ -215,7 +215,7 @@ function playSound() {
 		updateSoundFile();
 		
 		if (typeof gtag === "function") {
-			gtag("event", "resume", {
+			gtag("event", "resume_playback", {
 				event_category: "playback",
 			});
 		}
@@ -232,7 +232,7 @@ function pauseSound() {
 	audio.pause();
 	
 	if (typeof gtag === "function") {
-		gtag("event", "pause", {
+		gtag("event", "pause_playback", {
 			event_category: "playback",
 		});
 	}
@@ -346,7 +346,7 @@ text.onclick = function(e) {
 		updateSoundFile();
 		
 		if (typeof gtag === "function") {
-			gtag("event", "jump", {
+			gtag("event", "jump_to_clip", {
 				event_category: "playback",
 				event_label: oldCurrPlaying + ">" + currPlaying,
 			});

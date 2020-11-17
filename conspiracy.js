@@ -190,18 +190,35 @@ function displaySentence(sentence) {
 	updateSoundFile();
 }
 
-function startNewSentence() {
+function startNewSentence(startedManually) {
 	sentence = buildSentence(map, +asidePer.value / 100, +interPer.value / 100);
 	playPause.disabled = false;
 	playPause.className = "pause";
 	displaySentence(sentence);
+	
+	if (typeof gtag === "function") {
+		var label = "";
+		for (var i = 0; i < sentence.length; ++i) {
+			label += "/" + sentence[i].index;
+		}
+		gtag("event", startedManually ? "generate" : "loop", {
+			event_category: "playback",
+			event_label: label,
+		});
+	}
 }
 
 function playSound() {
 	if (!sentence || currPlaying >= sentence.length) {
-		startNewSentence();
+		startNewSentence(true);
 	} else {
 		updateSoundFile();
+		
+		if (typeof gtag === "function") {
+			gtag("event", "resume", {
+				event_category: "playback",
+			});
+		}
 	}
 }
 
@@ -213,6 +230,12 @@ function pauseSound() {
 	
 	playPause.className = "";
 	audio.pause();
+	
+	if (typeof gtag === "function") {
+		gtag("event", "pause", {
+			event_category: "playback",
+		});
+	}
 }
 
 function stopSound() {
@@ -248,10 +271,10 @@ var text         = document.getElementById("text"),
     sentDelayMin = document.getElementById("sent-delay-min"),
 	sentDelayMax = document.getElementById("sent-delay-max"),
 	playPause    = document.getElementById("play-pause"),
-    volume       = document.getElementById("volume"),
+	volume       = document.getElementById("volume"),
 	firstRun     = true,
 	xhr          = new XMLHttpRequest(),
-    map, sentence, currPlaying, currText, timeout;
+	map, sentence, currPlaying, currText, timeout;
 sane.onchange = function() {
 	updateText(sentence, currPlaying, currPlaying + 1);
 	preloadNextLine();
@@ -300,7 +323,7 @@ start.onclick = function() {
 		clearTimeout(timeout);
 		timeout = undefined;
 	}
-	startNewSentence();
+	startNewSentence(true);
 };
 playPause.onclick = function() {
 	if (playPause.className === "pause") {
@@ -312,6 +335,7 @@ playPause.onclick = function() {
 }
 text.onclick = function(e) {
 	if (e.target.className.split(/\s+/g).indexOf("clip-text") >= 0) {
+		var oldCurrPlaying = currPlaying;
 		currPlaying = parseInt(e.target.getAttribute("index"), 10);
 		if (timeout != undefined) {
 			clearTimeout(timeout);
@@ -320,6 +344,23 @@ text.onclick = function(e) {
 		audio.currentTime = 0;
 		updateText(sentence, currPlaying, currPlaying);
 		updateSoundFile();
+		
+		if (typeof gtag === "function") {
+			gtag("event", "jump", {
+				event_category: "playback",
+				event_label: oldCurrPlaying + ">" + currPlaying,
+			});
+		}
+	}
+}
+document.onchange = function(e) {
+	var id = e.target.id;
+	
+	if (id && typeof gtag === "function") {
+		gtag("event", "change_setting", {
+			event_category: "playback",
+			event_label: id,
+		});
 	}
 }
 

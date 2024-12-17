@@ -206,16 +206,16 @@ function startNewSentence(startedManually) {
 	playPause.className = "pause";
 	displaySentence(sentence);
 	
-	if (typeof gtag === "function") {
-		var label = "";
-		for (var i = 0; i < sentence.length; ++i) {
-			label += "/" + sentence[i].index;
-		}
-		gtag("event", startedManually ? "generate_conspiracy" : "loop_conspiracy", {
-			event_category: "playback",
-			event_label: label,
-		});
-	}
+	// if (typeof gtag === "function") {
+	// 	var label = "";
+	// 	for (var i = 0; i < sentence.length; ++i) {
+	// 		label += "/" + sentence[i].index;
+	// 	}
+	// 	gtag("event", startedManually ? "generate_conspiracy" : "loop_conspiracy", {
+	// 		event_category: "playback",
+	// 		event_label: label,
+	// 	});
+	// }
 }
 
 function playSound() {
@@ -224,11 +224,11 @@ function playSound() {
 	} else {
 		updateSoundFile();
 		
-		if (typeof gtag === "function") {
-			gtag("event", "resume_playback", {
-				event_category: "playback",
-			});
-		}
+		// if (typeof gtag === "function") {
+		// 	gtag("event", "resume_playback", {
+		// 		event_category: "playback",
+		// 	});
+		// }
 	}
 }
 
@@ -238,11 +238,11 @@ function pauseSound() {
 	playPause.className = "";
 	audio.pause();
 	
-	if (typeof gtag === "function") {
-		gtag("event", "pause_playback", {
-			event_category: "playback",
-		});
-	}
+	// if (typeof gtag === "function") {
+	// 	gtag("event", "pause_playback", {
+	// 		event_category: "playback",
+	// 	});
+	// }
 }
 
 function stopSound() {
@@ -343,23 +343,23 @@ text.onclick = function(e) {
 		updateText(sentence, currPlaying, currPlaying);
 		updateSoundFile();
 		
-		if (typeof gtag === "function") {
-			gtag("event", "jump_to_clip", {
-				event_category: "playback",
-				event_label: oldCurrPlaying + ">" + currPlaying,
-			});
-		}
+		// if (typeof gtag === "function") {
+		// 	gtag("event", "jump_to_clip", {
+		// 		event_category: "playback",
+		// 		event_label: oldCurrPlaying + ">" + currPlaying,
+		// 	});
+		// }
 	}
 }
 document.onchange = function(e) {
 	var id = e.target.id;
 	
-	if (id && typeof gtag === "function") {
-		gtag("event", "change_setting", {
-			event_category: "playback",
-			event_label: id,
-		});
-	}
+	// if (id && typeof gtag === "function") {
+	// 	gtag("event", "change_setting", {
+	// 		event_category: "playback",
+	// 		event_label: id,
+	// 	});
+	// }
 }
 
 xhr.open("GET", "lines.json?v=3");

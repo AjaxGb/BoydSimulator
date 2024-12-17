@@ -24,11 +24,21 @@ function randomChoice(arr) {
 	return arr[randomInt(arr.length)];
 }
 
-function setOptionalTimeout(func, delay) {
+var audioDelayTimeout = null;
+
+function startAudioDelay(func, delay) {
 	if (delay === 0) {
 		func();
+		audioDelayTimeout = null;
 	} else {
-		return setTimeout(func, delay);
+		audioDelayTimeout = setTimeout(func, delay);
+	}
+}
+
+function cancelAudioDelay() {
+	if (audioDelayTimeout != null) {
+		clearTimeout(audioDelayTimeout);
+		audioDelayTimeout = null;
 	}
 }
 
@@ -223,10 +233,7 @@ function playSound() {
 }
 
 function pauseSound() {
-	if (timeout != undefined) {
-		clearTimeout(timeout);
-		timeout = undefined;
-	}
+	cancelAudioDelay();
 	
 	playPause.className = "";
 	audio.pause();
@@ -244,10 +251,7 @@ function stopSound() {
 		currText = null;
 	}
 	
-	if (timeout != undefined) {
-		clearTimeout(timeout);
-		timeout = undefined;
-	}
+	cancelAudioDelay();
 	
 	playPause.className = "";
 	audio.pause();
@@ -274,7 +278,7 @@ var text         = document.getElementById("text"),
 	volume       = document.getElementById("volume"),
 	firstRun     = true,
 	xhr          = new XMLHttpRequest(),
-	map, sentence, currPlaying, currText, timeout;
+	map, sentence, currPlaying, currText;
 sane.onchange = function() {
 	updateText(sentence, currPlaying, currPlaying + 1);
 	preloadNextLine();
@@ -310,19 +314,16 @@ audio.onended = function() {
 	++currPlaying;
 	if (currPlaying >= sentence.length || sentence[currPlaying].index < 0) {
 		if (loop.checked) {
-			timeout = setOptionalTimeout(startNewSentence, randomSentenceDelay());
+			startAudioDelay(startNewSentence, randomSentenceDelay());
 		} else {
 			stopSound();
 		}
 	} else {
-		timeout = setOptionalTimeout(updateSoundFile, randomClipDelay());
+		startAudioDelay(updateSoundFile, randomClipDelay());
 	}
 };
 start.onclick = function() {
-	if (timeout != undefined) {
-		clearTimeout(timeout);
-		timeout = undefined;
-	}
+	cancelAudioDelay();
 	startNewSentence(true);
 };
 playPause.onclick = function() {
@@ -337,10 +338,7 @@ text.onclick = function(e) {
 	if (e.target.className.split(/\s+/g).indexOf("clip-text") >= 0) {
 		var oldCurrPlaying = currPlaying;
 		currPlaying = parseInt(e.target.getAttribute("index"), 10);
-		if (timeout != undefined) {
-			clearTimeout(timeout);
-			timeout = undefined;
-		}
+		cancelAudioDelay();
 		audio.currentTime = 0;
 		updateText(sentence, currPlaying, currPlaying);
 		updateSoundFile();

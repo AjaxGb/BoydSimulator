@@ -41,7 +41,7 @@
 		{
 			"index": 2,
 			"text": "those little green cops",
-			"crazy": {
+			"wild": {
 				"text": "those little green cops, they"
 			}
 		},
@@ -52,7 +52,7 @@
 		{
 			"index": 4,
 			"text": "the suits",
-			"crazy": {
+			"wild": {
 				"text": "the suits, they"
 			}
 		},
@@ -75,7 +75,7 @@
 		{
 			"index": 9,
 			"text": "that little fat kid, with the bunny,",
-			"crazy": {
+			"wild": {
 				"text": "that little fat kid with the bunny, he"
 			}
 		},
@@ -182,7 +182,7 @@
 		{
 			"index": 35,
 			"text": "oh! one of my nostril hairs",
-			"crazy": {
+			"wild": {
 				"text": "one of my nostril hairs"
 			}
 		},
@@ -295,7 +295,7 @@
 		{
 			"index": 61,
 			"text": "won't stop visiting me",
-			"crazy": {
+			"wild": {
 				"end_punctuation": "!"
 			}
 		},
@@ -317,21 +317,21 @@
 		{
 			"index": 65,
 			"text": "are crawling all over my skin",
-			"crazy": {
+			"wild": {
 				"end_punctuation": "!"
 			}
 		},
 		{
 			"index": 66,
 			"text": "bit me all night, so I couldn't sleep",
-			"crazy": {
+			"wild": {
 				"end_punctuation": "!"
 			}
 		},
 		{
 			"index": 67,
 			"text": "have everyone fooled",
-			"crazy": {
+			"wild": {
 				"end_punctuation": "!"
 			}
 		},
@@ -346,7 +346,7 @@
 		{
 			"index": 70,
 			"text": "stole my theories and reprinted them—incorrectly—to discredit them",
-			"crazy": {
+			"wild": {
 				"end_punctuation": "!"
 			}
 		},
@@ -358,14 +358,14 @@
 		{
 			"index": 72,
 			"text": "have been living off the teat of the dairy industry",
-			"crazy": {
+			"wild": {
 				"end_punctuation": "!"
 			}
 		},
 		{
 			"index": 73,
 			"text": "have been fixing oil prices",
-			"crazy": {
+			"wild": {
 				"end_punctuation": "!"
 			}
 		},
@@ -376,14 +376,14 @@
 		{
 			"index": 75,
 			"text": "pretty much control everything",
-			"crazy": {
+			"wild": {
 				"end_punctuation": "!"
 			}
 		},
 		{
 			"index": 76,
 			"text": "pick who lives, and who dies, and what the football scores are going to be every week",
-			"crazy": {
+			"wild": {
 				"text": "pick who lives, who dies, what the football scores are going to be every week",
 				"end_punctuation": "!"
 			}
@@ -393,14 +393,14 @@
 		{
 			"index": 77,
 			"text": "and they obviously",
-			"crazy": {
+			"wild": {
 				"text": "they obviously"
 			}
 		},
 		{
 			"index": 78,
 			"text": "I know they",
-			"crazy": {
+			"wild": {
 				"text": "and I know they"
 			}
 		},
@@ -420,7 +420,7 @@
 		{
 			"index": 82,
 			"text": "if I know anything, I know that they",
-			"crazy": {
+			"wild": {
 				"text": "and, if I know anything, I know that they"
 			}
 		},
@@ -512,7 +512,7 @@
 		{
 			"index": 103,
 			"text": "my hooch",
-			"crazy": {
+			"wild": {
 				"end_punctuation": "!"
 			}
 		},
@@ -563,7 +563,7 @@
 			"text": "If they find out I know this stuff, I'm dead.",
 			"new_sentence": true,
 			"pre_punctuated": true,
-			"crazy": {
+			"wild": {
 				"text": "And if they find out I know this stuff, I'm dead."
 			}
 		},
@@ -614,7 +614,7 @@
 			"index": 112,
 			"text": "If they find out I know this stuff, I'm dead.",
 			"ignore": true,
-			"crazy": {
+			"wild": {
 				"text": "And if they find out I know this stuff, I'm dead."
 			}
 		},
@@ -637,7 +637,7 @@
 			"index": 119,
 			"text": "You can pass it over the counter, but that doesn't make it \"over the counter.\"",
 			"ignore": true,
-			"crazy": {
+			"wild": {
 				"text": "You can pass it over the counter, but that don't make it \"over the counter!\""
 			}
 		},
@@ -690,7 +690,7 @@
 			"index": 129,
 			"text": "Well, maybe if I forget about that other part...",
 			"ignore": true,
-			"crazy": {
+			"wild": {
 				"text": "Well, maybe if I forget about the other part..."
 			}
 		},
@@ -743,7 +743,7 @@
 			"index": 139,
 			"text": "They think the windows are tinted. But they ain't tinted nearly enough! Hyeh.",
 			"ignore": true,
-			"crazy": {
+			"wild": {
 				"text": "They think the windows are tinted. But they aren't tinted nearly enough!"
 			}
 		},
@@ -881,7 +881,7 @@
 			"index": 166,
 			"text": "Think you could get this past me? I'm the guard.",
 			"ignore": true,
-			"crazy": {
+			"wild": {
 				"text": "What, you think— think you could get this past me? I'm the guard."
 			}
 		},
@@ -924,7 +924,7 @@
 			"index": 174,
 			"text": "Am I? Or is he? Am I he? What's he doing in my house?",
 			"ignore": true,
-			"crazy": {
+			"wild": {
 				"text": "Am I? Or is he? Am I he? What is he? Doing in my house!?"
 			}
 		},
@@ -972,7 +972,7 @@
 			"index": 183,
 			"text": "Who is the Milkman?",
 			"ignore": true,
-			"crazy": {
+			"wild": {
 				"text": "Who's the Milkman?"
 			}
 		},
@@ -1022,7 +1022,7 @@
 			"index": 192,
 			"text": "(Um...)",
 			"ignore": true,
-			"crazy": {
+			"wild": {
 				"text": "(Uh...)"
 			}
 		},
@@ -1075,7 +1075,7 @@
 			"index": 202,
 			"text": "(Right...)",
 			"ignore": true,
-			"crazy": {
+			"wild": {
 				"text": "(Oh-hoh, RIGHT...)"
 			}
 		}

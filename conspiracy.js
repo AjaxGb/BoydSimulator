@@ -42,8 +42,8 @@ function cancelAudioDelay() {
 	}
 }
 
-function getSoundURL(i, sane) {
-	return "sounds/line_" + i + (sane ? "_sane.mp3" : "_crazy.mp3");
+function getSoundURL(i, isCalm) {
+	return "sounds/line_" + i + (isCalm ? "_calm.mp3" : "_wild.mp3");
 }
 
 function getLengthWeight(c) {
@@ -111,9 +111,9 @@ function pushText(str, index) {
 	return li;
 }
 
-function getClipData(clip, sane, key, defaultValue) {
-	if (!sane && clip.crazy && clip.crazy.hasOwnProperty(key)) {
-		return clip.crazy[key];
+function getClipData(clip, isCalm, key, defaultValue) {
+	if (!isCalm && clip.wild && clip.wild.hasOwnProperty(key)) {
+		return clip.wild[key];
 	}
 	if (clip.hasOwnProperty(key)) {
 		return clip[key];
@@ -127,7 +127,7 @@ function updateText(sentence, curr, ignoreBefore) {
 		text.removeChild(text.lastChild);
 	}
 	for (var i = ignoreBefore; i < sentence.length; ++i) {
-		var clipText = getClipData(sentence[i], sane.checked, "text");
+		var clipText = getClipData(sentence[i], calm.checked, "text");
 		if (!sentence[i].ignore) {
 			// Capitalize, if appropriate
 			var prevClip = null;
@@ -151,7 +151,7 @@ function updateText(sentence, curr, ignoreBefore) {
 				}
 				
 				if (!nextClip || nextClip.new_sentence) {
-					clipText += getClipData(sentence[i], sane.checked, "end_punctuation", ".");
+					clipText += getClipData(sentence[i], calm.checked, "end_punctuation", ".");
 				}
 			}
 		}
@@ -173,7 +173,7 @@ function updateSoundFile() {
 	if (currText) currText.className = "clip-text curr";
 	
 	playPause.className = "pause";
-	var src = getSoundURL(sentence[currPlaying].index, sane.checked);
+	var src = getSoundURL(sentence[currPlaying].index, calm.checked);
 	if (audio.src.substring(audio.src.length - src.length) !== src) {
 		audio.src = src;
 	}
@@ -187,7 +187,7 @@ function preloadNextLine() {
 	if (!target) {
 		return;
 	}
-	var src = getSoundURL(target.index, sane.checked);
+	var src = getSoundURL(target.index, calm.checked);
 	if (audioPreload.src.substring(audioPreload.src.length - src.length) !== src) {
 		audioPreload.src = src;
 		audioPreload.load();
@@ -265,7 +265,7 @@ var text         = document.getElementById("text"),
 	audio        = document.getElementById("audio"),
 	audioPreload = document.getElementById("audio-preload"),
     start        = document.getElementById("start"),
-    sane         = document.getElementById("sane"),
+    calm         = document.getElementById("calm"),
     loop         = document.getElementById("loop"),
     lengthW      = document.getElementById("length-weight"),
     asidePer     = document.getElementById("aside"),
@@ -279,7 +279,7 @@ var text         = document.getElementById("text"),
 	firstRun     = true,
 	xhr          = new XMLHttpRequest(),
 	map, sentence, currPlaying, currText;
-sane.onchange = function() {
+calm.onchange = function() {
 	updateText(sentence, currPlaying, currPlaying + 1);
 	preloadNextLine();
 };

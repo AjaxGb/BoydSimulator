@@ -28,12 +28,12 @@
 	<form>
 		<input type="button" id="start" value="Generate New Conspiracy" disabled>
 		<label>
-			<span class="input-wrapper"><input type="checkbox" id="calm"></span>
-			Inside voice
-		</label>
-		<label>
 			<span class="input-wrapper"><input type="checkbox" id="loop" checked></span>
 			Loop
+		</label>
+		<label>
+			<span class="input-wrapper"><input type="number" value="60" min="0" max="100" id="calm" class="suffix">%</span>
+			Intensity
 		</label>
 		<label>
 			<span class="input-wrapper"><input type="number" value="0" step="any" id="length-weight"></span>
@@ -104,7 +104,7 @@
 	</div>
 	<audio id="audio" autoplay></audio>
 	<audio id="audio-preload" muted preload></audio>
-	
+
 	<script type="text/javascript" src="conspiracy.js?v=4"></script>
 </body>
 </html>

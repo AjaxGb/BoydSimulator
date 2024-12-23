@@ -6,7 +6,7 @@ from the game *Psychonauts*.
 http://www.soltoder.com/BoydSimulator/
 
 *Psychonauts* generates Boyd's theories using 202 sentence fragments, each of which has
-two variants (one for outside of Boyd's mind, and one for inside) giving a total of 404
+two variants (one calmer, and one more agitated) giving a total of 404
 voice clips. The fragments are randomly assembled using the following structure:
 
 ![Flowchart of sentence structure](flowchart.png)

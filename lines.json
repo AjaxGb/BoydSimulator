@@ -1,1083 +1,1076 @@
 {
-	"index": {
+	"sentence_start": "subject",
+	"prebuilts": "aside",
+	"mixins": "interjection",
+	"categories": {
 		"subject": {
-			"lengthFactor": 0,
-			"next": ["subjectConnector", "transitiveVerb", "intransitiveVerb"]
+			"length_factor": 0,
+			"next": ["subject_connector", "transitive_verb", "intransitive_verb"],
+			"fragments": [
+				{
+					"id": 1,
+					"text": "the Milkman"
+				},
+				{
+					"id": 2,
+					"text": {
+						"calm": "those little green cops",
+						"wild": "those little green cops, they"
+					}
+				},
+				{
+					"id": 3,
+					"text": "the military industrial complex"
+				},
+				{
+					"id": 4,
+					"text": {
+						"calm": "the suits",
+						"wild": "the suits, they"
+					}
+				},
+				{
+					"id": 5,
+					"text": "the analyticals, man,"
+				},
+				{
+					"id": 6,
+					"text": "those Bermuda Triangle sharks"
+				},
+				{
+					"id": 7,
+					"text": "all them haters"
+				},
+				{
+					"id": 8,
+					"text": "Hernando"
+				},
+				{
+					"id": 9,
+					"text": {
+						"calm": "that little fat kid, with the bunny,",
+						"wild": "that little fat kid with the bunny, he"
+					}
+				},
+				{
+					"id": 10,
+					"text": "the doctors back at the clinic"
+				},
+				{
+					"id": 11,
+					"text": "the pelicans"
+				},
+				{
+					"id": 12,
+					"text": "the squirrels"
+				},
+				{
+					"id": 13,
+					"text": "the manager of that boy band"
+				},
+				{
+					"id": 14,
+					"text": "those eggheads in their ivory tower"
+				},
+				{
+					"id": 15,
+					"text": "that guy with the eyepatch"
+				},
+				{
+					"id": 16,
+					"text": "the Psycho-whatsits"
+				},
+				{
+					"id": 17,
+					"text": "the freaky hunchback girl who loves brains so much"
+				},
+				{
+					"id": 18,
+					"text": "the dairy industry"
+				},
+				{
+					"id": 19,
+					"text": "the kid with the goggles"
+				},
+				{
+					"id": 20,
+					"text": "the dogtrack regulators"
+				},
+				{
+					"id": 21,
+					"text": "the tuna canneries"
+				},
+				{
+					"id": 22,
+					"text": "the National Park system"
+				},
+				{
+					"id": 23,
+					"text": "Big Oil"
+				},
+				{
+					"id": 24,
+					"text": "organized labor"
+				},
+				{
+					"id": 25,
+					"text": "the rodeo clown cartel"
+				},
+				{
+					"id": 26,
+					"text": "the media"
+				},
+				{
+					"id": 27,
+					"text": "the cows"
+				},
+				{
+					"id": 28,
+					"text": "foreign toymakers"
+				},
+				{
+					"id": 29,
+					"text": "the dairy industry"
+				},
+				{
+					"id": 30,
+					"text": "the intelligentsia"
+				},
+				{
+					"id": 31,
+					"text": "the fluoride producers"
+				},
+				{
+					"id": 32,
+					"text": "a secret doomsday cult"
+				},
+				{
+					"id": 33,
+					"text": "the president's brother"
+				},
+				{
+					"id": 34,
+					"text": "my first cat, Seymour,"
+				},
+				{
+					"id": 35,
+					"text": {
+						"calm": "oh! one of my nostril hairs",
+						"wild": "one of my nostril hairs"
+					}
+				},
+				{
+					"id": 36,
+					"text": "the intelligence community"
+				},
+				{
+					"id": 37,
+					"text": "the five richest families in the country"
+				},
+				{
+					"id": 38,
+					"text": "all those stupid crows"
+				},
+				{
+					"id": 39,
+					"text": "some sort of power, y'know?"
+				}
+			]
 		},
-		"subjectConnector": {
-			"lengthFactor": 3,
-			"next": ["subject"]
+		"subject_connector": {
+			"length_factor": 3,
+			"next": ["subject"],
+			"fragments": [
+				{
+					"id": 40,
+					"text": "and"
+				},
+				{
+					"id": 41,
+					"text": "...or else maybe..."
+				},
+				{
+					"id": 42,
+					"text": "...no, no, wait, I mean..."
+				},
+				{
+					"id": 43,
+					"text": "in conjunction with"
+				},
+				{
+					"id": 44,
+					"text": "with the full blessing of"
+				},
+				{
+					"id": 45,
+					"text": "with the backing of"
+				},
+				{
+					"id": 46,
+					"text": "who are merely the pawns of"
+				},
+				{
+					"id": 47,
+					"text": "who are the puppet masters of"
+				}
+			]
 		},
-		"transitiveVerb": {
-			"lengthFactor": 1,
-			"next": ["object"]
+		"transitive_verb": {
+			"length_factor": 1,
+			"next": ["object"],
+			"fragments": [
+				{
+					"id": 48,
+					"text": "went to the prom with"
+				},
+				{
+					"id": 49,
+					"text": "ate a whole jar of olives with"
+				},
+				{
+					"id": 50,
+					"text": "are working for"
+				},
+				{
+					"id": 51,
+					"text": "are telling my location to"
+				},
+				{
+					"id": 52,
+					"text": "made a deal, back in '68, with"
+				},
+				{
+					"id": 53,
+					"text": "sold their soul to"
+				},
+				{
+					"id": 54,
+					"text": "are controlled by"
+				},
+				{
+					"id": 55,
+					"text": "bought votes to protect"
+				},
+				{
+					"id": 56,
+					"text": "are doing the dirty work of"
+				},
+				{
+					"id": 57,
+					"text": "got in bed with"
+				},
+				{
+					"id": 58,
+					"text": "signed a secret treaty with"
+				},
+				{
+					"id": 59,
+					"text": "has been officially linked with"
+				}
+			]
 		},
-		"intransitiveVerb": {
-			"lengthFactor": 0,
-			"next": ["verbConnector", "preposition", "conclusion", null]
+		"intransitive_verb": {
+			"length_factor": 0,
+			"next": ["verb_connector", "preposition", "conclusion", null],
+			"fragments": [
+				{
+					"id": 60,
+					"text": "know the truth"
+				},
+				{
+					"id": 61,
+					"text": "won't stop visiting me",
+					"punctuation_mark": { "wild": "!" }
+				},
+				{
+					"id": 62,
+					"text": "keep sparring with me",
+					"punctuation_mark": "!"
+				},
+				{
+					"id": 63,
+					"text": "have been spitting on me all day",
+					"punctuation_mark": "!"
+				},
+				{
+					"id": 64,
+					"text": "do this horrible thing, but in conjunction with who? Or, whom?",
+					"sentence_end": true
+				},
+				{
+					"id": 65,
+					"text": "are crawling all over my skin",
+					"punctuation_mark": { "wild": "!" }
+				},
+				{
+					"id": 66,
+					"text": "bit me all night, so I couldn't sleep",
+					"punctuation_mark": { "wild": "!" }
+				},
+				{
+					"id": 67,
+					"text": "have everyone fooled",
+					"punctuation_mark": { "wild": "!" }
+				},
+				{
+					"id": 68,
+					"text": "were digging away at the plastics"
+				},
+				{
+					"id": 69,
+					"text": "were dialing in through the optics"
+				},
+				{
+					"id": 70,
+					"text": "stole my theories and reprinted them—incorrectly—to discredit them",
+					"punctuation_mark": { "wild": "!" }
+				},
+				{
+					"id": 71,
+					"text": "are not to be trusted",
+					"punctuation_mark": "!"
+				},
+				{
+					"id": 72,
+					"text": "have been living off the teat of the dairy industry",
+					"punctuation_mark": { "wild": "!" }
+				},
+				{
+					"id": 73,
+					"text": "have been fixing oil prices",
+					"punctuation_mark": { "wild": "!" }
+				},
+				{
+					"id": 74,
+					"text": "assassinated the one man in their way"
+				},
+				{
+					"id": 75,
+					"text": "pretty much control everything",
+					"punctuation_mark": { "wild": "!" }
+				},
+				{
+					"id": 76,
+					"text": {
+						"calm": "pick who lives, and who dies, and what the football scores are going to be every week",
+						"wild": "pick who lives, who dies, what the football scores are going to be every week"
+					},
+					"punctuation_mark": { "wild": "!" }
+				}
+			]
 		},
-		"verbConnector": {
-			"lengthFactor": 5,
-			"next": ["transitiveVerb", "intransitiveVerb"]
+		"verb_connector": {
+			"length_factor": 5,
+			"next": ["transitive_verb", "intransitive_verb"],
+			"fragments": [
+				{
+					"id": 77,
+					"text": {
+						"calm": "and they obviously",
+						"wild": "they obviously"
+					}
+				},
+				{
+					"id": 78,
+					"text": {
+						"calm": "I know they",
+						"wild": "and I know they"
+					}
+				},
+				{
+					"id": 79,
+					"text": "but they can't hide that they"
+				},
+				{
+					"id": 80,
+					"text": "Ha! Like I don't know that they",
+					"sentence_start": true
+				},
+				{
+					"id": 81,
+					"text": "and let's just say for now that they"
+				},
+				{
+					"id": 82,
+					"text": {
+						"calm": "if I know anything, I know that they",
+						"wild": "and, if I know anything, I know that they"
+					}
+				},
+				{
+					"id": 83,
+					"text": "and sure as the nose on my face, I am sure they"
+				}
+			]
 		},
 		"preposition": {
-			"lengthFactor": 3,
-			"next": ["object"]
+			"length_factor": 3,
+			"next": ["object"],
+			"fragments": [
+				{
+					"id": 84,
+					"text": "to get"
+				},
+				{
+					"id": 85,
+					"text": "because they want"
+				},
+				{
+					"id": 86,
+					"text": "in order to monopolize"
+				},
+				{
+					"id": 87,
+					"text": "to keep down"
+				},
+				{
+					"id": 88,
+					"text": "so the people never find out about"
+				},
+				{
+					"id": 89,
+					"text": "and who wins? Them. Who loses?",
+					"sentence_end": true
+				},
+				{
+					"id": 90,
+					"text": "all in a big fight over"
+				}
+			]
 		},
 		"object": {
-			"lengthFactor": 0,
-			"next": ["verbConnector", "preposition", "conclusion", null]
+			"length_factor": 0,
+			"next": ["verb_connector", "preposition", "conclusion", null],
+			"fragments": [
+				{
+					"id": 91,
+					"text": "the truth"
+				},
+				{
+					"id": 92,
+					"text": "all of us"
+				},
+				{
+					"id": 93,
+					"text": "the whole sack of lies"
+				},
+				{
+					"id": 94,
+					"text": "the innocents"
+				},
+				{
+					"id": 95,
+					"text": "the biggest conspiracy of all"
+				},
+				{
+					"id": 96,
+					"text": "the infrastructure"
+				},
+				{
+					"id": 97,
+					"text": "the lap belt man"
+				},
+				{
+					"id": 98,
+					"text": "the water supply"
+				},
+				{
+					"id": 99,
+					"text": "the rotundra"
+				},
+				{
+					"id": 100,
+					"text": "the AM Tenderizer"
+				},
+				{
+					"id": 101,
+					"text": "last specimen of the supervirus"
+				},
+				{
+					"id": 102,
+					"text": "the witnesses"
+				},
+				{
+					"id": 103,
+					"text": "my hooch",
+					"punctuation_mark": { "wild": "!" }
+				},
+				{
+					"id": 104,
+					"text": "the hanging udders"
+				},
+				{
+					"id": 105,
+					"text": "a clean-burning perpetual energy source"
+				},
+				{
+					"id": 106,
+					"text": "a religious artifact with supposedly unimaginable powers"
+				},
+				{
+					"id": 107,
+					"text": "exactly what, nobody knows"
+				}
+			]
 		},
 		"conclusion": {
-			"lengthFactor": 0,
-			"next": [null]
+			"length_factor": 0,
+			"next": [null],
+			"fragments": [
+				{
+					"id": 108,
+					"text": "How long do they think they can hide that?",
+					"sentence_start": true,
+					"sentence_end": true
+				},
+				{
+					"id": 109,
+					"text": "I mean, who do they think they're fooling?",
+					"sentence_start": true,
+					"sentence_end": true
+				},
+				{
+					"id": 110,
+					"text": "Can I really be the only person who sees this?",
+					"sentence_start": true,
+					"sentence_end": true
+				},
+				{
+					"id": 111,
+					"text": "Someone has to get this information to the people.",
+					"sentence_start": true,
+					"sentence_end": true
+				},
+				{
+					"id": 112,
+					"text": {
+						"calm": "If they find out I know this stuff, I'm dead.",
+						"wild": "And if they find out I know this stuff, I'm dead."
+					},
+					"sentence_start": true,
+					"sentence_end": true
+				},
+				{
+					"id": 113,
+					"text": "Oh man, this stuff is hot.",
+					"sentence_start": true,
+					"sentence_end": true
+				},
+				{
+					"id": 114,
+					"text": "since the year \"dot\".",
+					"sentence_end": true
+				},
+				{
+					"id": 115,
+					"text": "right under people's noses!",
+					"sentence_end": true
+				},
+				{
+					"id": 116,
+					"text": "and nobody seems to care!",
+					"sentence_end": true
+				}
+			]
+		},
+		"aside": {
+			"length_factor": 0,
+			"next": [null],
+			"fragments": [
+				{
+					"id": 108,
+					"text": "How long do they think they can hide that?",
+					"punctuate": false
+				},
+				{
+					"id": 109,
+					"text": "I mean, who do they think they're fooling?",
+					"punctuate": false
+				},
+				{
+					"id": 110,
+					"text": "Can I really be the only person who sees this?",
+					"punctuate": false
+				},
+				{
+					"id": 111,
+					"text": "Someone has to get this information to the people.",
+					"punctuate": false
+				},
+				{
+					"id": 112,
+					"text": {
+						"calm": "If they find out I know this stuff, I'm dead.",
+						"wild": "And if they find out I know this stuff, I'm dead."
+					},
+					"punctuate": false
+				},
+				{
+					"id": 113,
+					"text": "Oh man, this stuff is hot.",
+					"punctuate": false
+				},
+				{
+					"id": 117,
+					"text": "Visiting hours are over!",
+					"punctuate": false
+				},
+				{
+					"id": 118,
+					"text": "Why does that hydrant keep looking at me?",
+					"punctuate": false
+				},
+				{
+					"id": 119,
+					"text": {
+						"calm": "You can pass it over the counter, but that doesn't make it \"over the counter.\"",
+						"wild": "You can pass it over the counter, but that don't make it \"over the counter!\""
+					},
+					"punctuate": false
+				},
+				{
+					"id": 120,
+					"text": "No insubordination, right boss? Right?",
+					"punctuate": false
+				},
+				{
+					"id": 121,
+					"text": "Okay, boss?",
+					"punctuate": false
+				},
+				{
+					"id": 122,
+					"text": "Hey, where is the boss?",
+					"punctuate": false
+				},
+				{
+					"id": 123,
+					"text": "Ignore it, Cooper.",
+					"punctuate": false
+				},
+				{
+					"id": 124,
+					"text": "I have to get rid of some of this stuff.",
+					"punctuate": false
+				},
+				{
+					"id": 125,
+					"text": "I have to stay focused.",
+					"punctuate": false
+				},
+				{
+					"id": 126,
+					"text": "No distractions!",
+					"punctuate": false
+				},
+				{
+					"id": 127,
+					"text": "What?",
+					"punctuate": false
+				},
+				{
+					"id": 128,
+					"text": "No, that doesn't fit. That doesn't fit at all!",
+					"punctuate": false
+				},
+				{
+					"id": 129,
+					"text": {
+						"calm": "Well, maybe if I forget about that other part...",
+						"wild": "Well, maybe if I forget about the other part..."
+					},
+					"punctuate": false
+				},
+				{
+					"id": 130,
+					"text": "Wait, why did I say that?",
+					"punctuate": false
+				},
+				{
+					"id": 131,
+					"text": "Oh Boyd, you've got this all wrong.",
+					"punctuate": false
+				},
+				{
+					"id": 132,
+					"text": "Did I just think that? Or did someone make me think it?",
+					"punctuate": false
+				},
+				{
+					"id": 133,
+					"text": "But when that happens, they turn it into chocolate milk, and nobody can tell the difference.",
+					"punctuate": false
+				},
+				{
+					"id": 134,
+					"text": "You know what I mean? \"Amounts\" \"tendered\"? Yeah?",
+					"punctuate": false
+				},
+				{
+					"id": 135,
+					"text": "The squirrels have eyes.",
+					"punctuate": false
+				},
+				{
+					"id": 136,
+					"text": "Listen to me. Listen to me! LISTEN TO ME!",
+					"punctuate": false
+				},
+				{
+					"id": 137,
+					"text": "Shut up. Shut up. Shut up!",
+					"punctuate": false
+				},
+				{
+					"id": 138,
+					"text": "Shhh! No, wait. Say that again?",
+					"punctuate": false
+				},
+				{
+					"id": 139,
+					"text": {
+						"calm": "They think the windows are tinted. But they ain't tinted nearly enough! Hyeh.",
+						"wild": "They think the windows are tinted. But they aren't tinted nearly enough!"
+					},
+					"punctuate": false
+				},
+				{
+					"id": 140,
+					"text": "Of course the milk's got spiderwebs in it. Taste it!",
+					"punctuate": false
+				},
+				{
+					"id": 141,
+					"text": "I scream, you scream, we all scream... we all scream!",
+					"punctuate": false
+				},
+				{
+					"id": 142,
+					"text": "The ice cream's in the web. The web is in the cream!",
+					"punctuate": false
+				},
+				{
+					"id": 143,
+					"text": "Oh, you think that's regular yarn, do you?",
+					"punctuate": false
+				},
+				{
+					"id": 144,
+					"text": "They come, they whisper, they watch, they chop, chop, chop!",
+					"punctuate": false
+				},
+				{
+					"id": 145,
+					"text": "What's that on your head? That's no hat. Maybe you could tell your hat to shut up? Or at least ask me the right questions?",
+					"punctuate": false
+				},
+				{
+					"id": 146,
+					"text": "I wonder if I'm on camera right now. Ha! What, am I crazy? Of course I am.",
+					"punctuate": false
+				},
+				{
+					"id": 147,
+					"text": "Hi mom! Look at me! I'm tangled in a web of deception. How's Uncle G?",
+					"punctuate": false
+				},
+				{
+					"id": 148,
+					"text": "G-Man, who are you working for? Who is G?",
+					"punctuate": false
+				},
+				{
+					"id": 149,
+					"text": "G-Man, Go-Man, Goat-Man... I thought you worked for me.",
+					"punctuate": false
+				},
+				{
+					"id": 150,
+					"text": "My father, he was a good man. But he served a cruel master!",
+					"punctuate": false
+				},
+				{
+					"id": 151,
+					"text": "Mom, are you sure these are your children?",
+					"punctuate": false
+				},
+				{
+					"id": 152,
+					"text": "These are not my dot-to-dots. These are not my babies!",
+					"punctuate": false
+				},
+				{
+					"id": 153,
+					"text": "But of course you know all this, because you're Australian!",
+					"punctuate": false
+				},
+				{
+					"id": 154,
+					"text": "And then it comes out of those wires over there, and goes straight into my head, with all its little audio tricks!",
+					"punctuate": false
+				},
+				{
+					"id": 155,
+					"text": "I don't want to be a lead weight on the table.",
+					"punctuate": false
+				},
+				{
+					"id": 156,
+					"text": "I see myself more as a turtle with a rocket strapped to its back.",
+					"punctuate": false
+				},
+				{
+					"id": 157,
+					"text": "And he waits, and he waits.",
+					"punctuate": false
+				},
+				{
+					"id": 158,
+					"text": "This milk can't stay fresh forever!",
+					"punctuate": false
+				},
+				{
+					"id": 159,
+					"text": "Something's got to give!",
+					"punctuate": false
+				},
+				{
+					"id": 160,
+					"text": "How many are there? I count fourteen, but that's not the number on my hand! That's not the number on my neck!",
+					"punctuate": false
+				},
+				{
+					"id": 161,
+					"text": "The truth lives in a small house on the edge of town.",
+					"punctuate": false
+				},
+				{
+					"id": 162,
+					"text": "The truth is sleeping in a glass box.",
+					"punctuate": false
+				},
+				{
+					"id": 163,
+					"text": "The truth is a colorful diamond.",
+					"punctuate": false
+				},
+				{
+					"id": 164,
+					"text": "I'm dropping out of this yogurt convention. There's no fruit at the bottom!",
+					"punctuate": false
+				},
+				{
+					"id": 165,
+					"text": "Hey, lady, where are you going with that sweater!?",
+					"punctuate": false
+				},
+				{
+					"id": 166,
+					"text": {
+						"calm": "Think you could get this past me? I'm the guard.",
+						"wild": "What, you think— think you could get this past me? I'm the guard."
+					},
+					"punctuate": false
+				},
+				{
+					"id": 167,
+					"text": "I've got the truth. It's tucked in my cheeks! I'm not going to eat it right now.",
+					"punctuate": false
+				},
+				{
+					"id": 168,
+					"text": "Are you buying? Or are you spying?",
+					"punctuate": false
+				},
+				{
+					"id": 169,
+					"text": "This is ugly. It's like a cyclops with a million eyes!",
+					"punctuate": false
+				},
+				{
+					"id": 170,
+					"text": "The fire will start in menswear!",
+					"punctuate": false
+				},
+				{
+					"id": 171,
+					"text": "But what if the signal comes early?",
+					"punctuate": false
+				},
+				{
+					"id": 172,
+					"text": "The meaty bit, in the middle of this wonton? It's me.",
+					"punctuate": false
+				},
+				{
+					"id": 173,
+					"text": "Hey, don't worry about me. I'm centered. I'm the whole center, in fact.",
+					"punctuate": false
+				},
+				{
+					"id": 174,
+					"text": {
+						"calm": "Am I? Or is he? Am I he? What's he doing in my house?",
+						"wild": "Am I? Or is he? Am I he? What is he? Doing in my house!?"
+					},
+					"punctuate": false
+				},
+				{
+					"id": 175,
+					"text": "Someone moved into my neighborhood uninvited.",
+					"punctuate": false
+				},
+				{
+					"id": 176,
+					"text": "The housing committee is not going to like this.",
+					"punctuate": false
+				},
+				{
+					"id": 177,
+					"text": "They should paint their garage door the same color as everybody else's.",
+					"punctuate": false
+				},
+				{
+					"id": 178,
+					"text": "I'm locked on the outside and I'm locked on the inside.",
+					"punctuate": false
+				},
+				{
+					"id": 179,
+					"text": "And the little girl stuck her finger in the dike and saved all the windmills. But who does the little girl work for?",
+					"punctuate": false
+				},
+				{
+					"id": 180,
+					"text": "Hey, little girl, get your finger out of there!",
+					"punctuate": false
+				},
+				{
+					"id": 181,
+					"text": "Hahaha, I know what you're up to.",
+					"punctuate": false
+				},
+				{
+					"id": 182,
+					"text": "You've got the skates, but I've got the key.",
+					"punctuate": false
+				},
+				{
+					"id": 183,
+					"text": {
+						"calm": "Who is the Milkman?",
+						"wild": "Who's the Milkman?"
+					},
+					"punctuate": false
+				},
+				{
+					"id": 184,
+					"text": "You know my house is clean, right? Right, boss?",
+					"punctuate": false
+				},
+				{
+					"id": 185,
+					"text": "Get off of me!",
+					"punctuate": false
+				},
+				{
+					"id": 186,
+					"text": "I don't want any half-and-half. I'm already half-and-half.",
+					"punctuate": false
+				},
+				{
+					"id": 187,
+					"text": "If I'm invisible, then why is everyone looking at me?",
+					"punctuate": false
+				}
+			]
+		},
+		"interjection": {
+			"length_factor": 0,
+			"next": [null],
+			"fragments": [
+				{
+					"id": 188,
+					"text": "*chuckles*",
+					"punctuate": false
+				},
+				{
+					"id": 189,
+					"text": "(Ho ho!)",
+					"punctuate": false
+				},
+				{
+					"id": 190,
+					"text": "(Wait...)",
+					"punctuate": false
+				},
+				{
+					"id": 191,
+					"text": "(Uh...)",
+					"punctuate": false
+				},
+				{
+					"id": 192,
+					"text": {
+						"calm": "(Um...)",
+						"wild": "(Uh...)"
+					},
+					"punctuate": false
+				},
+				{
+					"id": 193,
+					"text": "*cough*",
+					"punctuate": false
+				},
+				{
+					"id": 194,
+					"text": "(Uh...)",
+					"punctuate": false
+				},
+				{
+					"id": 195,
+					"text": "(Hmm...)",
+					"punctuate": false
+				},
+				{
+					"id": 196,
+					"text": "(Ha!)",
+					"punctuate": false
+				},
+				{
+					"id": 197,
+					"text": "(Yeah, yeah, yeah...)",
+					"punctuate": false
+				},
+				{
+					"id": 198,
+					"text": "(What?)",
+					"punctuate": false
+				},
+				{
+					"id": 199,
+					"text": "(No, no, nonono...)",
+					"punctuate": false
+				},
+				{
+					"id": 200,
+					"text": "(Okay, okay but...)",
+					"punctuate": false
+				},
+				{
+					"id": 201,
+					"text": "(Huh?)",
+					"punctuate": false
+				},
+				{
+					"id": 202,
+					"text": {
+						"calm": "(Right...)",
+						"wild": "(Oh-hoh, RIGHT...)"
+					},
+					"punctuate": false
+				}
+			]
 		}
-	},
-	"subject": [
-		{
-			"index": 1,
-			"text": "the Milkman"
-		},
-		{
-			"index": 2,
-			"text": "those little green cops",
-			"wild": {
-				"text": "those little green cops, they"
-			}
-		},
-		{
-			"index": 3,
-			"text": "the military industrial complex"
-		},
-		{
-			"index": 4,
-			"text": "the suits",
-			"wild": {
-				"text": "the suits, they"
-			}
-		},
-		{
-			"index": 5,
-			"text": "the analyticals, man,"
-		},
-		{
-			"index": 6,
-			"text": "those Bermuda Triangle sharks"
-		},
-		{
-			"index": 7,
-			"text": "all them haters"
-		},
-		{
-			"index": 8,
-			"text": "Hernando"
-		},
-		{
-			"index": 9,
-			"text": "that little fat kid, with the bunny,",
-			"wild": {
-				"text": "that little fat kid with the bunny, he"
-			}
-		},
-		{
-			"index": 10,
-			"text": "the doctors back at the clinic"
-		},
-		{
-			"index": 11,
-			"text": "the pelicans"
-		},
-		{
-			"index": 12,
-			"text": "the squirrels"
-		},
-		{
-			"index": 13,
-			"text": "the manager of that boy band"
-		},
-		{
-			"index": 14,
-			"text": "those eggheads in their ivory tower"
-		},
-		{
-			"index": 15,
-			"text": "that guy with the eyepatch"
-		},
-		{
-			"index": 16,
-			"text": "the Psycho-whatsits"
-		},
-		{
-			"index": 17,
-			"text": "the freaky hunchback girl who loves brains so much"
-		},
-		{
-			"index": 18,
-			"text": "the dairy industry"
-		},
-		{
-			"index": 19,
-			"text": "the kid with the goggles"
-		},
-		{
-			"index": 20,
-			"text": "the dogtrack regulators"
-		},
-		{
-			"index": 21,
-			"text": "the tuna canneries"
-		},
-		{
-			"index": 22,
-			"text": "the National Park system"
-		},
-		{
-			"index": 23,
-			"text": "Big Oil"
-		},
-		{
-			"index": 24,
-			"text": "organized labor"
-		},
-		{
-			"index": 25,
-			"text": "the rodeo clown cartel"
-		},
-		{
-			"index": 26,
-			"text": "the media"
-		},
-		{
-			"index": 27,
-			"text": "the cows"
-		},
-		{
-			"index": 28,
-			"text": "foreign toymakers"
-		},
-		{
-			"index": 29,
-			"text": "the dairy industry"
-		},
-		{
-			"index": 30,
-			"text": "the intelligentsia"
-		},
-		{
-			"index": 31,
-			"text": "the fluoride producers"
-		},
-		{
-			"index": 32,
-			"text": "a secret doomsday cult"
-		},
-		{
-			"index": 33,
-			"text": "the president's brother"
-		},
-		{
-			"index": 34,
-			"text": "my first cat, Seymour,"
-		},
-		{
-			"index": 35,
-			"text": "oh! one of my nostril hairs",
-			"wild": {
-				"text": "one of my nostril hairs"
-			}
-		},
-		{
-			"index": 36,
-			"text": "the intelligence community"
-		},
-		{
-			"index": 37,
-			"text": "the five richest families in the country"
-		},
-		{
-			"index": 38,
-			"text": "all those stupid crows"
-		},
-		{
-			"index": 39,
-			"text": "some sort of power, y'know?"
-		}
-	],
-	"subjectConnector": [
-		{
-			"index": 40,
-			"text": "and"
-		},
-		{
-			"index": 41,
-			"text": "...or else maybe..."
-		},
-		{
-			"index": 42,
-			"text": "...no, no, wait, I mean..."
-		},
-		{
-			"index": 43,
-			"text": "in conjunction with"
-		},
-		{
-			"index": 44,
-			"text": "with the full blessing of"
-		},
-		{
-			"index": 45,
-			"text": "with the backing of"
-		},
-		{
-			"index": 46,
-			"text": "who are merely the pawns of"
-		},
-		{
-			"index": 47,
-			"text": "who are the puppet masters of"
-		}
-	],
-	"transitiveVerb": [
-		{
-			"index": 48,
-			"text": "went to the prom with"
-		},
-		{
-			"index": 49,
-			"text": "ate a whole jar of olives with"
-		},
-		{
-			"index": 50,
-			"text": "are working for"
-		},
-		{
-			"index": 51,
-			"text": "are telling my location to"
-		},
-		{
-			"index": 52,
-			"text": "made a deal, back in '68, with"
-		},
-		{
-			"index": 53,
-			"text": "sold their soul to"
-		},
-		{
-			"index": 54,
-			"text": "are controlled by"
-		},
-		{
-			"index": 55,
-			"text": "bought votes to protect"
-		},
-		{
-			"index": 56,
-			"text": "are doing the dirty work of"
-		},
-		{
-			"index": 57,
-			"text": "got in bed with"
-		},
-		{
-			"index": 58,
-			"text": "signed a secret treaty with"
-		},
-		{
-			"index": 59,
-			"text": "has been officially linked with"
-		}
-	],
-	"intransitiveVerb": [
-		{
-			"index": 60,
-			"text": "know the truth"
-		},
-		{
-			"index": 61,
-			"text": "won't stop visiting me",
-			"wild": {
-				"end_punctuation": "!"
-			}
-		},
-		{
-			"index": 62,
-			"text": "keep sparring with me",
-			"end_punctuation": "!"
-		},
-		{
-			"index": 63,
-			"text": "have been spitting on me all day",
-			"end_punctuation": "!"
-		},
-		{
-			"index": 64,
-			"text": "do this horrible thing, but in conjunction with who? Or, whom?",
-			"pre_punctuated": true
-		},
-		{
-			"index": 65,
-			"text": "are crawling all over my skin",
-			"wild": {
-				"end_punctuation": "!"
-			}
-		},
-		{
-			"index": 66,
-			"text": "bit me all night, so I couldn't sleep",
-			"wild": {
-				"end_punctuation": "!"
-			}
-		},
-		{
-			"index": 67,
-			"text": "have everyone fooled",
-			"wild": {
-				"end_punctuation": "!"
-			}
-		},
-		{
-			"index": 68,
-			"text": "were digging away at the plastics"
-		},
-		{
-			"index": 69,
-			"text": "were dialing in through the optics"
-		},
-		{
-			"index": 70,
-			"text": "stole my theories and reprinted them—incorrectly—to discredit them",
-			"wild": {
-				"end_punctuation": "!"
-			}
-		},
-		{
-			"index": 71,
-			"text": "are not to be trusted",
-			"end_punctuation": "!"
-		},
-		{
-			"index": 72,
-			"text": "have been living off the teat of the dairy industry",
-			"wild": {
-				"end_punctuation": "!"
-			}
-		},
-		{
-			"index": 73,
-			"text": "have been fixing oil prices",
-			"wild": {
-				"end_punctuation": "!"
-			}
-		},
-		{
-			"index": 74,
-			"text": "assassinated the one man in their way"
-		},
-		{
-			"index": 75,
-			"text": "pretty much control everything",
-			"wild": {
-				"end_punctuation": "!"
-			}
-		},
-		{
-			"index": 76,
-			"text": "pick who lives, and who dies, and what the football scores are going to be every week",
-			"wild": {
-				"text": "pick who lives, who dies, what the football scores are going to be every week",
-				"end_punctuation": "!"
-			}
-		}
-	],
-	"verbConnector": [
-		{
-			"index": 77,
-			"text": "and they obviously",
-			"wild": {
-				"text": "they obviously"
-			}
-		},
-		{
-			"index": 78,
-			"text": "I know they",
-			"wild": {
-				"text": "and I know they"
-			}
-		},
-		{
-			"index": 79,
-			"text": "but they can't hide that they"
-		},
-		{
-			"index": 80,
-			"text": "Ha! Like I don't know that they",
-			"new_sentence": true
-		},
-		{
-			"index": 81,
-			"text": "and let's just say for now that they"
-		},
-		{
-			"index": 82,
-			"text": "if I know anything, I know that they",
-			"wild": {
-				"text": "and, if I know anything, I know that they"
-			}
-		},
-		{
-			"index": 83,
-			"text": "and sure as the nose on my face, I am sure they"
-		}
-	],
-	"preposition": [
-		{
-			"index": 84,
-			"text": "to get"
-		},
-		{
-			"index": 85,
-			"text": "because they want"
-		},
-		{
-			"index": 86,
-			"text": "in order to monopolize"
-		},
-		{
-			"index": 87,
-			"text": "to keep down"
-		},
-		{
-			"index": 88,
-			"text": "so the people never find out about"
-		},
-		{
-			"index": 89,
-			"text": "and who wins? Them. Who loses?",
-			"end_sentence": true
-		},
-		{
-			"index": 90,
-			"text": "all in a big fight over"
-		}
-	],
-	"object": [
-		{
-			"index": 91,
-			"text": "the truth"
-		},
-		{
-			"index": 92,
-			"text": "all of us"
-		},
-		{
-			"index": 93,
-			"text": "the whole sack of lies"
-		},
-		{
-			"index": 94,
-			"text": "the innocents"
-		},
-		{
-			"index": 95,
-			"text": "the biggest conspiracy of all"
-		},
-		{
-			"index": 96,
-			"text": "the infrastructure"
-		},
-		{
-			"index": 97,
-			"text": "the lap belt man"
-		},
-		{
-			"index": 98,
-			"text": "the water supply"
-		},
-		{
-			"index": 99,
-			"text": "the rotundra"
-		},
-		{
-			"index": 100,
-			"text": "the AM Tenderizer"
-		},
-		{
-			"index": 101,
-			"text": "last specimen of the supervirus"
-		},
-		{
-			"index": 102,
-			"text": "the witnesses"
-		},
-		{
-			"index": 103,
-			"text": "my hooch",
-			"wild": {
-				"end_punctuation": "!"
-			}
-		},
-		{
-			"index": 104,
-			"text": "the hanging udders"
-		},
-		{
-			"index": 105,
-			"text": "a clean-burning perpetual energy source"
-		},
-		{
-			"index": 106,
-			"text": "a religious artifact with supposedly unimaginable powers"
-		},
-		{
-			"index": 107,
-			"text": "exactly what, nobody knows"
-		}
-	],
-	"conclusion": [
-		{
-			"index": 108,
-			"text": "How long do they think they can hide that?",
-			"new_sentence": true,
-			"pre_punctuated": true
-		},
-		{
-			"index": 109,
-			"text": "I mean, who do they think they're fooling?",
-			"new_sentence": true,
-			"pre_punctuated": true
-		},
-		{
-			"index": 110,
-			"text": "Can I really be the only person who sees this?",
-			"new_sentence": true,
-			"pre_punctuated": true
-		},
-		{
-			"index": 111,
-			"text": "Someone has to get this information to the people.",
-			"new_sentence": true,
-			"pre_punctuated": true
-		},
-		{
-			"index": 112,
-			"text": "If they find out I know this stuff, I'm dead.",
-			"new_sentence": true,
-			"pre_punctuated": true,
-			"wild": {
-				"text": "And if they find out I know this stuff, I'm dead."
-			}
-		},
-		{
-			"index": 113,
-			"text": "Oh man, this stuff is hot.",
-			"new_sentence": true,
-			"pre_punctuated": true
-		},
-		{
-			"index": 114,
-			"text": "since the year \"dot\".",
-			"pre_punctuated": true
-		},
-		{
-			"index": 115,
-			"text": "right under people's noses!",
-			"pre_punctuated": true
-		},
-		{
-			"index": 116,
-			"text": "and nobody seems to care!",
-			"pre_punctuated": true
-		}
-	],
-	"aside": [
-		{
-			"index": 108,
-			"text": "How long do they think they can hide that?",
-			"ignore": true
-		},
-		{
-			"index": 109,
-			"text": "I mean, who do they think they're fooling?",
-			"ignore": true
-		},
-		{
-			"index": 110,
-			"text": "Can I really be the only person who sees this?",
-			"ignore": true
-		},
-		{
-			"index": 111,
-			"text": "Someone has to get this information to the people.",
-			"ignore": true
-		},
-		{
-			"index": 112,
-			"text": "If they find out I know this stuff, I'm dead.",
-			"ignore": true,
-			"wild": {
-				"text": "And if they find out I know this stuff, I'm dead."
-			}
-		},
-		{
-			"index": 113,
-			"text": "Oh man, this stuff is hot.",
-			"ignore": true
-		},
-		{
-			"index": 117,
-			"text": "Visiting hours are over!",
-			"ignore": true
-		},
-		{
-			"index": 118,
-			"text": "Why does that hydrant keep looking at me?",
-			"ignore": true
-		},
-		{
-			"index": 119,
-			"text": "You can pass it over the counter, but that doesn't make it \"over the counter.\"",
-			"ignore": true,
-			"wild": {
-				"text": "You can pass it over the counter, but that don't make it \"over the counter!\""
-			}
-		},
-		{
-			"index": 120,
-			"text": "No insubordination, right boss? Right?",
-			"ignore": true
-		},
-		{
-			"index": 121,
-			"text": "Okay, boss?",
-			"ignore": true
-		},
-		{
-			"index": 122,
-			"text": "Hey, where is the boss?",
-			"ignore": true
-		},
-		{
-			"index": 123,
-			"text": "Ignore it, Cooper.",
-			"ignore": true
-		},
-		{
-			"index": 124,
-			"text": "I have to get rid of some of this stuff.",
-			"ignore": true
-		},
-		{
-			"index": 125,
-			"text": "I have to stay focused.",
-			"ignore": true
-		},
-		{
-			"index": 126,
-			"text": "No distractions!",
-			"ignore": true
-		},
-		{
-			"index": 127,
-			"text": "What?",
-			"ignore": true
-		},
-		{
-			"index": 128,
-			"text": "No, that doesn't fit. That doesn't fit at all!",
-			"ignore": true
-		},
-		{
-			"index": 129,
-			"text": "Well, maybe if I forget about that other part...",
-			"ignore": true,
-			"wild": {
-				"text": "Well, maybe if I forget about the other part..."
-			}
-		},
-		{
-			"index": 130,
-			"text": "Wait, why did I say that?",
-			"ignore": true
-		},
-		{
-			"index": 131,
-			"text": "Oh Boyd, you've got this all wrong.",
-			"ignore": true
-		},
-		{
-			"index": 132,
-			"text": "Did I just think that? Or did someone make me think it?",
-			"ignore": true
-		},
-		{
-			"index": 133,
-			"text": "But when that happens, they turn it into chocolate milk, and nobody can tell the difference.",
-			"ignore": true
-		},
-		{
-			"index": 134,
-			"text": "You know what I mean? \"Amounts\" \"tendered\"? Yeah?",
-			"ignore": true
-		},
-		{
-			"index": 135,
-			"text": "The squirrels have eyes.",
-			"ignore": true
-		},
-		{
-			"index": 136,
-			"text": "Listen to me. Listen to me! LISTEN TO ME!",
-			"ignore": true
-		},
-		{
-			"index": 137,
-			"text": "Shut up. Shut up. Shut up!",
-			"ignore": true
-		},
-		{
-			"index": 138,
-			"text": "Shhh! No, wait. Say that again?",
-			"ignore": true
-		},
-		{
-			"index": 139,
-			"text": "They think the windows are tinted. But they ain't tinted nearly enough! Hyeh.",
-			"ignore": true,
-			"wild": {
-				"text": "They think the windows are tinted. But they aren't tinted nearly enough!"
-			}
-		},
-		{
-			"index": 140,
-			"text": "Of course the milk's got spiderwebs in it. Taste it!",
-			"ignore": true
-		},
-		{
-			"index": 141,
-			"text": "I scream, you scream, we all scream... we all scream!",
-			"ignore": true
-		},
-		{
-			"index": 142,
-			"text": "The ice cream's in the web. The web is in the cream!",
-			"ignore": true
-		},
-		{
-			"index": 143,
-			"text": "Oh, you think that's regular yarn, do you?",
-			"ignore": true
-		},
-		{
-			"index": 144,
-			"text": "They come, they whisper, they watch, they chop, chop, chop!",
-			"ignore": true
-		},
-		{
-			"index": 145,
-			"text": "What's that on your head? That's no hat. Maybe you could tell your hat to shut up? Or at least ask me the right questions?",
-			"ignore": true
-		},
-		{
-			"index": 146,
-			"text": "I wonder if I'm on camera right now. Ha! What, am I crazy? Of course I am.",
-			"ignore": true
-		},
-		{
-			"index": 147,
-			"text": "Hi mom! Look at me! I'm tangled in a web of deception. How's Uncle G?",
-			"ignore": true
-		},
-		{
-			"index": 148,
-			"text": "G-Man, who are you working for? Who is G?",
-			"ignore": true
-		},
-		{
-			"index": 149,
-			"text": "G-Man, Go-Man, Goat-Man... I thought you worked for me.",
-			"ignore": true
-		},
-		{
-			"index": 150,
-			"text": "My father, he was a good man. But he served a cruel master!",
-			"ignore": true
-		},
-		{
-			"index": 151,
-			"text": "Mom, are you sure these are your children?",
-			"ignore": true
-		},
-		{
-			"index": 152,
-			"text": "These are not my dot-to-dots. These are not my babies!",
-			"ignore": true
-		},
-		{
-			"index": 153,
-			"text": "But of course you know all this, because you're Australian!",
-			"ignore": true
-		},
-		{
-			"index": 154,
-			"text": "And then it comes out of those wires over there, and goes straight into my head, with all its little audio tricks!",
-			"ignore": true
-		},
-		{
-			"index": 155,
-			"text": "I don't want to be a lead weight on the table.",
-			"ignore": true
-		},
-		{
-			"index": 156,
-			"text": "I see myself more as a turtle with a rocket strapped to its back.",
-			"ignore": true
-		},
-		{
-			"index": 157,
-			"text": "And he waits, and he waits.",
-			"ignore": true
-		},
-		{
-			"index": 158,
-			"text": "This milk can't stay fresh forever!",
-			"ignore": true
-		},
-		{
-			"index": 159,
-			"text": "Something's got to give!",
-			"ignore": true
-		},
-		{
-			"index": 160,
-			"text": "How many are there? I count fourteen, but that's not the number on my hand! That's not the number on my neck!",
-			"ignore": true
-		},
-		{
-			"index": 161,
-			"text": "The truth lives in a small house on the edge of town.",
-			"ignore": true
-		},
-		{
-			"index": 162,
-			"text": "The truth is sleeping in a glass box.",
-			"ignore": true
-		},
-		{
-			"index": 163,
-			"text": "The truth is a colorful diamond.",
-			"ignore": true
-		},
-		{
-			"index": 164,
-			"text": "I'm dropping out of this yogurt convention. There's no fruit at the bottom!",
-			"ignore": true
-		},
-		{
-			"index": 165,
-			"text": "Hey, lady, where are you going with that sweater!?",
-			"ignore": true
-		},
-		{
-			"index": 166,
-			"text": "Think you could get this past me? I'm the guard.",
-			"ignore": true,
-			"wild": {
-				"text": "What, you think— think you could get this past me? I'm the guard."
-			}
-		},
-		{
-			"index": 167,
-			"text": "I've got the truth. It's tucked in my cheeks! I'm not going to eat it right now.",
-			"ignore": true
-		},
-		{
-			"index": 168,
-			"text": "Are you buying? Or are you spying?",
-			"ignore": true
-		},
-		{
-			"index": 169,
-			"text": "This is ugly. It's like a cyclops with a million eyes!",
-			"ignore": true
-		},
-		{
-			"index": 170,
-			"text": "The fire will start in menswear!",
-			"ignore": true
-		},
-		{
-			"index": 171,
-			"text": "But what if the signal comes early?",
-			"ignore": true
-		},
-		{
-			"index": 172,
-			"text": "The meaty bit, in the middle of this wonton? It's me.",
-			"ignore": true
-		},
-		{
-			"index": 173,
-			"text": "Hey, don't worry about me. I'm centered. I'm the whole center, in fact.",
-			"ignore": true
-		},
-		{
-			"index": 174,
-			"text": "Am I? Or is he? Am I he? What's he doing in my house?",
-			"ignore": true,
-			"wild": {
-				"text": "Am I? Or is he? Am I he? What is he? Doing in my house!?"
-			}
-		},
-		{
-			"index": 175,
-			"text": "Someone moved into my neighborhood uninvited.",
-			"ignore": true
-		},
-		{
-			"index": 176,
-			"text": "The housing committee is not going to like this.",
-			"ignore": true
-		},
-		{
-			"index": 177,
-			"text": "They should paint their garage door the same color as everybody else's.",
-			"ignore": true
-		},
-		{
-			"index": 178,
-			"text": "I'm locked on the outside and I'm locked on the inside.",
-			"ignore": true
-		},
-		{
-			"index": 179,
-			"text": "And the little girl stuck her finger in the dike and saved all the windmills. But who does the little girl work for?",
-			"ignore": true
-		},
-		{
-			"index": 180,
-			"text": "Hey, little girl, get your finger out of there!",
-			"ignore": true
-		},
-		{
-			"index": 181,
-			"text": "Hahaha, I know what you're up to.",
-			"ignore": true
-		},
-		{
-			"index": 182,
-			"text": "You've got the skates, but I've got the key.",
-			"ignore": true
-		},
-		{
-			"index": 183,
-			"text": "Who is the Milkman?",
-			"ignore": true,
-			"wild": {
-				"text": "Who's the Milkman?"
-			}
-		},
-		{
-			"index": 184,
-			"text": "You know my house is clean, right? Right, boss?",
-			"ignore": true
-		},
-		{
-			"index": 185,
-			"text": "Get off of me!",
-			"ignore": true
-		},
-		{
-			"index": 186,
-			"text": "I don't want any half-and-half. I'm already half-and-half.",
-			"ignore": true
-		},
-		{
-			"index": 187,
-			"text": "If I'm invisible, then why is everyone looking at me?",
-			"ignore": true
-		}
-	],
-	"interjection": [
-		{
-			"index": 188,
-			"text": "*chuckles*",
-			"ignore": true
-		},
-		{
-			"index": 189,
-			"text": "(Ho ho!)",
-			"ignore": true
-		},
-		{
-			"index": 190,
-			"text": "(Wait...)",
-			"ignore": true
-		},
-		{
-			"index": 191,
-			"text": "(Uh...)",
-			"ignore": true
-		},
-		{
-			"index": 192,
-			"text": "(Um...)",
-			"ignore": true,
-			"wild": {
-				"text": "(Uh...)"
-			}
-		},
-		{
-			"index": 193,
-			"text": "*cough*",
-			"ignore": true
-		},
-		{
-			"index": 194,
-			"text": "(Uh...)",
-			"ignore": true
-		},
-		{
-			"index": 195,
-			"text": "(Hmm...)",
-			"ignore": true
-		},
-		{
-			"index": 196,
-			"text": "(Ha!)",
-			"ignore": true
-		},
-		{
-			"index": 197,
-			"text": "(Yeah, yeah, yeah...)",
-			"ignore": true
-		},
-		{
-			"index": 198,
-			"text": "(What?)",
-			"ignore": true
-		},
-		{
-			"index": 199,
-			"text": "(No, no, nonono...)",
-			"ignore": true
-		},
-		{
-			"index": 200,
-			"text": "(Okay, okay but...)",
-			"ignore": true
-		},
-		{
-			"index": 201,
-			"text": "(Huh?)",
-			"ignore": true
-		},
-		{
-			"index": 202,
-			"text": "(Right...)",
-			"ignore": true,
-			"wild": {
-				"text": "(Oh-hoh, RIGHT...)"
-			}
-		}
-	]
+	}
 }
